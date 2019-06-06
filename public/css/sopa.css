@@ -1,0 +1,83 @@
+ /* Style for grid cells */
+ .rf-tgrid {
+
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    margin: 1px;
+    padding: 8px;
+    border: 1px solid #143a83;
+    vertical-align: middle;
+    text-align: center;
+
+    /* margin: 3px; */
+    /* width: 45px; */
+    /* height: 45px; */
+    /* line-height: 45px; */
+    /* text-align: center; */
+    background: #fff;
+    /* box-shadow: 0 0 0px rgba(0,0,0,0.1); */
+    border-radius: 5px;
+    /* border-color: black; */
+}
+
+/* Style for the grid */
+.rf-tablestyle {
+    /* border: 2px solid; */
+    /* border-color: black; */
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/* Style for the div containing the grid */
+#rf-searchgamecontainer {
+    float: left;
+    padding-right: 50px; 
+}
+
+/* Style for the div containing the word list */
+#rf-wordcontainer {
+    font-family: Arial,sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    float :left;
+    padding-right: 10px; 
+    cursor: default;
+    margin : 1em 1em 1em 0;
+    width : 200px;  
+    border: 2px solid;
+    border-color: black;
+    background-color: #eee;
+    cursor: pointer;    
+}
+
+/* Style for the words that have been found */
+.rf-foundword {
+    font-family: Arial,sans-serif;
+    text-decoration : line-through;
+    color : darkslategray;                
+}
+
+#rf-tablegrid .rf-armed {
+    /*  background: lightcyan;*/
+}
+
+#rf-tablegrid .rf-highlight {
+    background: red;
+}
+
+
+#rf-tablegrid .rf-glowing {
+    background: gold;
+
+}
+
+#rf-tablegrid .rf-selected {
+    background: #bdff93;
+}
+
+/* style for words that didn't make it on the grid */
+.rf-pfalse {
+    color: #111;
+    visibility: hidden; 
+}
