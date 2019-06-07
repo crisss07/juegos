@@ -71,7 +71,7 @@
         </p>  
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Jugar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button>
       </div>
     </div>
   </div>
