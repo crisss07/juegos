@@ -56,11 +56,11 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title contenidos" id="exampleModalLabel">SOPA DE LETRAS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title contenidos" id="exampleModalLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
+<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+ -->      </div>
       <div class="modal-body">
         <p class="contenidos">
             El juego conciste en encontrar las palabras dentro
@@ -71,8 +71,7 @@
         </p>  
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Jugar</button>
       </div>
     </div>
   </div>
@@ -85,7 +84,7 @@
     
         <p>&nbsp;</p>
         <p class="titulo">SOPA DE LETRAS</p>
-        <p id="time" class="titulo" style="display: none;">03:00</p>
+        <p id="time" class="titulo">03:00</p>
         <div id="txt_tutorial">
             <p>&nbsp;</p>
             
@@ -219,6 +218,10 @@
                 "wordlist": words,
                 "gridsize": 12,
                 // "width" : 300
+            });
+
+            $("#exampleModal").on("hidden.bs.modal", function () {
+               inicia(); 
             });
         });
     </script>
