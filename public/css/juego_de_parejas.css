@@ -1,0 +1,425 @@
+@font-face {
+     font-family: "OpenSans-Regular";
+     src: url("http://embed.eltiempo.digital/maquetacion/maquillajes_xalok/el_tiempo/2018/02/las_10_mejores_jugadas/assets//fonts/OpenSans-Regular.ttf");
+}
+ @font-face {
+     font-family: 'PT Sans Narrow', sans-serif;
+     src: url("http://embed.eltiempo.digital/maquetacion/maquillajes_xalok/el_tiempo/2018/02/las_10_mejores_jugadas/assets/./fonts/Kankin.otf");
+}
+ @font-face {
+     font-family: "Lakeshore";
+     src: url("http://embed.eltiempo.digital/maquetacion/maquillajes_xalok/el_tiempo/2018/02/las_10_mejores_jugadas/assets//fonts/Lakeshore-Regular.otf");
+}
+ #juego_de_parejas {
+     position: relative;
+     background-color: #fffcd5;
+     width: 100%;
+     overflow: hidden;
+}
+ #juego_de_parejas #contenedor_juego {
+     margin: auto;
+     background-repeat: no-repeat;
+}
+ #juego_de_parejas #contenedor_juego #cabecera_juego {
+     margin-bottom: 20px;
+}
+ #juego_de_parejas #contenedor_juego #cabecera_juego #imagen_juego {
+     margin-top: 30px;
+}
+ #juego_de_parejas #contenedor_juego #cabecera_juego p {
+     width: 600px;
+     margin: 0px 0px 25px 0px;
+     font-family: "OpenSans-Regular";
+     color: #000;
+     font-size: 20px;
+     font-weight: 300;
+}
+ #juego_de_parejas #contenedor_juego #cabecera_juego #tiempo_juego {
+     font-family: 'PT Sans Narrow', sans-serif;
+     color: #000;
+     font-size: 20px;
+     font-weight: 600;
+}
+ #juego_de_parejas #contenedor_juego #cabecera_juego span {
+     font-family: 'PT Sans Narrow', sans-serif;
+     color: #000;
+     font-size: 12px;
+     margin-left: 5px;
+}
+ #juego_de_parejas #contenedor_juego #tablero_juego {
+     margin: auto;
+     width: 710px;
+     height: 520px;
+}
+ #juego_de_parejas #contenedor_juego #tablero_juego .casilla {
+     background-color: #f15b5b;
+     background-size: contain;
+     border-radius: 8px;
+     cursor: pointer;
+     float: left;
+     height: 110px;
+     margin: 15px;
+     width: 110px;
+}
+ #juego_de_parejas #contenedor_juego #tablero_juego .acertado {
+     box-shadow: 0 0 6px black;
+     box-sizing: border-box;
+     pointer-events: none !important;
+}
+ #juego_de_parejas #panel_resultados {
+     background-color: rgba(255,252,213,0.9);
+     bottom: 0px;
+     display: none;
+     left: 0px;
+     overflow: auto;
+     position: absolute;
+     top: 0;
+     width: 100%;
+}
+ #juego_de_parejas #panel_resultados .label_tiempo {
+     font-family: 'PT Sans Narrow', sans-serif;
+     color: #000;
+     font-size: 27px;
+     line-height: 26px;
+}
+ #juego_de_parejas #panel_resultados .tiempo_final {
+     color: #f15b5b;
+     font-family: 'PT Sans Narrow', sans-serif;
+     font-size: 48px;
+     font-weight: 600;
+}
+ #juego_de_parejas #panel_resultados hr {
+     border-color: #f15b5b;
+     max-width: 70%;
+}
+ #juego_de_parejas #panel_resultados #resultados {
+     padding-top: 80px;
+     text-align: center;
+}
+ #juego_de_parejas #panel_resultados #resultados p {
+     font-family: 'PT Sans Narrow', sans-serif;
+     color: #f15b5b;
+     font-size: 22px;
+}
+ #juego_de_parejas #panel_resultados #resultados p.flecha {
+     cursor: pointer;
+     margin: 0;
+     user-select: none;
+}
+ #juego_de_parejas #panel_resultados #resultados .btn_jugada {
+     margin-right: 15px;
+     font-family: 'PT Sans Narrow', sans-serif;
+     color: #000;
+     font-size: 24px;
+     padding: 10px 10px 5px 10px;
+     border: 1px solid #000;
+     line-height: 48px;
+}
+ #juego_de_parejas #panel_resultados #resultados .btn_jugada:hover {
+     background-color: #f15b5b;
+     color: #242424;
+     border: 1px solid #f15b5b;
+     cursor: pointer;
+}
+ #juego_de_parejas #panel_resultados #resultados #btn_reiniciar {
+     border: 3px solid #f15b5b;
+     color: #f15b5b;
+     font-family: 'PT Sans Narrow', sans-serif;
+     font-size: 24px;
+     font-weight: 600;
+     margin-right: 15px;
+     padding: 10px 10px 5px 10px;
+}
+ #juego_de_parejas #panel_resultados #resultados #btn_reiniciar:hover {
+     background-color: #f15b5b;
+     color: #fff;
+     cursor: pointer;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada {
+     display: none;
+     padding-top: 80px;
+     text-align: center;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada {
+     position: relative;
+     width: 500px;
+     height: 200px;
+     margin: auto;
+     text-align: left;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada label {
+     padding-left: 200px;
+     font-family: "Lakeshore";
+     font-size: 114px;
+     color: #f15b5b;
+     line-height: 60px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada p {
+     padding-left: 200px;
+     font-family: "OpenSans-Regular";
+     font-size: 13px;
+     line-height: 17px;
+     color: #000;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada img {
+     position: absolute;
+     top: -80px;
+     left: 30px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_01 img {
+     top: -50px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_02 img {
+     left: -10px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_03 img {
+     left: 10px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_04 img {
+     left: -40px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_05 img {
+     left: -10px;
+     top: -50px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_06 img {
+     left: -10px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_07 img {
+     left: -10px;
+     top: -60px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_08 img {
+     left: -25px;
+     top: -100px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_09 img {
+     left: -10px;
+     top: -65px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_10 img {
+     left: 40px;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada .btn_inf {
+     width: 130px;
+     margin-top: 50px;
+     margin-right: 15px;
+     font-family: 'PT Sans Narrow', sans-serif;
+     color: #f15b5b;
+     font-size: 20px;
+     padding: 10px 10px 5px 10px;
+     border: 3px solid #f15b5b;
+     box-shadow: 7px 7px #f15b5b;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada .btn_inf:hover {
+     background-color: #f15b5b;
+     color: #242424;
+     cursor: pointer;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #btn_volver, #juego_de_parejas #panel_resultados #infografia_jugada #btn_ver_inf_jugada {
+     margin-top: unset;
+     padding: 5px 5px 0px 5px;
+     font-size: 14px;
+     display: inline-block;
+     vertical-align: middle;
+}
+ #juego_de_parejas #panel_resultados #infografia_jugada #btn_volver {
+     padding: 9px 10px 5px 10px;
+     font-size: 20px;
+}
+ #juego_de_parejas #panel_resultados #compartir_redes {
+     margin-top: 70px;
+     text-align: center;
+}
+ #juego_de_parejas #panel_resultados #compartir_redes #btn_compartir_facebook {
+     display: inline-block;
+     width: 42px;
+     height: 40px;
+     background: url(../images/compartir_redes.png) 0px 0px;
+     cursor: pointer;
+}
+ #juego_de_parejas #panel_resultados #compartir_redes #btn_compartir_facebook:hover {
+     background: url(../images/compartir_redes.png) -42px 0px;
+}
+ #juego_de_parejas #panel_resultados #compartir_redes #btn_compartir_twitter {
+     display: inline-block;
+     width: 42px;
+     height: 40px;
+     margin-left: 15px;
+     background: url(../images/compartir_redes.png) 0px -43px;
+     cursor: pointer;
+}
+ #juego_de_parejas #panel_resultados #compartir_redes #btn_compartir_twitter:hover {
+     background: url(../images/compartir_redes.png) -48px -43px;
+}
+ #juego_de_parejas #panel_resultados #compartir_redes label {
+     display: block;
+     margin-top: 10px;
+     font-family: 'PT Sans Narrow', sans-serif;
+     font-size: 20px;
+     color: #000;
+}
+#juego_de_parejas #panel_resultados #resultados .preguntas {
+    height: 50vh;
+    overflow: auto;
+    padding-top: 20px;
+}
+#juego_de_parejas #panel_resultados #resultados table {
+    margin: 0 auto;
+    max-width: 65%;
+    text-align: center;
+}
+#juego_de_parejas #panel_resultados #resultados table tr td {
+    border-bottom: 1px solid rgba(241,91,91,0.673);
+    padding: 10px 0;
+}
+#juego_de_parejas #panel_resultados #resultados table td:first-child {
+    width: 145px;
+}
+#juego_de_parejas #panel_resultados #resultados table p {
+    margin: 5px 0;
+    font-family: "OpenSans-Regular";
+    color: #757575;
+    font-size: 15px;
+    font-weight: 300;
+}
+#juego_de_parejas #panel_resultados #resultados table b {
+    font-family: "OpenSans-Regular";
+    color: #000000;
+    font-size: 15px;
+}
+#juego_de_parejas #panel_resultados #resultados table img {
+    display: inline-block;
+    height: auto;
+    margin: 5px 0;
+    max-width: 60px;
+}
+ @media only screen and (max-width: 767px) {
+    #juego_de_parejas #panel_resultados hr {
+        max-width: 90%;
+    }
+    #juego_de_parejas #panel_resultados #resultados .preguntas {
+        padding-top: 0;
+    }
+    #juego_de_parejas #panel_resultados #resultados table {
+        max-width: 85%;
+    }
+    #juego_de_parejas #panel_resultados #resultados table td:first-child {
+        width: auto;
+    }
+     #juego_de_parejas {
+         width: 100vw;
+    }
+     #juego_de_parejas #contenedor_juego {
+         width: 100%;
+         height: 850px;
+         background-image: unset;
+    }
+     #juego_de_parejas #contenedor_juego #cabecera_juego {
+         width: 100%;
+    }
+     #juego_de_parejas #contenedor_juego #cabecera_juego #imagen_juego {
+         width: 212px;
+         margin-top: 35px;
+    }
+     #juego_de_parejas #contenedor_juego #cabecera_juego p {
+         width: 262px;
+         font-size: 14px;
+    }
+     #juego_de_parejas #contenedor_juego #tablero_juego {
+         width: 260px;
+    }
+     #juego_de_parejas #contenedor_juego #tablero_juego .casilla {
+         width: 66px;
+         height: 60px;
+         margin: 10px;
+         background-position: center;
+         background-repeat: no-repeat;
+    }
+     #juego_de_parejas #contenedor_juego #tablero_juego .acertado {
+         border: 2px solid #000;
+    }
+     #juego_de_parejas #panel_resultados {
+         height: 850px;
+         top: 0px;
+    }
+     #juego_de_parejas #panel_resultados hr {
+         width: auto;
+         margin-bottom: 30px;
+    }
+     #juego_de_parejas #panel_resultados .label_tiempo {
+         display: block;
+    }
+     #juego_de_parejas #panel_resultados br {
+         display: none;
+    }
+     #juego_de_parejas #panel_resultados #resultados {
+         width: 320px;
+         margin: auto;
+    }
+     #juego_de_parejas #panel_resultados #resultados .btn_jugada {
+         display: block;
+         max-width: 150px;
+         margin: auto;
+         margin-bottom: 5px;
+         line-height: unset;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada {
+         width: 320px;
+         margin: auto;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada {
+         width: auto;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada label {
+         padding-left: 130px;
+         font-size: 60px;
+         line-height: 20px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada .inf_jugada p {
+         padding-left: 130px;
+         font-size: 11px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada .btn_inf {
+         width: 100px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_01 img {
+         left: -20px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_02 img {
+         left: -40px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_03 img {
+         left: -35px;
+         top: -60px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_04 img {
+         left: -90px;
+         top: -70px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_05 img {
+         left: -55px;
+         top: -55px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_06 img {
+         left: -60px;
+         top: -60px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_07 img {
+         left: -60px;
+         top: -60px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_08 img {
+         left: -60px;
+         top: -85px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_09 img {
+         left: -40px;
+         top: -60px;
+    }
+     #juego_de_parejas #panel_resultados #infografia_jugada #inf_jugada_10 img {
+         left: -10px;
+         top: -70px;
+    }
+}
+ 
