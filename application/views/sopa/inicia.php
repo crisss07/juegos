@@ -76,6 +76,31 @@
     </div>
   </div>
 </div>
+<!-- Modal 2 -->
+
+<!-- Modal cierre de tiempo -->
+<div class="modal fade" id="modal_tiempo" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title contenidos" id="exampleModalLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
+<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+ -->      </div>
+      <div class="modal-body">
+        <p class="contenidos">
+            TU TIEMPO HA FINALIZADO!!!
+        </p>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin modal cierre de tiempo -->
+
 
     
     <div class="container h-100">
@@ -128,7 +153,9 @@
 
                 if (--timer < 0) {
                     timer = duration;
+                    $("#modal_tiempo").modal('show');
                     console.log('termino');
+
                 }
             }, 1000);
         }
@@ -137,7 +164,7 @@
             // $("#sopa_contenidos").toggle('slow');
             // $("#txt_tutorial").toggle('slow');
             // $("#time").toggle('slow');
-            var fiveMinutes = 60 * 3,
+            var fiveMinutes = 60 * 1,
                 display = document.querySelector('#time');
             startTimer(fiveMinutes, display);
         }
