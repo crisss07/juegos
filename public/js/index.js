@@ -20,10 +20,10 @@ function triv() {
   }, 50);
 
   var tips = [
-    "Pro Tip: Answer as quickly as possible!",
-    "Pro Tip: Study to get higher scores!",
-    "Pro Tip: If you don't know something, go with your guts!",
-    "Pro Tip: Questions can repeat, so pay attention!",
+    "¿Sabías que? Caloncho, es el sitio de huellas de dinosaurios más importante del mundo ya que contiene más de cinco mil huellas de 294 especies de dinosaurios.",
+    "¿Sabías que? El Alto, es la ciudad más poblada a mayor altura del planeta, en ella se ubica el aeropuerto internacional a mayor altitud del mundo. Además del Estadio Andino el cual es el estadio más grande a mayor altitud del mundo con una capacidad de 48 mil personas. Es una altitud de 4.061 metros sobre el nivel del mar.",
+    "¿Sabías que? El famoso camino de la muerte está en Bolivia, más conocido como el camino a los yungas, un camino de aproximadamente 80 kilómetros de extensión que une a la ciudad de La Paz y la región de los yungas al noreste.",
+    "¿Sabías que? El símbolo del dólar estadounidense fue creado en Bolivia, pues las monedas de plata españolas serán acuñadas en Potosí donde se les ponía una marca de ceca que estaba compuesta de las letras PTSI derivado de Potosí superpuestas una encima de la otra formando un símbolo muy similar al símbolo del dólar.",
     "¿Sabías que? El pantanal en el departamento de Santa Cruz, el cual comparte con brasil, es el humedal más grande del mundo.",
     "¿Sabías que? El Salar de Uyuni, es el salar continuo más extenso del planeta con una dimensión de 10.582 kilómetros cuadrados, una superficie similar a la de países como el Líbano.",
     "¿Sabías que? En 1967 en Bolivia fue asesinado el ícono socialista más grande a nivel mundial Ernesto Che Guevara y su guerrilla fue derrotada muy cerca de valle grande en Santa Cruz. ",
@@ -32,105 +32,36 @@ function triv() {
 
   var questions = [
     "¿En que año paso por primera vez el Dakar por Bolivia?",
-    "Which of the following is not one of the Olympic ring colors?",
-    "Which of the following is a Marvel Comics superhero?",
-    "There's a word for the day after tomorrow. What is it?",
-    "What is the second lowest prime number?",
-    "How many red stripes are on the American Flag?",
-    "Stephen King did not write which book?",
-    "Who won the 1989 Super Bowl?",
-    "What are the names of the Steve Jobs's foster parents?",
-    "Nauru is a ...",
-    "Which mathematician is responsible for the laws of gravity?",
-    "Which actors was famous for the phrase 'nanoo nanoo'?",
-    "Which country hosted the first Winter Olympic Games?",
-    "Amelia Earhart disappeared over what ocean?",
-    "What year was JFK assasinated?",
-    "Which of the following is a leap year?",
-    "Steve Wozniak is a founder of what company?",
-    "In 2018, Lionel Messi played for which country",
-    "X.com, founded by Elon Musk, was later known as what?",
-    "Famous wrestler John Cena was born in whcih US state?",
-    "What is the square root of 3136?",
-    "What are the two colors of the New York Jets?",
-    "What was the length of the RMS Titanic?",
-    "How many golf clubs are allowed in your bag during a tournament?",
-    "Gold, AU, is what number on the Periodic Table?",
-    "The german scientist who created the X-Ray name was ...",
-    "Coca Cola's original color was ....",
-    "The NBA logo silohouettes which basketball player?",
-    "How many keys are on a standard piano?",
-    "Allen Brooks voices which character in Disney's Nemo?",
-    "What does the DC in DC comics stand for?",
-    "Spell the word that concluded the 2017 Scripps National Spelling Bee"
+    "¿Quien fue el primer Presidente de Bolivia?",
+    "¿Cuál ha sido el único mundial de fútbol que ha disputado Bolivia?",
+    "¿Cuál es la capital del departamento de Pando?",
+    "¿Entre qué departamentos se encuentra el territorio indígena y parque nacional Isiboro Secure?",
+    "¿En qué lugar y año tuvieron lugar los hechos conocidos como la Guerra del Agua?",
+    "¿Cual es su primer Nombre del Viceministro?",
+    "¿Cual es el ultimo Campeon del Mundo?",
+    "¿Cual es su Capital de Bolivia?",
   ];
   var answers = [
     ["2014", "2015", "2013"],
-    ["Black", "Blue", "Orange"],
-    ["Batman", "Falcon", "Juggernaut"],
-    ["Overmorrow", "Postmorrow", "Aftermorrow"],
-    ["One", "Two", "Three"],
-    ["Six", "Eight", "Seven"],
-    ["The Shining", "The Raven", "Misery"],
-    ["The 49ers", "Patriots", "Raiders"],
-    ["Paul and Clara", "John and Mary", "Chris and Kerry"],
-    ["State", "City", "Country"],
-    ["Isaac Newton Jr.", "Isaac Newton Sr", "Neither"],
-    ["Gary Cooper", "Robin Williams", "Bing Crosby"],
-    ["England", "France", "Russia"],
-    ["The Pacific", "The Atlantic", "The Indian"],
-    ["1957", "1961", "1963"],
-    ["2016", "2022", "2030"],
-    ["Apple", "Microsoft", "Yahoo!"],
-    ["Brazil", "Spain", "Argentina"],
-    ["Uber", "Alibaba", "PayPal"],
-    ["Wisconsin", "Massachussets", "Georgia"],
-    ["66", "56", "46"],
-    ["Green and White", "Blue and Yellow", "Orange and Red"],
-    ["1098'", "984'", "883'"],
-    ["14", "17", "19"],
-    ["65", "79", "86"],
-    ["Georg Kummer", "Denis Bönsch", "Wilhelm Röntgen"],
-    ["Blue", "Green", "Brown"],
-    ["Jerry West", "Lary Bird", "Michael Jordan"],
-    ["88", "82", "76"],
-    ["Nemo", "Phillip Sherman", "Marlin"],
-    ["Daily Comics", "Detective Comics", "Dangerous Comics"],
-    ["Marocain", "Marocane", "Mairocan"]
+    ["Antonio Jose de Sucre", "Simon Bolivar", "Jose Miguel de Velasco"],
+    ["Mexico 86", "Estados Unidos 1994", "Francia 1998"],
+    ["Trinidad", "Rurrenbaque", "Cobija"],
+    ["Cochabamba - Beni", "La Paz - Pando", "Beni - Pando"],
+    ["El Alto 2006", "La Paz 2004", "Cochabamba 2000"],
+    ["Javier", "Antonio", "Juan"],
+    ["Argentina", "Francia", "Bolivia"],
+    ["Sucre", "La Paz", "Cochabamba"],
   ];
   var answers2answers = [
     1,
-    3,
     2,
-    1,
-    3,
-    3,
     2,
-    1,
+    3,
+    3,
     1,
     3,
     2,
-    2,
-    2,
     1,
-    3,
-    1,
-    1,
-    3,
-    3,
-    2,
-    2,
-    1,
-    3,
-    1,
-    2,
-    3,
-    2,
-    1,
-    1,
-    3,
-    2,
-    1
   ];
 
   function PlayNormal() {
@@ -148,6 +79,7 @@ function triv() {
     setTimeout(function() {
       normalUI.style.width = "33%";
     }, 200);
+  
 
     setTimeout(function() {
       waitScreen.style.top = "-200%";
@@ -175,18 +107,18 @@ function triv() {
       correctTxt.style.fontSize = "0";
       incorrectTxt.style.fontSize = "0";
 
-      normalUI.style.background = "#262626";
+      normalUI.style.background = "#143A83";
     }
 
     newR();
 
     choice1.addEventListener("click", function() {
       if (correct == 1) {
-        score += 500;
+        score += 4;
         correctTxt.style.fontSize = "1800%";
         normalUI.style.background = "#009900";
       } else if (correct == 2 || correct == 3) {
-        score -= 250;
+        score -= 2;
         incorrectTxt.style.fontSize = "1800%";
         normalUI.style.background = "#cc0000";
       }
@@ -199,11 +131,11 @@ function triv() {
 
     choice2.addEventListener("click", function() {
       if (correct == 2) {
-        score += 500;
+        score += 4;
         correctTxt.style.fontSize = "1800%";
         normalUI.style.background = "#009900";
       } else if (correct == 1 || correct == 3) {
-        score -= 250;
+        score -= 2;
         incorrectTxt.style.fontSize = "1800%";
         normalUI.style.background = "#cc0000";
       }
@@ -216,11 +148,11 @@ function triv() {
 
     choice3.addEventListener("click", function() {
       if (correct == 3) {
-        score += 500;
+        score += 4;
         correctTxt.style.fontSize = "1800%";
         normalUI.style.background = "#009900";
       } else if (correct == 1 || correct == 2) {
-        score -= 250;
+        score -= 2;
         incorrectTxt.style.fontSize = "1800%";
         normalUI.style.background = "#cc0000";
       }
@@ -234,17 +166,16 @@ function triv() {
     setTimeout(function() {
       overScreen.style.left = 0;
 
-      if (score >= 1500) {
+      if (score >= 30) {
         overScreen.style.background = "#00ff7f";
-        affirm.innerHTML = "¡bien!";
-      } else if (score >= 500) {
+        affirm.innerHTML = "¡Eres un Experto!";
+      } else if (score >= 10) {
         overScreen.style.background = "#7647a2";
-        affirm.innerHTML = "¡mas o menos!";
-      } else if (score < 500) {
+        affirm.innerHTML = "¡Bien Jugado!";
+      } else if (score > 0 && score < 10 ) {
         overScreen.style.background = "#ff6666";
-        affirm.innerHTML = "¡Eres Malo!";
-      }
-
+        affirm.innerHTML = "¡Vuelve a Intentarlo!";
+      }      
       yourPoints.innerHTML = score;
     }, 44000);
 
@@ -252,22 +183,17 @@ function triv() {
     setTimeout(function() {
       normalUI.style.top = "-200%";
       overScreen.style.left = "-100%";
-      location = "/juegos/Trivia/guarda";
+      location = location;
     }, 52000);
+
     //104000 total 1 minuto
+    // $.ajax({
+    //         url: '<?php echo base_url(); ?>Trivia/guarda',
+    //         type: "POST",
+    //         dataType: "json",
+    //         data: {'puntaje': score},
+    //       })
   }
-
-    //MANDAR EL SCORE A LA BASE DE DATOS
-      // $.ajax({
-      //       url:"<?php echo base_url(); ?>Welcome/guarda/",
-      //       type:"POST",
-      //       dataType:'json',
-      //       data: {'puntaje': score},
-      //       success:function(respuesta){
-      //        window.location.href = "<?php echo base_url(); ?>Welcome/guarda/";
-      //      }
-      //    }); 
-
 
   PlayNormal();
 }

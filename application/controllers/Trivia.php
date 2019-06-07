@@ -26,7 +26,8 @@ class Trivia extends CI_Controller {
 	public function guarda()
 	{
 		$puntaje = $this->input->post('puntaje');
-		var_dump($puntaje);
+		$this->trivia_model->insertar($puntaje);
+		redirect('Trivia');
 	}
 
 	public function guarda_edicion()
