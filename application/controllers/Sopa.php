@@ -1,16 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Trivia extends CI_Controller {
-
+class Sopa extends CI_Controller {
+	
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('vayes_helper');
+		$this->load->model('Sopa_model');
     }
 
-    public function index()
+  public function index()
 	{
 		$this->load->view('trivia');
+	}
+
+	public function inicia(){
+
+		// echo "holas desde la sopa";
+		$resultados = $this->Sopa_model->genera_ramdon();
+		// vdebug($resultados, true, false, true);
+		$this->load->view('sopa/inicia', $resultados);
 	}
 
 	public function prueba()
@@ -21,7 +31,7 @@ class Trivia extends CI_Controller {
         $valor = $consulta->nombre;
 
         var_dump($valor);
-	 }
+	}
 
 	public function guarda()
 	{
