@@ -21,9 +21,7 @@ function triv() {
 
   var tips = [
     "¿Sabías que? Caloncho, es el sitio de huellas de dinosaurios más importante del mundo ya que contiene más de cinco mil huellas de 294 especies de dinosaurios.",
-    "¿Sabías que? El Alto, es la ciudad más poblada a mayor altura del planeta, en ella se ubica el aeropuerto internacional a mayor altitud del mundo. Además del Estadio Andino el cual es el estadio más grande a mayor altitud del mundo con una capacidad de 48 mil personas. Es una altitud de 4.061 metros sobre el nivel del mar.",
     "¿Sabías que? El famoso camino de la muerte está en Bolivia, más conocido como el camino a los yungas, un camino de aproximadamente 80 kilómetros de extensión que une a la ciudad de La Paz y la región de los yungas al noreste.",
-    "¿Sabías que? El símbolo del dólar estadounidense fue creado en Bolivia, pues las monedas de plata españolas serán acuñadas en Potosí donde se les ponía una marca de ceca que estaba compuesta de las letras PTSI derivado de Potosí superpuestas una encima de la otra formando un símbolo muy similar al símbolo del dólar.",
     "¿Sabías que? El pantanal en el departamento de Santa Cruz, el cual comparte con brasil, es el humedal más grande del mundo.",
     "¿Sabías que? El Salar de Uyuni, es el salar continuo más extenso del planeta con una dimensión de 10.582 kilómetros cuadrados, una superficie similar a la de países como el Líbano.",
     "¿Sabías que? En 1967 en Bolivia fue asesinado el ícono socialista más grande a nivel mundial Ernesto Che Guevara y su guerrilla fue derrotada muy cerca de valle grande en Santa Cruz. ",
@@ -32,7 +30,6 @@ function triv() {
 
   var questions = [
     "¿En que año paso por primera vez el Dakar por Bolivia?",
-    "¿Quien fue el primer Presidente de Bolivia?",
     "¿Cuál ha sido el único mundial de fútbol que ha disputado Bolivia?",
     "¿Cuál es la capital del departamento de Pando?",
     "¿Entre qué departamentos se encuentra el territorio indígena y parque nacional Isiboro Secure?",
@@ -40,28 +37,56 @@ function triv() {
     "¿Cual es su primer Nombre del Viceministro?",
     "¿Cual es el ultimo Campeon del Mundo?",
     "¿Cual es su Capital de Bolivia?",
+    "What was the length of the RMS Titanic?",
+    "How many golf clubs are allowed in your bag during a tournament?",
+    "Gold, AU, is what number on the Periodic Table?",
+    "The german scientist who created the X-Ray name was ...",
+    "Coca Cola's original color was ....",
+    "The NBA logo silohouettes which basketball player?",
+    "How many keys are on a standard piano?",
+    "Allen Brooks voices which character in Disney's Nemo?",
+    "What does the DC in DC comics stand for?",
+    "Spell the word that concluded the 2017 Scripps National Spelling Bee",
   ];
   var answers = [
     ["2014", "2015", "2013"],
-    ["Antonio Jose de Sucre", "Simon Bolivar", "Jose Miguel de Velasco"],
-    ["Mexico 86", "Estados Unidos 1994", "Francia 1998"],
+    ["Mexico", "Estados Unidos", "Francia"],
     ["Trinidad", "Rurrenbaque", "Cobija"],
-    ["Cochabamba - Beni", "La Paz - Pando", "Beni - Pando"],
+    ["Cochabamba-Beni", "La Paz-Pando", "Beni-Pando"],
     ["El Alto 2006", "La Paz 2004", "Cochabamba 2000"],
     ["Javier", "Antonio", "Juan"],
     ["Argentina", "Francia", "Bolivia"],
     ["Sucre", "La Paz", "Cochabamba"],
+    ["1098'", "984'", "883'"],
+    ["14", "17", "19"],
+    ["65", "79", "86"],
+    ["Georg Kummer", "Denis Bönsch", "Wilhelm Röntgen"],
+    ["Blue", "Green", "Brown"],
+    ["Jerry West", "Lary Bird", "Michael Jordan"],
+    ["88", "82", "76"],
+    ["Nemo", "Phillip Sherman", "Marlin"],
+    ["Daily Comics", "Detective Comics", "Dangerous Comics"],
+    ["Marocain", "Marocane", "Mairocan"],
   ];
   var answers2answers = [
     1,
     2,
-    2,
     3,
     1,
     3,
     1,
     2,
     1,
+    3,
+    1,
+    2,
+    3,
+    2,
+    1,
+    1,
+    3,
+    2,
+    1
   ];
 
   function PlayNormal() {
