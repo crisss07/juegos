@@ -32,7 +32,7 @@
             font-family: 'Handlee', cursive;
             font-size: 28px;
             /*color: #ff0000;*/
-            font-weight: bolder;            
+            font-weight: bolder;
         }
         #txt_tutorial {
           position: absolute;
@@ -64,11 +64,11 @@
       <div class="modal-body">
         <p class="contenidos">
             El juego conciste en encontrar las palabras dentro
-            de la sopa de letras, tienes 2 minutos para poder 
+            de la sopa de letras, tienes 2 minutos para poder
             superar esta prueba.
-            Si consigues encontrar todas las palabras tendras 
+            Si consigues encontrar todas las palabras tendras
             10 puntos ganados.
-        </p>  
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success btn-lg btn-block" onclick="cierra_modal_inicio();">JUGAR</button>
@@ -92,7 +92,7 @@
       <div class="modal-body">
         <p class="contenidos">
             TU TIEMPO HA FINALIZADO!!!
-        </p>  
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR DE NUEVO</button>
@@ -118,7 +118,7 @@
       <div class="modal-body">
         <p class="contenidos">
             FELICIDADES LO LOGRASTE!!!
-        </p>  
+        </p>
       </div>
       <div class="modal-footer">
         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
@@ -131,17 +131,17 @@
 <!-- Fin modal ganaste -->
 
 
-    
+
     <div class="container h-100">
       <div class="row h-100 justify-content-center align-items-center">
         <form class="col-12">
-    
+
         <p>&nbsp;</p>
         <p class="titulo">SOPA DE LETRAS</p>
         <p id="time" class="titulo">02:00</p>
         <div id="txt_tutorial">
             <p>&nbsp;</p>
-            
+
 <!--             <center>
                 <div id="BOTjugar" onclick="inicia();" class="contenidos">JUGAR</div>
             </center>
@@ -161,12 +161,12 @@
             <!-- <div>El juego conciste en encontrar las siguientes palabras <span id="time">01:00</span> minutes!</div> -->
             <div id="theGrid" width="100%" style="display: block;"></div>
             <!-- <input type="button" onclick="inicia();" value="iniciar"> -->
-        </div>      
-          
-        </form>   
+        </div>
+
+        </form>
       </div>
     </div>
-    
+
     <script>
         function startTimer(duration, display) {
             var timer = duration,
@@ -221,10 +221,10 @@
          */
 
         //==============================================================================
-        //------------------------------------------------------------------------------  
+        //------------------------------------------------------------------------------
         //The Word Search Game Widget
-        //------------------------------------------------------------------------------  
-        //  
+        //------------------------------------------------------------------------------
+        //
         //  ------
         //  Usage:
         //  ------
@@ -233,15 +233,15 @@
         //              three,four,five,six,seven,eight,mozart,bach,meyer,rose,mahler";
         //      $("#theGrid").wordsearchwidget({"wordlist" : words,"gridsize" : 12});
         //  });
-        //  
+        //
         //  -------
-        //  Inputs: 
+        //  Inputs:
         //  -------
         //  gridsize - Size of grid to generate (this will be a square)
         //  wordlist - Comma separated list of words to place on the grid
-        //  
+        //
         //  -------------
-        //  What it does:               
+        //  What it does:
         //  -------------
         //  Creates a grid of letters with words from the wordlist
         //  These words are randomly placed in the following directions
@@ -251,23 +251,23 @@
         //  4. Right-Diagonal
         //  In addition, the letters are placed in forward or reverse order, randomly
         //  Provision is made to overlap words
-        //  
-        //  The User is expected to click on a letter and drag to the last letter of the 
+        //
+        //  The User is expected to click on a letter and drag to the last letter of the
         //  word. If the selected letters form a word that is in the word list the UI
         //  will indicate that by crossing it out from the wordlist
-        //  
-        //  If the user cannot find a word, she has to click on that word in the 
+        //
+        //  If the user cannot find a word, she has to click on that word in the
         //  wordlist and the UI will hightlight the word in the grid and cross it out
-        //  
+        //
         //  ------------------
         //  Technical Details:
-        //  ------------------ 
-        //  
-        //      Contains 3 areas: 
+        //  ------------------
+        //
+        //      Contains 3 areas:
         //          a) main game grid (#rf-searchgamecontainer)
         //          b) list of words to be found (#rf-wordcontainer)
         //          c) list of words that have been found (#rf-foundwordcontainer)
-        //      
+        //
         //      Data Structures used:
         //      ---------------------
         //          Objects related to the Data Model
@@ -278,20 +278,20 @@
         //                  3) VerticalPopulator
         //                  4) LeftDiagonalPopulator
         //                  5) RightDiagonalPopulator
-        //                  
+        //
         //              b) WordList
         //                  1) Word
-        //          
+        //
         //          Objects related to View
         //          1) Root
         //          2) Hotzone
         //          3) Arms
         //          4) Visualizer
-        //          
+        //
         //          Objects related to the controller
-        //          1) GameWidgetHelper         
-        //          
-        //          
+        //          1) GameWidgetHelper
+        //
+        //
         //==============================================================================
         var contador = 0;
         var cantidad_palabras=0;
@@ -369,7 +369,7 @@
                         return;
                     }
                     //if event is on an armed cell
-                    if ($(event.target).hasClass("rf-armed") || $(event.target).hasClass("rf-glowing")) { //CHANGE! 
+                    if ($(event.target).hasClass("rf-armed") || $(event.target).hasClass("rf-glowing")) { //CHANGE!
                         //if in hotzone
                         var chosenOne = this.hotzone.index(event.target);
                         if (chosenOne != -1) {
@@ -410,15 +410,15 @@
                         // console.log(contador + ' si lo lograste');
                         if(cantidad_palabras == contador){
                             // console.log('lo lograste carajo!!!')
-                            $.ajax({
-                                 type: "POST",
-                                 url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
-                                 data: {"persona_id":"56"},
-                                 success: function(response){
-                                     alert(response);
-                                 }
-                            });
-                            $("#modalGano").modal('show');
+                            // $.ajax({
+                            //      type: "POST",
+                            //      url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
+                            //      data: {"persona_id":"56"},
+                            //      success: function(response){
+                            //          alert(response);
+                            //      }
+                            // });
+                            // $("#modalGano").modal('show');
 
                         }
                     }
@@ -437,10 +437,10 @@
             });
 
             //------------------------------------------------------------------------------
-            // VIEW OBJECTS 
+            // VIEW OBJECTS
             //------------------------------------------------------------------------------
             /*
-                * The Arms represent the cells that are selectable once the hotzone has been 
+                * The Arms represent the cells that are selectable once the hotzone has been
                 * exited/passed
                 */
             function Arms() {
@@ -542,7 +542,7 @@
                     }
                 }
 
-                //clear out the arms 
+                //clear out the arms
                 this.returnToNormal = function () {
                     if (!this.arms) return;
 
@@ -813,7 +813,7 @@
             /*
                 * Set of strategies to populate the grid.
                 */
-            //Create a Horizontal Populator Strategy 
+            //Create a Horizontal Populator Strategy
             function HorizontalPopulator(row, col, word, grid) {
 
                 this.grid = grid;
@@ -936,7 +936,7 @@
             }//HorizontalPopulator
 
 
-            //Create a Vertical Populator Strategy 
+            //Create a Vertical Populator Strategy
             function VerticalPopulator(row, col, word, grid) {
 
                 this.grid = grid;
@@ -1058,7 +1058,7 @@
             }//VerticalPopulator
 
 
-            //Create a LeftDiagonal Populator Strategy 
+            //Create a LeftDiagonal Populator Strategy
             function LeftDiagonalPopulator(row, col, word, grid) {
 
                 this.grid = grid;
@@ -1205,7 +1205,7 @@
             }//LeftDiagonalPopulator
 
 
-            //Create a RightDiagonal Populator Strategy 
+            //Create a RightDiagonal Populator Strategy
             function RightDiagonalPopulator(row, col, word, grid) {
 
                 this.grid = grid;
@@ -1617,7 +1617,7 @@
             });
 
             // $("#modalInicial").on("hidden.bs.modal", function () {
-            //    inicia(); 
+            //    inicia();
             // });
         });
 
