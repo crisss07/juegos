@@ -38,23 +38,17 @@ class Ahorcado extends CI_Controller {
 	}
 
 
-	public function nuevo($ida=null){
-
-	
+	public function nuevo($ida=null){	
 			//$lista['verifica'] = $this->rol_model->verifica();
-			//$lista['zona_urbana'] = $this->zona_urbana_model->index();
-		
+			//$lista['zona_urbana'] = $this->zona_urbana_model->index();	
       
             $data['id_persona']=$ida;
             $data['puntaje_id'] = $this->ahorcado_model->get_puntaje($ida);
-		  
-		            	
+            $data['preguntas'] = $this->ahorcado_model->get_preguntas();
 		    //$this->load->view('admin/header');
 		    //$this->load->view('admin/menu');
 		    $this->load->view('ahorcado', $data);
-			//$this->load->view('admin/footer');			
-			
-       	
+			//$this->load->view('admin/footer');	
 		
 	}
 
