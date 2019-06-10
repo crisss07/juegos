@@ -194,9 +194,10 @@ var cantidad_palabras=0;
                 GameWidgetHelper.signalWordFound(wordIndex);
                 contador += 1;
 
-                console.log(contador + ' si lo lograste');
+                // console.log(contador + ' si lo lograste');
                 if(cantidad_palabras == contador){
-                    console.log('lo lograste carajo!!!')
+                    // console.log('lo lograste carajo!!!')
+                    $("#modalGano").modal('show');
                 }
             }
 

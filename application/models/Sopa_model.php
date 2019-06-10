@@ -27,4 +27,8 @@ class Sopa_model extends CI_Model
         $data['respuestas'] = $respuestas;
         return $data;
     }
+
+    public function guarda_puntaje(){
+        vdebug($this->input->post(), true, false, true);
+    }
 }

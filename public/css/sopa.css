@@ -84,14 +84,21 @@ body {
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     font-size: 18px;
     float :left;
-    padding-right: 10px; 
+    /*padding-right: 10px; */
     cursor: default;
     margin : 1em 1em 1em 0;
-    width : 200px;  
+    /*width : 200px;  */
     /*border: 2px solid;*/
     /*border-color: black;*/
     /*background-color: #eee;*/
-    cursor: pointer;    
+    cursor: pointer; 
+}
+
+#rf-wordcontainer ul li{
+    /*color: #ff0000;*/
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 22px;   
 }
 
 /* Style for the words that have been found */
@@ -99,7 +106,7 @@ body {
     /*font-family: Arial,sans-serif;*/
     font-family: 'Handlee', cursive;
     text-decoration : line-through;
-    color : darkslategray;                
+    color : darkslategray;             
 }
 
 #rf-tablegrid .rf-armed {
@@ -124,4 +131,10 @@ body {
 .rf-pfalse {
     color: #111;
     visibility: hidden; 
+}
+#theGrid{
+    margin: auto;
+    width: 50%;
+    /*border: 3px solid green;*/
+    padding: 10px;
 }
