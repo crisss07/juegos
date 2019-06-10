@@ -47,6 +47,21 @@ function triv() {
     "¿La voz de Allen Brooks a que personaje de la pelicula Nemo de Disney represento?",
     "¿Qué representan los cómics de DC en DC?",
     "¿En que año se fundo la ciudad de La Paz?",
+
+    "¿Dónde se dio el primer grito libertario en el Alto Peru?",
+    "¿Presidente durante la guerra del Pacífico?",
+    "¿Dictador boliviano contemporáneo?",
+    "¿Triunfador de batalla de Junín?",
+    "¿Quién escribió La Odisea?",
+    "¿Cuál es el río más largo del mundo?",
+    "¿Cómo se llama la Reina del Reino Unido?",
+    "¿Cuál es el país más grande del mundo?",
+    "¿Cuál es tercer planeta en el sistema solar?",
+    "¿En qué lugar del cuerpo se produce la insulina?",
+    "¿Cual es país más poblado de la Tierra?",
+    "¿Cómo se llama el animal más rápido del mundo?",
+    "¿A qué país pertenecen los cariocas?",
+
   ];
   var answers = [
     ["2014", "2015", "2013"],
@@ -67,6 +82,22 @@ function triv() {
     ["Nemo", "Phillip Sherman", "Marlin"],
     ["Daily Comics", "Detective Comics", "Dangerous Comics"],
     ["1548", "1540", "1550"],
+
+    ["Chuquisaca", "La Paz", "Potosi"],
+    ["Ballivian", "Santa Cruz", "Hilarion Daza"],
+    ["Melgarejo", "Linares", "Ballivian"],
+    ["Sucre", "Bolivar", "Santa Cruz"],
+    ["Ulises", "Penélope", "Homero"],
+    ["Nilo", "Amazonas", "Yangtsé"],
+    ["Isabel II", "Isabel I", "Isabel III"],
+    ["Rusia", "EEUU", "Brasil"],
+    ["Marte", "Tierra", "Jupiter"],
+    ["Riñones", "Pulmones", "Páncreas"],
+    ["India", "Indonesia", "China"],
+    ["Halcón", "Guepardo", "Colibri"],
+    ["Brasil", "Uruguay", "Paraguay"],
+
+
   ];
   var answers2answers = [
     1,
@@ -86,7 +117,21 @@ function triv() {
     1,
     3,
     2,
+    1,
+    1,
+    3,
+    1,
+    2,
+    3,
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    2,
     1
+
   ];
 
   function PlayNormal() {
