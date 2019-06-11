@@ -50,26 +50,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="container">
 
 	  <div class="row">
+
+		<div class="col-md-6 col-sm-12">
+			<div class="card">
+			  <img src="<?php echo base_url('/public/img/ahorcado.jpg'); ?>" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">EL AHORCADO</h5>
+			    <p class="card-text">
+			    	El juego conciste en encontrar la respuesta 
+			    	a la pregunta, tienes 1 minuto para poder
+			    	superar esta prueba.
+			    	Si consigues encontrar todas las palabras tendras
+			    	10 puntos ganados.
+			    </p>
+			    <a href="#" class="btn btn-info">COMENZAR A JUGAR</a>
+			  </div>
+			</div>
+		</div>
+
 	  	<div class="col-md-6 col-sm-12">
 	    	<div class="card">
-	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
+	    	  <img src="<?php echo base_url('/public/img/sopa.jpg'); ?>" class="card-img-top" alt="...">
 	    	  <div class="card-body">
-	    	    <h5 class="card-title">Card title</h5>
-	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	    <h5 class="card-title">SOPA DE LETRAS</h5>
+	    	    <p class="card-text">
+					El juego conciste en encontrar las palabras dentro
+					de la sopa de letras, tienes 2 minutos para poder
+					superar esta prueba.
+					Si consigues encontrar todas las palabras tendras
+					10 puntos ganados.
+	    	    </p>
+	    	    <a href="#" class="btn btn-warning">COMENZAR A JUGAR</a>
 	    	  </div>
 	    	</div>
 	    </div>
-	    <div class="col-md-6 col-sm-12">
-	    	<div class="card">
-	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
-	    	  <div class="card-body">
-	    	    <h5 class="card-title">Card title</h5>
-	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
-	    	  </div>
-	    	</div>
-	    </div>
+	    
 	</div>
 	<p></p>
 	<div class="row">
@@ -77,9 +92,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	<div class="card">
 	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
 	    	  <div class="card-body">
-	    	    <h5 class="card-title">Card title</h5>
-	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	    <h5 class="card-title">TRIVIA</h5>
+	    	    <p class="card-text">
+					El juego conciste en escoger la respuesta correcta
+					lo mas rapido posible, tienes 2 minutos para poder
+					superar esta prueba.
+					Si consigues encontrar todas las palabras tendras
+					10 puntos ganados.
+	    	    </p>
+	    	    <a href="#" class="btn btn-success">COMENZAR A JUGAR</a>
 	    	  </div>
 	    	</div>
 	    </div>
@@ -87,9 +108,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	<div class="card">
 	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
 	    	  <div class="card-body">
-	    	    <h5 class="card-title">Card title</h5>
-	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	    <h5 class="card-title">ENPAREJADOS</h5>
+	    	    <p class="card-text">
+	    	    	El juego conciste en encontrar la respuesta correcta
+	    	    	en un conjunto de cartas, tienes 2 minutos para poder
+	    	    	superar esta prueba.
+	    	    	Si consigues encontrar todas las palabras tendras
+	    	    	10 puntos ganados.
+	    	    </p>
+	    	    <a href="#" class="btn btn-primary" disabled>PROXIMAMENTE</a>
 	    	  </div>
 	    	</div>
 	    </div>
