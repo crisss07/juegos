@@ -4,86 +4,98 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to Cristian</title>
-
+	<title>Juegos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
+	    .titulo{
+	        font-family: 'Luckiest Guy', cursive;
+	        /*font-size: 50px;*/
+	        /*color: #ff0000;*/
+	        color: #FFF;
+	          /*font-family: "Kanit";*/
+	          font-size: 45px;
+	          line-height: 1em;
+	          margin: 0;
+	          /*position: absolute;*/
+	          text-align: center;
+	          top: 50%;
+	          /*transform: translateY(-50%);*/
+	          /*width: 100%;*/
+	          text-shadow: 0 1px 0 #e4adad, 0 2px 0 #e1a6a6, 0 3px 0 #df9e9e, 0 4px 0 #dc9696, 0 5px 0 #da8f8f, 0 6px 0 #d78787, 0 7px 0 #d58080, 0 8px 0 #d27878, 0 0 5px rgba(237, 154, 154, 0.05), 0 -1px 3px rgba(237, 154, 154, 0.2), 0 9px 9px rgba(237, 154, 154, 0.5), 0 12px 12px rgba(237, 154, 154, 0.5), 0 15px 15px rgba(237, 154, 154, 0.5);
+	    }
+	    .contenidos{
+	        font-family: 'Handlee', cursive;
+	        font-size: 28px;
+	        /*color: #ff0000;*/
+	        font-weight: bolder;
+	    }
+	    #txt_tutorial {
+	      position: absolute;
+	      left: 0px;
+	      top: 0px;
+	      z-index: +1;
+	      /*background: #ff0000;*/
+	    }
 	</style>
 </head>
 <body>
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+	<div class="jumbotron text-center">
+	  <h1>JUEGOS</h1>
+	  <p>Bienvenido a nuestra consola de juegos!</p> 
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
+	<div class="container">
+
+	  <div class="row">
+	  	<div class="col-md-6 col-sm-12">
+	    	<div class="card">
+	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
+	    	  <div class="card-body">
+	    	    <h5 class="card-title">Card title</h5>
+	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	  </div>
+	    	</div>
+	    </div>
+	    <div class="col-md-6 col-sm-12">
+	    	<div class="card">
+	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
+	    	  <div class="card-body">
+	    	    <h5 class="card-title">Card title</h5>
+	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	  </div>
+	    	</div>
+	    </div>
+	</div>
+	<p></p>
+	<div class="row">
+	    <div class="col-md-6 col-sm-12">
+	    	<div class="card">
+	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
+	    	  <div class="card-body">
+	    	    <h5 class="card-title">Card title</h5>
+	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	  </div>
+	    	</div>
+	    </div>
+	    <div class="col-md-6 col-sm-12">
+	    	<div class="card">
+	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
+	    	  <div class="card-body">
+	    	    <h5 class="card-title">Card title</h5>
+	    	    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	    	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	    	  </div>
+	    	</div>
+	    </div>
+	  </div>
+
+	</div>
 
 </body>
 </html>

@@ -29,13 +29,12 @@ class Sopa extends CI_Controller {
 										FROM persona
 										WHERE id = 10")->row();
         $valor = $consulta->nombre;
-
         var_dump($valor);
 	}
 
-	public function guarda()
+	public function guarda_puntaje()
 	{
-		$puntaje = $this->input->post('puntaje');
+		$puntaje = $this->input->post('persona_id');
 		var_dump($puntaje);
 	}
 
@@ -98,11 +97,10 @@ class Sopa extends CI_Controller {
             $data['data_inf'] = $this->inspecciones_model->get_data_inf();
             $data['asignacion_id']=$ida;
 
-
-		            	$this->load->view('admin/header');
-				        $this->load->view('admin/menu');
-				        $this->load->view('asignacion/edita', $data);
-				        $this->load->view('admin/footer');
+            	$this->load->view('admin/header');
+		        $this->load->view('admin/menu');
+		        $this->load->view('asignacion/edita', $data);
+		        $this->load->view('admin/footer');
 
        		}
 		else{

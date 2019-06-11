@@ -410,16 +410,15 @@
                         // console.log(contador + ' si lo lograste');
                         if(cantidad_palabras == contador){
                             // console.log('lo lograste carajo!!!')
-                            // $.ajax({
-                            //      type: "POST",
-                            //      url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
-                            //      data: {"persona_id":"56"},
-                            //      success: function(response){
-                            //          alert(response);
-                            //      }
-                            // });
-                            // $("#modalGano").modal('show');
-
+                            $.ajax({
+                                 type: "POST",
+                                 url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
+                                 data: {"persona_id": "56"},
+                                 success: function(response){
+                                     alert(response);
+                                 }
+                            });
+                            $("#modalGano").modal('show');
                         }
                     }
 
