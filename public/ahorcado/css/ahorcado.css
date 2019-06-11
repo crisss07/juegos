@@ -2,10 +2,25 @@
 .orange{
   background-color: #f5e4bf;
 }
+  
+
+  .home {
+  height: 70%;
+  width: 35%; 
+  position: center;
+  background-image: url(../fondo2.png);  
+}
+
 
 .celeste{
   background-color: #bbd1cc;
 }
+
+.inf{
+  background-color: #0886f8;
+   color: white;
+}
+
 
 .gris{
   background-color: #49565b;
@@ -17,7 +32,7 @@
   color: #6c5948;
 }
 .cafe{
-  background-color: #6c5948;
+  background-color: #8b641d;
   color: white;
 }
 
