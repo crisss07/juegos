@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    	Si consigues encontrar todas las palabras tendras
 			    	10 puntos ganados.
 			    </p>
-			    <a href="#" class="btn btn-info">COMENZAR A JUGAR</a>
+			    <a href="<?php echo base_url('/ahorcado/') ?>" class="btn btn-info">COMENZAR A JUGAR</a>
 			  </div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					Si consigues encontrar todas las palabras tendras
 					10 puntos ganados.
 	    	    </p>
-	    	    <a href="#" class="btn btn-warning">COMENZAR A JUGAR</a>
+	    	    <a href="<?php echo base_url('/sopa/inicia') ?>" class="btn btn-warning">COMENZAR A JUGAR</a>
 	    	  </div>
 	    	</div>
 	    </div>

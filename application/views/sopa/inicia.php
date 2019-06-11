@@ -130,13 +130,11 @@
 </div>
 <!-- Fin modal ganaste -->
 
+    <div class="container">
 
-
-    <div class="container h-100">
-      <div class="row h-100 justify-content-center align-items-center">
-        <form class="col-12">
-
-        <p>&nbsp;</p>
+      <div class="d-flex justify-content-center">
+        <div class="col-12">
+        <br>
         <p class="titulo">SOPA DE LETRAS</p>
         <p id="time" class="titulo">02:00</p>
         <div id="txt_tutorial">
@@ -147,7 +145,7 @@
             </center>
  -->        </div>
         <div id="sopa_contenidos" style="text-align: center;">
-            <p class="contenidos" style="color: #ff0000;"><?php echo $pregunta; ?></p>
+            <p class="contenidos" style="color: #f4df42;"><?php echo $pregunta; ?></p>
             <p class="contenidos">
             <?php
                 $palabras = "";
@@ -159,11 +157,11 @@
             ?>
             </p>
             <!-- <div>El juego conciste en encontrar las siguientes palabras <span id="time">01:00</span> minutes!</div> -->
-            <div id="theGrid" width="100%" style="display: block;"></div>
+            <div id="theGrid" width="100%"></div>
             <!-- <input type="button" onclick="inicia();" value="iniciar"> -->
         </div>
 
-        </form>
+        </div>
       </div>
     </div>
 
@@ -1612,7 +1610,7 @@
             $("#theGrid").wordsearchwidget({
                 "wordlist": words,
                 "gridsize": 12,
-                // "width" : 300
+                "width" : 300
             });
 
             // $("#modalInicial").on("hidden.bs.modal", function () {
