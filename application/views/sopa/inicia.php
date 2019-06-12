@@ -147,17 +147,18 @@
  -->        </div>
         <div id="sopa_contenidos" style="text-align: center;">
             <p class="contenidos" style="color: #f4df42;"><?php echo $pregunta; ?></p>
-            <p class="contenidos">
+            <p class="contenidos" style="color: #ffffff;">
             <?php
                 $palabras = "";
                 foreach ($respuestas as $key => $r) {
+                    echo $r['respuesta']." ";
                     $palabras .= $r['respuesta'] . ",";
                 }
                 $palabras_pulidas = rtrim($palabras, ",");
                 // echo $palabras_pulidas;
             ?>
             </p>
-            <p class="contenidos" style="color: #ffffff;"><?php echo $palabras_pulidas; ?></p>
+            <!-- <p class="contenidos" style="color: #ffffff;"><?php //echo $palabras_pulidas; ?></p> -->
             <!-- <div>El juego conciste en encontrar las siguientes palabras <span id="time">01:00</span> minutes!</div> -->
             <div id="theGrid" width="100%"></div>
             <!-- <input type="button" onclick="inicia();" value="iniciar"> -->
@@ -1527,12 +1528,11 @@
 
                     var words = "<div id='rf-wordcontainer'><ul>"
                     $(model.wordList.words).each(function () {
-                        // words += '<li class=rf-p' + this.isPlaced + '>' + this.originalValue + '</li>';
+                        words += '<li class=rf-p' + this.isPlaced + '>' + this.originalValue + '</li>';
                     });
                     words += "</ul></div>";
 
-                    $(container).append(words);
-
+                    // $(container).append(words);
 
                 },
 
@@ -1622,7 +1622,7 @@
             $("#theGrid").wordsearchwidget({
                 "wordlist": words,
                 "gridsize": 15,
-                "width" : 300
+                // "width" : 300
             });
 
             // $("#modalInicial").on("hidden.bs.modal", function () {
