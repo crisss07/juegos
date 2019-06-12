@@ -38,14 +38,14 @@
 
 				
 				<a  href="<?php echo site_url('ahorcado'); ?>" >
-					<button  type="button" class="btn cafe " ><h2>JUGAR</h2></button>
+					<button  type="button" class="btn cafe " ><h3>JUGAR</h3></button>
 				</a>
 				<p></p>
 
 				
 
 
-				<button type="button" class="btn cafe " data-toggle="modal" data-target="#modalinfo"><h2>AYUDA</h2></button>
+				<button type="button" class="btn cafe " data-toggle="modal" data-target="#modalinfo"><h3>AYUDA</h3></button>
 				<p></p>
 			</div>
 		</div>
@@ -78,9 +78,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">     
+      <div class="modal-body" align="justify">     
         <p></p>
-        Este es el juego clasico del ahorcado recuerda que tienes 6 intentos para resolver la pregunta
+        Este es el juego clasico del ahorcado recuerda que tienes 6 intentos para resolver la pregunta.
+        <br>
+        <b>
+        	Solo puedes jugar 3 veces por dia
+        </b>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>  

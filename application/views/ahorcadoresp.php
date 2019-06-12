@@ -12,43 +12,41 @@
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/ahorcado/css/ahorcado.css">  
 </head>
-<body onload="inicia();">
-	<div class="container  ">
+<body>
+
+		
+
+	<div class="container mt-8 d-flex flex-column justify-content-center align-items-center  blue ">
 		  <input type="hidden" class="form-control" id="id_persona" name="id_persona" value="<?php echo $id_persona; ?>">
 
-		<div class="row">
-			<div class="col-md-3 " >
+
+		  <div class="row">
+			<table class="contador ">
+				<tr>
+					<td>RONDA <span id="puntaje"> <?php echo ($ronda->contador)+1 ?> /3</span></td>
+					<td>PUNTAJE <span id="puntaje"> <?php echo $puntaje_id->suma ?></span></td>
+					<td align="right"><img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/moneda.png" alt="ahorcado" width="10%"><span id="vidas"> 6</span></td>
+				</tr>
+			</table>
+
+		  		
+		  		<b></b>
+		  		<p>
+		  			<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="50%">	
+		  		</p>
+		  
+		  </div>
+
+	
+		<div class="row" align="center">
+			
+			<div class="col-md-12 " align="center">
+				<div class="col-md-6 marron">
+					<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="50%">	
+				</div>
 							
 			</div>
-			<div class="col-md-2 contador " >
-				RONDA <span id="puntaje"> <?php echo ($ronda->contador)+1 ?> /3</span>
 			</div>
-		
-			<div class="col-md-2 contador " >
-				PUNTAJE <span id="puntaje"> <?php echo $puntaje_id->suma ?></span>
-			</div>
-			<div class="col-md-2 contador " align="right">
-				<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/moneda.png" alt="ahorcado" width="10%"><span id="vidas"> 6</span>
-			</div>
-		</div>
-
-
-		
-		<div class="row">
-			<div class="col-md-3 " >				
-			</div>
-			<div class="col-md-6 marron" align="center">
-				<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="60%">				
-			</div>
-		</div>
-
-			<div class="row">
-			<div class="col-md-3 " >				
-			</div>
-				<div class="col-md-6 tiempo" align="center" id="time">
-				 01:00
-			</div>
-		</div>
 
 		<div class="row">
 			<div class="col-md-3 " >				
@@ -65,11 +63,7 @@
 			</div>
 			<div class="col-md-6 marron" id="teclado">
 				<br>	
-				
-				
-
-
-								<!--<h1 align="center">HANGI: EL AHORCADO</h1><p></p>	-->
+												<!--<h1 align="center">HANGI: EL AHORCADO</h1><p></p>	-->
 				<button id = "a" type="button" class="btn naranja " onclick="enviado('a')">A</button>
 				<button id = "b" type="button" class="btn naranja " onclick="enviado('b')">B</button>
 				<button id = "c" type="button" class="btn naranja " onclick="enviado('c')">C</button>
@@ -118,11 +112,9 @@
 			<div class="col-md-3 " >
 				
 			</div>
-		
 			<div class="col-md-6 marron" align="right" id="prueba">
 
 			<button type="button" class="btn inf " data-toggle="modal" data-target="#modalinfo"><h1>?</h1></button>
-			<button type="button" class="btn inf " data-toggle="modal" data-target="#modalTiempo"><h1>?</h1></button>
 				<p></p>				
 			</div>
 		</div>
@@ -130,7 +122,6 @@
 			<div class="col-md-3 " >
 				
 			</div>
-			
 			<div class="col-md-6 marron" align="center" id="fallos">
 
 						
@@ -158,70 +149,8 @@
     </div>
   </div>
 </div>	
-
-
-<!-- Modal cierre de tiempo -->
-<div class="modal fade" id="modalTiempo" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTiempoLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-      	<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="60%">	
-        
-<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
- -->      </div>
-      <div class="modal-body">
-        <p class="alerta" align="center">
-            EL TIEMPO <br> HA FINALIZADO!!!
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR DE NUEVO</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ir_menu();">MENU</button>
-        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
-        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Fin modal cierre de tiempo -->
 		<script>
 			//array con palabras
-			  function startTimer(duration, display) {
-            var timer = duration,
-                minutes, seconds;
-            setInterval(function() {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration;
-                    $("#modalTiempo").modal('show');
-                    // console.log('termino');
-
-                }
-            }, 1000);
-        }
-  function inicia() {
-            // $("#sopa_contenidos").toggle('slow');
-            // $("#txt_tutorial").toggle('slow');
-            // $("#time").toggle('slow');
-            var oneMinutes = 60,
-            display = document.querySelector('#time');
-            startTimer(oneMinutes, display);
-        }
-
-        // window.onload = function () {
-        //     var fiveMinutes = 60 * 5,
-        //         display = document.querySelector('#time');
-        //     startTimer(fiveMinutes, display);
-        // };
 
 var tabla=[<?php foreach ($preguntas as $row) {
 	echo "'".$row->respuesta."',";} ?>];
@@ -236,7 +165,6 @@ var palabra = tabla[indice];
 //var preg= ["Símbolo patrio boliviano","Primer presidente indígena de Bolivia","El dios creador del Inca en tierras altas era conocido como:","La madre tierra se conoce con el nombre:"];
 var preg= [<?php foreach ($preguntas as $row) {
 	echo "'".$row->pregunta."',";} ?>
-
 ];
 
 //quita las comillas de la palabra obtenida
@@ -337,8 +265,9 @@ function enviado(tecla) {
 }
 function guarda_data(){
 	
-	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+puntos;
+	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+2;
 }
+
 function guarda_perdida(){
 	
 	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+0;
@@ -378,3 +307,4 @@ pista=caduno.concat(pregunta);
 		</script>
 	</body>
 	</html>
+ 

@@ -7,7 +7,9 @@
   <body>
   <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/juego_de_parejas.css"/>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script type="text/javascript">
   //LOGICA PRINCIPAL DEL JUEGO
   /*En caso de añadir una imagen al juego solo es necesario añadir un td en HTML nuevo y la imagen en arrayImagenes*/
@@ -156,9 +158,18 @@
             var dif = Date.now() - inicioConteo;
             dif = Math.round(dif / 1000);
             cronometro.innerHTML = formatoSegundos(dif);
+            console.log(cronometro.innerHTML);
+            if (cronometro.innerHTML == '00:05') {
+              //alert('Su tiempo termino');
+              $("#modalTiempo").modal('show');
+              //location.reload(true);
+            }
             idTimeout = setTimeout(actualizar,1000);
         }
     }
+
+    
+
     function iniciar(){
         clearTimeout(idTimeout);
         inicioConteo = Date.now();
@@ -285,10 +296,14 @@
     });
   });
   </script>
+
+
+
+
   <div id="juego_de_parejas">
     <div id="contenedor_juego"> 
-      <div id="cabecera_juego" align="center"><img alt="Juego de Parejas" id="imagen_juego" src="<?php echo base_url(); ?>public/imagenes/titulo_juego.png"/>
-        <p>Juega y aprende más.
+      <div id="cabecera_juego" align="center"><img alt="Juego de Parejas" id="imagen_juego" src="<?php echo base_url(); ?>public/imagenes/titulo.png"/>
+        <p>🅰🅿🆁🅴🅽🅳🅴   🅼🅰🆂   🆂🅾🅱🆁🅴   🅽🆄🅴🆂🆃🆁🅾   🅿🅰🅸🆂   🅹🆄🅶🅰🅽🅳🅾
         </p>
         <label id="tiempo_juego">00:00 </label><span>Tiempo</span>
       </div>

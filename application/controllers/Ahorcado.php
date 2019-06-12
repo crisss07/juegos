@@ -29,7 +29,7 @@ class Ahorcado extends CI_Controller {
             //'codcatas' => $this->input->post('cod_catastral'), //input          
             'persona_id' => $id_persona,
             'nombre_juego' =>'ahorcado',
-            'puntaje' => 2,
+            'puntaje' => $puntaje,
             //'fecha' => now(), //agregar en la bd valor por defecto now()
             'contador' =>$usu_creacion //aun no captura el usuario
         );
@@ -45,9 +45,14 @@ class Ahorcado extends CI_Controller {
             $data['id_persona']=$ida;
             $data['puntaje_id'] = $this->ahorcado_model->get_puntaje($ida);
             $data['preguntas'] = $this->ahorcado_model->get_preguntas();
-		    //$this->load->view('admin/header');
-		    //$this->load->view('admin/menu');
-		    $this->load->view('ahorcado', $data);
+            $data['ronda'] = $this->ahorcado_model->get_ronda($ida);
+			$cont=$this->ahorcado_model->get_ronda($ida);
+			if(($cont->contador)<3){
+				$this->load->view('ahorcado', $data);	
+			}else{
+				$this->load->view('menu_ahorcado', $data);	
+			}
+		    
 			//$this->load->view('admin/footer');	
 		
 	}

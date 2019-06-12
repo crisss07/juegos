@@ -7,8 +7,12 @@
   .home {
   height: 70%;
   width: 35%; 
-  position: center;
-  background-image: url(../fondo2.png);  
+ 
+  background-image: url(../fondo2.png) no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover; 
 }
 
 
@@ -35,6 +39,20 @@
   background-color: #8b641d;
   color: white;
 }
+.tiempo{
+    background-color: #efcb97;
+  color: #dd5f2b;
+  font-size: 3.3em;
+  font-weight: bold;
+}
+
+.alerta{
+
+  color: #ff1f00;
+  font-size: 4.3em;
+  font-weight: bold;
+}
+
 
 .naranja{
   background-color: #fcb100;

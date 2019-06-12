@@ -105,15 +105,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row">
 	    <div class="col-md-6 col-sm-12">
 	    	<div class="card">
-	    	  <img src="<?php echo base_url('/public/img/trivia.png'); ?>" class="card-img-top" alt="...">
+	    	  <img src="<?php echo base_url('/public/img/trivia.jpg'); ?>" class="card-img-top" alt="...">
 	    	  <div class="card-body">
 	    	    <h5 class="card-title">TRIVIA</h5>
 	    	    <p class="card-text">
-					El juego conciste en escoger la respuesta correcta
-					lo mas rapido posible, tienes 2 minutos para poder
+					El juego conciste en escoger la pregunta con su respuesta correcta
+					lo mas rapido posible, tienes 3 minutos para poder
 					superar esta prueba.
 					Si consigues encontrar todas las palabras tendras
-					10 puntos ganados.
+					30 puntos ganados.
 	    	    </p>
 	    	    <a href="<?php echo base_url('/trivia') ?>" class="btn btn-success">COMENZAR A JUGAR</a>
 	    	  </div>
@@ -121,9 +121,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    </div>
 	    <div class="col-md-6 col-sm-12">
 	    	<div class="card">
-	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
+	    	  <img src="<?php echo base_url('/public/img/emparejados.jpg'); ?>" class="card-img-top" alt="...">
 	    	  <div class="card-body">
-	    	    <h5 class="card-title">ENPAREJADOS</h5>
+	    	    <h5 class="card-title">EMPAREJADOS</h5>
 	    	    <p class="card-text">
 	    	    	El juego conciste en encontrar la respuesta correcta
 	    	    	en un conjunto de cartas, tienes 2 minutos para poder
