@@ -1,3 +1,6 @@
+
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
@@ -9,26 +12,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 	<style type="text/css">
-	    .titulo{
-	        font-family: 'Luckiest Guy', cursive;
-	        /*font-size: 50px;*/
-	        /*color: #ff0000;*/
-	        color: #FFF;
-	          /*font-family: "Kanit";*/
-	          font-size: 45px;
-	          line-height: 1em;
-	          margin: 0;
-	          /*position: absolute;*/
-	          text-align: center;
-	          top: 50%;
-	          /*transform: translateY(-50%);*/
-	          /*width: 100%;*/
-	          text-shadow: 0 1px 0 #e4adad, 0 2px 0 #e1a6a6, 0 3px 0 #df9e9e, 0 4px 0 #dc9696, 0 5px 0 #da8f8f, 0 6px 0 #d78787, 0 7px 0 #d58080, 0 8px 0 #d27878, 0 0 5px rgba(237, 154, 154, 0.05), 0 -1px 3px rgba(237, 154, 154, 0.2), 0 9px 9px rgba(237, 154, 154, 0.5), 0 12px 12px rgba(237, 154, 154, 0.5), 0 15px 15px rgba(237, 154, 154, 0.5);
-	    }
-	    .contenidos{
+		.titulo{
+			font-family: 'Luckiest Guy', cursive;
+			/*font-size: 50px;*/
+			/*color: #ff0000;*/
+			color: #f4bb41;
+			/*font-family: "Kanit";*/
+			font-size: 72px;
+			line-height: 1em;
+			margin: 0;
+			/*position: absolute;*/
+			text-align: center;
+			top: 50%;
+			/*transform: translateY(-50%);*/
+			/*width: 100%;*/
+			text-shadow: .1em .1em .2em rgba(0, 0, 0, 0.6);
+		}
+		.subtitulo{
+			font-family: 'Luckiest Guy', cursive;
+			/*font-size: 50px;*/
+			/*color: #ff0000;*/
+			color: #FE2E2E;
+			/*font-family: "Kanit";*/
+			font-size: 40px;
+			line-height: 1em;
+			margin: 0;
+			/*position: absolute;*/
+			text-align: center;
+			top: 50%;
+			/*transform: translateY(-50%);*/
+			/*width: 100%;*/
+			text-shadow: .1em .1em .2em rgba(0, 0, 0, 0.6);
+			padding-bottom: 50px;
+		}
+		.contenidos{
 	        font-family: 'Handlee', cursive;
 	        font-size: 28px;
-	        /*color: #ff0000;*/
+	        color: #ffffff;
 	        font-weight: bolder;
 	    }
 	    #txt_tutorial {
@@ -38,32 +58,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      z-index: +1;
 	      /*background: #ff0000;*/
 	    }
+	    .cabecera {
+	      /*background:url("http://localhost/juegos/public/img/fnd.jpg") no-repeat !important;*/
+	      /*padding-top:100px;*/
+	      /*background-size:cover;*/
+	      /*height: 100%;*/
+	      /*background-position: center;*/
+	      /*background-repeat: no-repeat;*/
+	      /*background-size: cover;*/
+	      /*font-family: 'Orbitron', sans-serif;*/
+	      background: url("<?php echo base_url('public/img/fp.jpg') ?>") no-repeat center center; 
+	       -webkit-background-size: cover;
+	       -moz-background-size: cover;
+	       -o-background-size: cover;
+	       background-size: cover;
+	    } 
+
+	    .contenidos1{
+	        font-family: 'Handlee', cursive;
+	        font-size: 30px;
+	        color: #0000FF;
+	        font-weight: bolder;
+	    }
+	    .contenidos2{
+	        font-family: 'Handlee', cursive;
+	        font-size: 24px;
+	        color: #000000;
+	        font-weight: bolder;
+	    }
+	    .botones{
+			
+			text-align: center;
+			top: 50%;
+			/*transform: translateY(-50%);*/
+			/*width: 100%;*/
+			
+			padding-bottom: 50px;
+		}
 	</style>
 </head>
 <body>
 
-	<div class="jumbotron text-center">
-	  <h1>PREMIOS</h1>
-	  <p></p> 
+	<div class="jumbotron text-center cabecera" >
+	  <h1 class="titulo">JUEGOS</h1>
+	  <p class="contenidos">Bienvenido a nuestra consola de juegos!</p> 
+	</div>
+	<div class="container botones">
+		<a href="<?php echo base_url('/') ?>" class="btn btn-info">Inicio</a>
+		<a href="<?php echo base_url('/opciones/premios') ?>" class="btn btn-warning">Premios</a>
+		<a href="#" class="btn btn-danger">Información</a>
+		<a href="#" class="btn btn-success">Ranking</a>
+		<a href="#" class="btn btn-primary">Ranking personal</a>	
 	</div>
 
 	<div class="container">
-
-	  <div class="row">
-	  	<?php foreach ($cosas as $premios) { ?>
-	  	<div class="col-md-4 col-sm-12">
-	    	<div class="card">
-	    	  <img src="https://www.macgamestore.com/images_screenshots/the-cooking-game-50592.jpg" class="card-img-top" alt="...">
-	    	  <div class="card-body">
-	    	    <h5 class="card-title"><?php echo $premios->premio; ?></h5>
-	    	    <p class="card-text"><?php echo $premios->puntaje; ?></p>
-	    	  </div>
-	    	</div>
-	    </div>
-	    <?php } ?>
+		<h1 class="subtitulo">PREMIOS</h1>
+	  	<div class="row">
+		  	<?php foreach ($cosas as $premios) { ?>
+		  	<div class="col-md-6 col-sm-12">
+		    	<div class="card">
+		    	  
+		    	  <div class="card-body">
+		    	    <h5 class="card-title contenidos1"><?php echo $premios->premio; ?></h5>
+		    	    <p class="card-text contenidos2">Puede canjear <?php echo $premios->premio; ?> con <?php echo $premios->puntaje; ?> puntos que acumule en los juegos</p>
+		    	  </div>
+		    	</div>
+		    </div>
+		    <?php } ?>
 	    
-	</div>
-	<p></p>
-
+		</div>
+	
+	
 </body>
 </html>
