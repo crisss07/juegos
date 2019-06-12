@@ -21,7 +21,7 @@ class Ahorcado_model extends CI_Model {
 
 
 	function get_ronda($id) {
-        $query = $this->db->query("SELECT IFNULL(COUNT(persona_id),0) AS contador FROM registro WHERE persona_id=$id and nombre_juego='ahorcado'");
+        $query = $this->db->query("SELECT IFNULL(COUNT(persona_id),0) AS contador FROM registro WHERE persona_id=$id and nombre_juego='ahorcado' and date(fecha)=CURDATE()");
         return $query->row();
 	}
 }

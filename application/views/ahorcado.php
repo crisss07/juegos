@@ -5,6 +5,8 @@
 	<title>Ahorcado by PMGM</title>
 	<!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>-->
 	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/ahorcado/lib/bootstrap.min.css">
 	<script src="<?php echo base_url(); ?>public/ahorcado/lib/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
 	<script src="<?php echo base_url(); ?>public/ahorcado/lib/popper.min.js" crossorigin="anonymous"></script>
@@ -122,7 +124,7 @@
 			<div class="col-md-6 marron" align="right" id="prueba">
 
 			<button type="button" class="btn inf " data-toggle="modal" data-target="#modalinfo"><h1>?</h1></button>
-			<button type="button" class="btn inf " data-toggle="modal" data-target="#modalTiempo"><h1>?</h1></button>
+		
 				<p></p>				
 			</div>
 		</div>
@@ -171,14 +173,18 @@
           <span aria-hidden="true">&times;</span>
         </button>
  -->      </div>
-      <div class="modal-body">
-        <p class="alerta" align="center">
-            EL TIEMPO <br> HA FINALIZADO!!!
-        </p>
+      <div class="modal-body" align="center">
+        <img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/imgpng/tiempo.png" alt="ahorcado" width="60%">	
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR DE NUEVO</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ir_menu();">MENU</button>
+      <div class="modal-footer" align="center">
+
+      	<a  href="<?php echo site_url('ahorcado'); ?>/nuevo/<?php echo $id_persona; ?> " >
+     
+					<button  type="button" class="btn nuevo" ><h4>JUGAR DE NUEVO</h4></button>
+		</a>
+		<a  href="<?php echo site_url('ahorcado'); ?>" >
+					<button  type="button" class="btn btn-success blank " ><h4>MENU</h4></button>
+		</a>        
         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
       </div>
@@ -264,7 +270,7 @@ for (var i = 0; i < arrayp.length; i++) {
   //genera la secuencia "- - - -" 
 	container.innerHTML = solucion.join(" ");
 }
-console.log(palabra);
+//console.log(palabra);
 //ingresa la tecla clickeada
 function enviado(tecla) {
     var boton =document.getElementById(tecla);
@@ -288,24 +294,25 @@ function enviado(tecla) {
         //consulta si aun quedan letras por adivinar
     		var terminado = solucion.indexOf("-");
     		if (terminado == -1){
-    			container.innerHTML = "";
-    			document.getElementById('imagen').src = rutawin;
+    			//container.innerHTML = "";
+    			//document.getElementById('imagen').src = rutawin;
           		finalGanado= true;
-    			var teclado = document.getElementById('teclado');
-		 		teclado.innerHTML="";
-        		question.innerHTML="";        
-    	  		//salida.innerHTML = muestraboton();
-    	  		prueba.innerHTML = "";
+    			//var teclado = document.getElementById('teclado');
+    			//time.innerHTML="";
+		 		//teclado.innerHTML="";
+        		//question.innerHTML="";        
+    	  //salida.innerHTML = muestraboton();
+    	  		//prueba.innerHTML = "";
     		}
     	}
       if (finalGanado){
         won++;
         puntos++;
         console.log(puntos);
-        document.getElementById('puntaje').innerHTML = puntos;
+        //document.getElementById('puntaje').innerHTML = puntos;
         finalGanado=false;
         //guarda el id de la persona y el puntaje, estableciendo el tiempo en milisegundos
-        setTimeout(guarda_data,3000); 
+        setTimeout(guarda_data,1); 
       }
     }else{
     	fallos ++;
@@ -320,16 +327,16 @@ function enviado(tecla) {
     	//salida.innerHTML += tecla+", ";
       //en caso de que se llegue al tope de fallos posibles
     	if (fallos >=6){
-    	 container.innerHTML ='<h1 style="color:#FF0000";>PERDISTE !!!!!</h1>';
+    	 //container.innerHTML ='<h1 style="color:#FF0000";>PERDISTE !!!!!</h1>';
         lost++;
        //termina el juego y el usuario puede reiniciar el juego 
-    	 salida.innerHTML = '<div class="d-flex flex-column align-items-center"><div>' + muestraboton()+' <br></div></div>';
+    	 //salida.innerHTML = '<div class="d-flex flex-column align-items-center"><div>' + muestraboton()+' <br></div></div>';
     	//salida.innerHTML = "";
     	question.innerHTML="";
     	prueba.innerHTML="";
     	 
-    	 var teclado = document.getElementById('teclado');
-		 teclado.innerHTML="";
+    	 //var teclado = document.getElementById('teclado');
+		 //teclado.innerHTML="";
 		 setTimeout(guarda_perdida,1000); 
     	}
     }
@@ -337,11 +344,11 @@ function enviado(tecla) {
 }
 function guarda_data(){
 	
-	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+puntos;
+	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+6;
 }
 function guarda_perdida(){
 	
-	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+0;
+	location = "/juegos/ahorcado/guarda_loss/"+ <?php echo $id_persona;?>+"/"+0;
 }
 
 function muestraboton(){
