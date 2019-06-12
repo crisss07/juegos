@@ -76,15 +76,10 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-<<<<<<< Updated upstream
-	'username' => 'root',
-	'password' => 'Axs51C0FAdm1n',
-=======
-
 	'username' => 'root',
 	'password' => '',
->>>>>>> Stashed changes
-
+	'username' => 'root',
+	'password' => '',
 	'database' => 'juegos',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
