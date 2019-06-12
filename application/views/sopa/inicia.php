@@ -1637,11 +1637,12 @@
 
         function reinicia_juego(){
             // alert('reinicia juego');
-            window.location.href = "http://localhost/juegos/sopa/inicia";
+            window.location.href = "<?php echo base_url('/sopa/inicia/') ?>";
         }
 
         function ir_menu(){
-            alert('ir menu');
+            // alert('ir menu');
+            window.location.href = "<?php echo base_url('/') ?>";
         }
 
     </script>

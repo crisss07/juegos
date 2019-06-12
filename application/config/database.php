@@ -76,13 +76,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-<<<<<<< HEAD
 	'username' => 'admin',
 	'password' => 'admin',
-=======
-	'username' => 'root',
-	'password' => '',
->>>>>>> 6cbf5cb0ebf10f69549bc9451887b5d352a231c4
 	'database' => 'juegos',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
