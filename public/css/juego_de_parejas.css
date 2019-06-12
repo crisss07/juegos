@@ -10,9 +10,16 @@
      font-family: "Lakeshore";
      src: url("http://embed.eltiempo.digital/maquetacion/maquillajes_xalok/el_tiempo/2018/02/las_10_mejores_jugadas/assets//fonts/Lakeshore-Regular.otf");
 }
+body{
+background: url("http://localhost/juegos/public/imagenes/f6.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
  #juego_de_parejas {
      position: relative;
-     background-color: #fffcd5;
      width: 100%;
      overflow: hidden;
 }
