@@ -19,7 +19,7 @@ function triv() {
     gamescore.innerHTML = score;
   }, 50);
 
-  var tips = [
+   var tips = [
     "¿Sabías que? Caloncho, es el sitio de huellas de dinosaurios más importante del mundo ya que contiene más de cinco mil huellas de 294 especies de dinosaurios.",
     "¿Sabías que? El famoso camino de la muerte está en Bolivia, más conocido como el camino a los yungas, un camino de aproximadamente 80 kilómetros de extensión que une a la ciudad de La Paz y la región de los yungas al noreste.",
     "¿Sabías que? El pantanal en el departamento de Santa Cruz, el cual comparte con brasil, es el humedal más grande del mundo.",
@@ -47,7 +47,10 @@ function triv() {
     "¿La voz de Allen Brooks a que personaje de la pelicula Nemo de Disney represento?",
     "¿Qué representan los cómics de DC en DC?",
     "¿En que año se fundo la ciudad de La Paz?",
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     "¿Dónde se dio el primer grito libertario en el Alto Peru?",
     "¿Presidente durante la guerra del Pacífico?",
     "¿Dictador boliviano contemporáneo?",
@@ -61,6 +64,15 @@ function triv() {
     "¿Cual es país más poblado de la Tierra?",
     "¿Cómo se llama el animal más rápido del mundo?",
     "¿A qué país pertenecen los cariocas?",
+<<<<<<< Updated upstream
+=======
+    "En la actualidad, ¿cuál es la institución del nivel central del Estado que se encarga de otorgar viviendas sociales?",
+    "En estos últimos años, ¿Dónde se han construido y ubicado la expansión de la ciudad, es decir la construcción de nuevas viviendas?",
+    "Hablando de hacinamiento ¿Cuantas personas óptimamente deberían habitar una vivienda?",
+    "¿Cuántos son los objetivos de Desarrollo Sostenible?",
+    "Los jóvenes cuentan ya con una Ley que enarbola sus derechos, ¿Qué número de ley es?",
+    "Según datos actuales, de 11.307.000 habitantes que aproximadamente viven en Bolivia, ¿Cuál de ellos son mayoría?",
+>>>>>>> Stashed changes
 
   ];
   var answers = [
@@ -82,7 +94,10 @@ function triv() {
     ["Nemo", "Phillip Sherman", "Marlin"],
     ["Daily Comics", "Detective Comics", "Dangerous Comics"],
     ["1548", "1540", "1550"],
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     ["Chuquisaca", "La Paz", "Potosi"],
     ["Ballivian", "Santa Cruz", "Hilarion Daza"],
     ["Melgarejo", "Linares", "Ballivian"],
@@ -96,6 +111,16 @@ function triv() {
     ["India", "Indonesia", "China"],
     ["Halcón", "Guepardo", "Colibri"],
     ["Brasil", "Uruguay", "Paraguay"],
+<<<<<<< Updated upstream
+=======
+    ["FONVIS", "FPS", "Agencia Estatal de Vivienda"],
+    ["En el Campo", "En las periferias", "Todas"],
+    ["Entre 4 a 6 personas", "Dos o más familias ", "Inquilinos y propietarios"],
+    ["11", "10", "17"],
+    ["Ley N° 342 de 5 de febrero de 2013", "Ley N° 247 de 5 de junio de 2012", "Ley N° 2341 de 23 de abril de 2002"],
+    ["Los jóvenes", "Los Jovenes y poblacion que vive en area de urbana", "Las Mujeres"],
+
+>>>>>>> Stashed changes
 
 
   ];
@@ -130,7 +155,17 @@ function triv() {
     3,
     3,
     2,
+<<<<<<< Updated upstream
     1
+=======
+    1,
+    3,
+    2,
+    1,
+    3,
+    1,
+    2
+>>>>>>> Stashed changes
 
   ];
 
