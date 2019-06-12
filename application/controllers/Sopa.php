@@ -34,8 +34,16 @@ class Sopa extends CI_Controller {
 
 	public function guarda_puntaje()
 	{
+		$ahora = date("Y-m-d H:i:s");
 		$puntaje = $this->input->post('persona_id');
-		var_dump($puntaje);
+		$data = array(
+			'persona_id'=>55,
+			'nombre_juego'=>'sopa',
+			'puntaje'=>10,
+			'fecha'=>$ahora
+		);
+		$this->db->insert('registro', $data);
+		// var_dump($puntaje);
 	}
 
 	public function guarda_edicion()

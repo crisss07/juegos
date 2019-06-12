@@ -115,7 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					Si consigues encontrar todas las palabras tendras
 					10 puntos ganados.
 	    	    </p>
-	    	    <a href="#" class="btn btn-success">COMENZAR A JUGAR</a>
+	    	    <a href="<?php echo base_url('/trivia') ?>" class="btn btn-success">COMENZAR A JUGAR</a>
 	    	  </div>
 	    	</div>
 	    </div>

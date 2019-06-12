@@ -45,6 +45,7 @@
 </head>
 
 <body>
+<?php echo date("Y-m-d H:i:s"); ?>
 
     <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -166,6 +167,7 @@
     </div>
 
     <script>
+
         function startTimer(duration, display) {
             var timer = duration,
                 minutes, seconds;
@@ -181,6 +183,15 @@
                 if (--timer < 0) {
                     timer = duration;
                     $("#modalTiempo").modal('show');
+                    $.ajax({
+                         type: "POST",
+                         url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
+                         data: {"persona_id": "56", 'puntaje': '0'},
+                         success: function(response){
+                             // alert(response);
+                         }
+                    });
+
                     // console.log('termino');
 
                 }
@@ -411,9 +422,9 @@
                             $.ajax({
                                  type: "POST",
                                  url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
-                                 data: {"persona_id": "56"},
+                                 data: {"persona_id": "56", 'puntaje': '10'},
                                  success: function(response){
-                                     alert(response);
+                                     // alert(response);
                                  }
                             });
                             $("#modalGano").modal('show');
@@ -1609,7 +1620,7 @@
             //attach the game to a div
             $("#theGrid").wordsearchwidget({
                 "wordlist": words,
-                "gridsize": 12,
+                "gridsize": 15,
                 "width" : 300
             });
 
