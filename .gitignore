@@ -33,4 +33,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .phpintel/*
 
 # Archivo de configuracion de la base datos
-application/config/database.php
+/application/config/database.php
