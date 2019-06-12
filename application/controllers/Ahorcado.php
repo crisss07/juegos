@@ -71,13 +71,19 @@ class Ahorcado extends CI_Controller {
             $data['preguntas'] = $this->ahorcado_model->get_preguntas();
             $data['ronda'] = $this->ahorcado_model->get_ronda($ida);
 			$cont=$this->ahorcado_model->get_ronda($ida);
-			if(($cont->contador)<3){
+
+		
 				$this->load->view('ahorcado', $data);	
-			}else{
-				redirect(base_url('ahorcado/contador/'. $ida));
-			}
+			
+
+
+			//if(($cont->contador)<3){
+			//	$this->load->view('ahorcado', $data);	
+			//}else{
+			//	redirect(base_url('ahorcado/contador/'. $ida));
+		//	}
 		    
-			//$this->load->view('admin/footer');	
+		
 		
 	}
 
