@@ -11,14 +11,15 @@ class Trivia_model extends CI_Model {
 	}
 
 
-	public function insertar($puntaje)
+	public function insertar($score)
 	{	
-		
+		$hoy = date("Y-m-d H:i:s");
+		// var_dump($hoy);
 		$array = array(
 			'persona_id' =>1,
 			'nombre_juego' =>'trivia',
-			'puntaje' =>$puntaje,
-			'fecha' =>2019-06-04 12:12:39,
+			'puntaje' =>$score,
+			'fecha' =>$hoy,
 			'contador' =>1
 			);
 		$this->db->insert('registro', $array);
