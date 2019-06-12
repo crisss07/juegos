@@ -45,7 +45,7 @@
 </head>
 
 <body>
-<?php echo date("Y-m-d H:i:s"); ?>
+<?php //echo date("Y-m-d H:i:s"); ?>
 
     <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
