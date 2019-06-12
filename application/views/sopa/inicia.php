@@ -157,6 +157,7 @@
                 // echo $palabras_pulidas;
             ?>
             </p>
+            <p class="contenidos" style="color: #ffffff;"><?php echo $palabras_pulidas; ?></p>
             <!-- <div>El juego conciste en encontrar las siguientes palabras <span id="time">01:00</span> minutes!</div> -->
             <div id="theGrid" width="100%"></div>
             <!-- <input type="button" onclick="inicia();" value="iniciar"> -->
@@ -1526,7 +1527,7 @@
 
                     var words = "<div id='rf-wordcontainer'><ul>"
                     $(model.wordList.words).each(function () {
-                        words += '<li class=rf-p' + this.isPlaced + '>' + this.originalValue + '</li>';
+                        // words += '<li class=rf-p' + this.isPlaced + '>' + this.originalValue + '</li>';
                     });
                     words += "</ul></div>";
 
