@@ -18,16 +18,16 @@ class Trivia extends CI_Controller {
 									FROM registro
 									WHERE fecha like '$hoy%'
 									AND persona_id = '$persona_id'")->row();
-		$num = $res->numero;
-		if ($num < 3) {
+		// $num = $res->numero;
+		// if ($num < 3) {
 			$trivias['persona_id'] = $persona_id;
 			$trivias['triviaa'] = $this->db->query("SELECT * FROM trivia ORDER BY RAND()")->result();
 			$this->load->view('trivia', $trivias);
-		}
-		else
-		{
-			echo 'hola ya tienes 3 juegos jugados el dia de hoy';
-		}
+		// }
+		// else
+		// {
+		// 	echo 'hola ya tienes 3 juegos jugados el dia de hoy';
+		// }
 		
 	}
 
