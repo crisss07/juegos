@@ -53,6 +53,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	       -o-background-size: cover;
 	       background-size: cover;
 	    } 
+	    .botones{
+			
+			text-align: center;
+			top: 50%;
+			/*transform: translateY(-50%);*/
+			/*width: 100%;*/
+			
+			padding-bottom: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -60,6 +69,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="jumbotron text-center cabecera" >
 	  <h1 class="titulo">JUEGOS</h1>
 	  <p class="contenidos">Bienvenido a nuestra consola de juegos!</p> 
+	</div>
+	<div class="container botones">
+		<a href="<?php echo base_url('/') ?>" class="btn btn-info">Inicio</a>
+		<a href="<?php echo base_url('/opciones/premios') ?>" class="btn btn-warning">Premios</a>
+		<a href="#" class="btn btn-danger">Información</a>
+		<a href="#" class="btn btn-success">Ranking</a>
+		<a href="#" class="btn btn-primary">Ranking personal</a>	
 	</div>
 
 	<div class="container">
@@ -109,13 +125,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	  <div class="card-body">
 	    	    <h5 class="card-title">TRIVIA</h5>
 	    	    <p class="card-text">
-					El juego conciste en escoger la pregunta con su respuesta correcta
-					lo mas rapido posible, tienes 3 minutos para poder
-					superar esta prueba.
-					Si consigues encontrar todas las palabras tendras
-					30 puntos ganados.
+					El juego conciste en encontrar la respuesta correcta
+	    	    	en un conjunto de cartas, tienes 2 minutos para poder
+	    	    	superar esta prueba.
+	    	    	Si consigues encontrar todas las palabras tendras
+	    	    	10 puntos ganados.
 	    	    </p>
-	    	    <a href="#" class="btn btn-success">COMENZAR A JUGAR</a>
+	    	    <a href="<?php echo base_url('/trivia') ?>" class="btn btn-success">COMENZAR A JUGAR</a>
 	    	  </div>
 	    	</div>
 	    </div>
@@ -125,11 +141,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	  <div class="card-body">
 	    	    <h5 class="card-title">EMPAREJADOS</h5>
 	    	    <p class="card-text">
-	    	    	El juego conciste en encontrar la respuesta correcta
-	    	    	en un conjunto de cartas, tienes 2 minutos para poder
-	    	    	superar esta prueba.
-	    	    	Si consigues encontrar todas las palabras tendras
-	    	    	10 puntos ganados.
+	    	    	El juego conciste en escoger la pregunta con su respuesta correcta
+					lo mas rapido posible, tienes 3 minutos para poder
+					superar esta prueba.
+					Si consigues encontrar todas las palabras tendras
+					30 puntos ganados.
 	    	    </p>
 	    	    <a href="#" class="btn btn-primary" disabled>PROXIMAMENTE</a>
 	    	  </div>
