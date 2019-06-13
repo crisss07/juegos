@@ -1,14 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis|Fredoka+One|Press+Start+2P");
 body {
-  background: #111111;
+  background-image: url(../images/fnd_nsopa.jpeg);
   overflow: hidden;
+
+    
 }
 
 .home {
   position: absolute;
   height: 100%;
   width: 45%;
-  background-image: url(../images/bandera2.jpg);
+  background-image: url(../images/signoss.jpg);no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover; 
   top: 0;
   left: 0;
   right: 0;
@@ -46,8 +51,7 @@ body {
 
 .play {
   background: white;
-  border-bottom: 8px solid lightgray;
-  height: 10%;
+  border-bottom: 4px solid lightgray;
   padding-top: 3%;
   width: 70%;
   margin-left: 15%;
@@ -55,11 +59,11 @@ body {
   margin-bottom: 6%;
   font-family: Forte;
   text-align: center;
-  font-size: 270%;
+  font-size: 200%;
 }
 
 .normal {
-  margin-top: -3.7vw;
+  margin-top: -0.7vw;
 }
 
 .learn:hover {
@@ -250,7 +254,7 @@ body {
 }
 
 .affirmation {
-  font-size: 650%;
+  font-size: 400%;
   margin-top: 47%;
 }
 
@@ -498,20 +502,39 @@ body {
 
 
 @media screen and (max-width: 500px){
-  .home {
+    .home {
     width: 100%;
     background-size: 150%;
     background-position: auto;
   }
 
   .title {
-    font-size: 500%;
+    font-size: 400%;
   }
 
   .play{
-    font-size: 200%;
+    font-size: 150%;
   }
-  
+
+  .wait{
+    font-size: 350%;
+
+  }
+
+  .question {
+  font-size: 100%;
+}
+
+.pntsTxt {
+  font-size: 200%;
+}
+
+.overScreen{
+  font-size: 50%;
+}
+.affirmation {
+  font-size: 300%;
+}
 
 
 }

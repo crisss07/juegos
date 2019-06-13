@@ -4,29 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <title>TRIV.io! </title>
-      <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/css/style.css">
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+
+     
 
 </head>
 
 <body>
-    <div class="contenedor">
+  
+  <div style="width: 400px; display: block; " >
+    <div class="container" style="width: 400px;">
         <div class="home">
-        <h1 class="title">
-          <span class="T">T</span>
-          <span class="T">R</span>
-          <span class="R">I</span>
-          <span class="R">V</span>
-          <span class="I">I</span>
-          <span class="I">A</span>
-        </h1>
-        <div class="play normal" onclick="triv()">
-          <div class="playTxt">¡Empieza a Jugar!</div>
-        </div>
-        <div class="play learn">
-          <div class="playTxt" onclick="learn()">Acerca de Nosotros</div>
-        </div>
-          </div>
+            <h1 class="title col-md-12">
+              <span class="T">T</span>
+              <span class="T">R</span>
+              <span class="R">I</span>
+              <span class="R">V</span>
+              <span class="I">I</span>
+              <span class="I">A</span>
+            </h1>
+            <div class="play normal col-md-12" onclick="triv()">
+              <div class="playTxt col-md-12">¡Empieza a Jugar!</div>
+            </div>
+            <div class="play col-md-12">
+              <div class="playTxt" onclick="learn()">Acerca de Nosotros</div>
+            </div>
+         </div>
        
 
       <div class="normalUI">
@@ -84,11 +90,9 @@
         </div>
         <div class="learnOut">✕</div>
       </div>
-       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     </div>
+  </div>
 <script type="text/javascript">
   function triv() {
   var home = document.querySelector(".home"),
@@ -150,7 +154,7 @@
     home.style.width = "0";
 
     setTimeout(function() {
-      normalUI.style.width = "33%";
+      normalUI.style.width = "350px";
     }, 200);
   
 
@@ -188,11 +192,11 @@
     choice1.addEventListener("click", function() {
       if (correct == 1) {
         score += 2;
-        correctTxt.style.fontSize = "1800%";
+        correctTxt.style.fontSize = "1200%";
         normalUI.style.background = "#009900";
       } else if (correct == 2 || correct == 3) {
         score -= 1;
-        incorrectTxt.style.fontSize = "1800%";
+        incorrectTxt.style.fontSize = "1200%";
         normalUI.style.background = "#cc0000";
       }
       choice1.style.zIndex = "-1";
@@ -205,11 +209,11 @@
     choice2.addEventListener("click", function() {
       if (correct == 2) {
         score += 2;
-        correctTxt.style.fontSize = "1800%";
+        correctTxt.style.fontSize = "1200%";
         normalUI.style.background = "#009900";
       } else if (correct == 1 || correct == 3) {
         score -= 1;
-        incorrectTxt.style.fontSize = "1800%";
+        incorrectTxt.style.fontSize = "1200%";
         normalUI.style.background = "#cc0000";
       }
       choice1.style.zIndex = "-1";
@@ -222,11 +226,11 @@
     choice3.addEventListener("click", function() {
       if (correct == 3) {
         score += 2;
-        correctTxt.style.fontSize = "1800%";
+        correctTxt.style.fontSize = "1200%";
         normalUI.style.background = "#009900";
       } else if (correct == 1 || correct == 2) {
         score -= 1;
-        incorrectTxt.style.fontSize = "1800%";
+        incorrectTxt.style.fontSize = "1200%";
         normalUI.style.background = "#cc0000";
       }
       choice1.style.zIndex = "-1";
@@ -252,7 +256,7 @@
       yourPoints.innerHTML = score;
     }, 44000);
 
-    setTimeout(guarda_data, 47000);
+    setTimeout(guarda_data, 55000);
   } 
 
   function guarda_data(){
