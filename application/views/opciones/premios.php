@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      /*background-repeat: no-repeat;*/
 	      /*background-size: cover;*/
 	      /*font-family: 'Orbitron', sans-serif;*/
-	      background: url("<?php echo base_url('public/img/fp.jpg') ?>") no-repeat center center; 
+	      background: url("<?php echo base_url('public/img/fp1.jpeg') ?>") no-repeat center center; 
 	       -webkit-background-size: cover;
 	       -moz-background-size: cover;
 	       -o-background-size: cover;
