@@ -23,45 +23,34 @@
     <div class="row">
       <div class="col-md-3 " >        
       </div>
-      <div class="col-md-6 marron" align="center">
-        <img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="60%">       
-      </div>
-    </div>
-
-    
-
-    <div class="row">
-      <div class="col-md-3 " >        
-      </div>
-      <div class="col-md-6 marron" align="center"><br>
-              <img  id="imagen"  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/imgpng/ahorcado.png" alt="ahorcado" width="40%"><p></p>
+      <div class="col-md-6 marron loss" align="center">
+        <img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="60%"> 
+        <p></p>
+        <br>
+              <img  id="imagen"  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/imgpng/splash.png" alt="ahorcado" width="40%"><p></p>
         <img  id="imagen"  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/imgpng/perdiste.png" alt="ahorcado" width="50%">
         <br>
-        <p></p>
         
-      </div>      
-    </div>
-
-    
-    
-    
-
-    <div class="row">
-      <div class="col-md-3 " >
-        
-      </div>
-    
-      <div class="col-md-6 marron" align="center" id="prueba">
-            <a  href="<?php echo site_url('ahorcado'); ?>/nuevo/<?php echo $id_persona; ?> " >
-          <button  type="button" class="btn nuevo " ><b>JUGAR DE NUEVO</b></button>
+                 <a  href="<?php echo site_url('ahorcado'); ?>/nuevo/<?php echo $id_persona; ?> " >
+          <img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/buttons/new.png"   width="50%">
     </a>
     <a  href="<?php echo site_url(); ?>" >
-          <button  type="button" class="btn btn-success blank" ><b>MENU</b></button>
+          <img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/buttons/menu.png"   width="20%">
     </a> 
+    <br>
+    <p></p>
 
-        <p></p>       
+
+
       </div>
     </div>
+
+    
+
+
+    
+    
+    
 
 
 

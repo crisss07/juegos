@@ -14,16 +14,16 @@
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/ahorcado/css/ahorcado.css">  
 </head>
-<body onload="inicia();">
+<body onload="inicia();" >
 	<div class="container  ">
 		  <input type="hidden" class="form-control" id="id_persona" name="id_persona" value="<?php echo $id_persona; ?>">
+		  
 
 		<div class="row">
-			<div class="col-md-3 " >
-							
+			<div class="col-md-3 " >							
 			</div>
 			<div class="col-md-2 contador " >
-			<!--	RONDA <span id="puntaje"> <?php echo ($ronda->contador)+1 ?> /3</span> -->
+			<!--RONDA <span id="puntaje"> <?php echo ($ronda->contador)+1 ?> /3</span>-->
 			</div>
 		
 			<div class="col-md-2 contador " >
@@ -39,39 +39,17 @@
 		<div class="row">
 			<div class="col-md-3 " >				
 			</div>
-			<div class="col-md-6 marron" align="center">
-				<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="60%">				
-			</div>
-		</div>
-
-			<div class="row">
-			<div class="col-md-3 " >				
-			</div>
-				<div class="col-md-6 tiempo" align="center" id="time">
-				 01:00
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3 " >				
-			</div>
-			<div class="col-md-6 marron" align="center"><br>
-				<img  id="imagen"  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/img/ahorcado-0.jpg" alt="ahorcado" width="60%">
-				
-			</div>			
-		</div>
-
-		<div class="row">
-			<div class="col-md-3 " >
-				
-			</div>
-			<div class="col-md-6 marron" id="teclado">
-				<br>	
-				
-				
-
-
-								<!--<h1 align="center">HANGI: EL AHORCADO</h1><p></p>	-->
+			<div class="col-md-6 infor" align="center">
+				<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/logo.png" alt="ahorcado" width="60%">
+				<p>
+					
+				</p>
+				<span class="tiempo" id="time"> 01:00</span>
+				<p>
+						<img  id="imagen"  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/img/ahorcado-0.jpg" alt="ahorcado" width="60%">
+				</p>
+				<p>
+					<br>									<!--<h1 align="center">HANGI: EL AHORCADO</h1><p></p>	-->
 				<button id = "a" type="button" class="btn naranja " onclick="enviado('a')">A</button>
 				<button id = "b" type="button" class="btn naranja " onclick="enviado('b')">B</button>
 				<button id = "c" type="button" class="btn naranja " onclick="enviado('c')">C</button>
@@ -81,6 +59,7 @@
 				<button id = "g" type="button" class="btn naranja " onclick="enviado('g')">G</button>
 				<button id = "h" type="button" class="btn naranja " onclick="enviado('h')">H</button>
 				<button id = "i" type="button" class="btn naranja " onclick="enviado('i')">I</button>
+				
 				<button id = "j" type="button" class="btn naranja " onclick="enviado('j')">J</button>
 				<button id = "k" type="button" class="btn naranja " onclick="enviado('k')">K</button>
 				<button id = "l" type="button" class="btn naranja " onclick="enviado('l')">L</button>
@@ -90,6 +69,7 @@
 				<button id = "o" type="button" class="btn naranja " onclick="enviado('o')">O</button>
 				<button id = "p" type="button" class="btn naranja " onclick="enviado('p')">P</button>
 				<button id = "q" type="button" class="btn naranja " onclick="enviado('q')">Q</button>
+
 				<button id = "r" type="button" class="btn naranja " onclick="enviado('r')">R</button>
 				<button id = "s" type="button" class="btn naranja " onclick="enviado('s')">S</button>
 				<button id = "t" type="button" class="btn naranja " onclick="enviado('t')">T</button>
@@ -99,43 +79,44 @@
 				<button id = "x" type="button" class="btn naranja " onclick="enviado('x')">X</button>
 				<button id = "y" type="button" class="btn naranja " onclick="enviado('y')">Y</button>
 				<button id = "z" type="button" class="btn naranja " onclick="enviado('z')">Z</button>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-3 " >
+				</p>
+				<p class="text-center faltante" id="container">
+					
+				</p>
 				
-			</div>
-			<div class="col-md-6 display-4 text-center marron" id="container">				
-			</div>			
-		</div>
-		<div class="row">
-			<div class="col-md-3 " >
-				
-			</div>
-			<div class="col-md-6 marron" id="question">				
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 " >
-				
-			</div>
-		
-			<div class="col-md-6 marron" align="right" id="prueba">
 
-			<button type="button" class="btn inf " data-toggle="modal" data-target="#modalinfo"><h1>?</h1></button>
+			</div>
+		</div>
+
+
+	
+
+		
+		
+		<div class="row">
+			<div class="col-md-3 " >
+				
+			</div>
+			<div class="col-md-6 verde" id="question">				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 " >
+				
+			</div>
+		
+			<div class="col-md-6 verde" align="right" id="prueba">
+
+			<button type="button" class="btn inf " data-toggle="modal" data-target="#modalinfo"><h3>?</h3></button>
+			
 		
 				<p></p>				
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3 " >
-				
-			</div>
-			
-			<div class="col-md-6 marron" align="center" id="fallos">
-
-						
+			<div class="col-md-3 " >				
+			</div>			
+			<div class="col-md-6 marron" align="center" id="fallos">						
 			</div>
 		</div>
 
@@ -152,10 +133,15 @@
       </div>
       <div class="modal-body">     
         <p></p>
-        Este es el clasico juego del ahorcado recuerda que tienes 6 intentos para resolver la pregunta
+          <p></p>
+        Este es el juego clasico del ahorcado recuerda que tienes 6 intentos para resolver la pregunta.
+        <br>
+        <b>
+        Solo puedes jugar 3 veces por dia
+        </b>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>  
+      	<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/buttons/entendido.png" alt="ahorcado" data-dismiss="modal" width="30%">      
       </div>
     </div>
   </div>
@@ -179,11 +165,13 @@
       <div class="modal-footer" align="center">
 
       	<a  href="<?php echo site_url('ahorcado'); ?>/nuevo/<?php echo $id_persona; ?> " >
+      		<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/buttons/new.png"   width="70%">
      
-					<button  type="button" class="btn nuevo" ><h4>JUGAR DE NUEVO</h4></button>
+					
 		</a>
-		<a  href="<?php echo site_url('ahorcado'); ?>" >
-					<button  type="button" class="btn btn-success blank " ><h4>MENU</h4></button>
+
+		<a  href="<?php echo site_url(); ?>" >
+				<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/buttons/menu.png"   width="70%">
 		</a>        
         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
