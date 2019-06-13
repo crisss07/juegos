@@ -78,11 +78,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<a href="#" class="btn btn-primary">Ranking personal</a>	
 	</div>
 
-	<div class="container">
+	<div class="container-fluid">
 
 	  <div class="row">
 
-		<div class="col-md-6 col-sm-12">
+		<div class="col-xs-6 col-md-6">
 			<div class="card">
 			  <img src="<?php echo base_url('/public/img/ahorcado.jpg'); ?>" class="card-img-top" alt="...">
 			  <div class="card-body">
@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 
-	  	<div class="col-md-6 col-sm-12">
+	  	<div class="col-xs-6 col-md-6">
 	    	<div class="card">
 	    	  <img src="<?php echo base_url('/public/img/sopa.jpg'); ?>" class="card-img-top" alt="...">
 	    	  <div class="card-body">
@@ -119,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<p></p>
 	<div class="row">
-	    <div class="col-md-6 col-sm-12">
+	    <div class="col-xs-6 col-md-6">
 	    	<div class="card">
 	    	  <img src="<?php echo base_url('/public/img/trivia.jpg'); ?>" class="card-img-top" alt="...">
 	    	  <div class="card-body">
@@ -135,7 +135,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	  </div>
 	    	</div>
 	    </div>
-	    <div class="col-md-6 col-sm-12">
+	    <div class="col-xs-6 col-md-6">
 	    	<div class="card">
 	    	  <img src="<?php echo base_url('/public/img/emparejados.jpg'); ?>" class="card-img-top" alt="...">
 	    	  <div class="card-body">

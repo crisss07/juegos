@@ -12,13 +12,16 @@
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
     <style type="text/css">
+        body {
+          background: url("<?php echo base_url("/public/img/fnd_nsopa.jpeg"); ?>") repeat; 
+        } 
         .titulo{
             font-family: 'Luckiest Guy', cursive;
             /*font-size: 50px;*/
             /*color: #ff0000;*/
             color: #FFF;
               /*font-family: "Kanit";*/
-              font-size: 45px;
+              font-size: 36px;
               line-height: 1em;
               margin: 0;
               /*position: absolute;*/
@@ -30,7 +33,7 @@
         }
         .contenidos{
             font-family: 'Handlee', cursive;
-            font-size: 28px;
+            font-size: 20px;
             /*color: #ff0000;*/
             font-weight: bolder;
         }
@@ -52,121 +55,152 @@
   Launch demo modal
 </button>
  -->
-<!-- Modal -->
-<div class="modal fade" id="modalInicial" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalInicialLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title contenidos" id="modalInicialLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
-<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
- -->      </div>
-      <div class="modal-body">
-        <p class="contenidos">
-            El juego conciste en encontrar las palabras dentro
-            de la sopa de letras, tienes 2 minutos para poder
-            superar esta prueba.
-            Si consigues encontrar todas las palabras tendras
-            10 puntos ganados.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success btn-lg btn-block" onclick="cierra_modal_inicio();">JUGAR</button>
-        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+
+<div class="container-fluid">
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalInicial" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalInicialLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title contenidos" id="modalInicialLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
+    <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+     -->      </div>
+          <div class="modal-body">
+            <p class="contenidos">
+                El juego conciste en encontrar las palabras dentro
+                de la sopa de letras, tienes 2 minutos para poder
+                superar esta prueba.
+                Si consigues encontrar todas las palabras tendras
+                10 puntos ganados.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success btn-lg btn-block" onclick="cierra_modal_inicio();">JUGAR</button>
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Modal 2 -->
+    <!-- Modal 2 -->
 
-<!-- Modal cierre de tiempo -->
-<div class="modal fade" id="modalTiempo" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTiempoLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title contenidos" id="modalTiempoLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
-<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
- -->      </div>
-      <div class="modal-body">
-        <p class="contenidos">
-            TU TIEMPO HA FINALIZADO!!!
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR DE NUEVO</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ir_menu();">MENU</button>
-        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
-        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Fin modal cierre de tiempo -->
-
-<!-- Modal ganaste -->
-<div class="modal fade" id="modalGano" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalGanoLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title contenidos" id="modalGanoLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
-<!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
- -->      </div>
-      <div class="modal-body">
-        <p class="contenidos">
-            FELICIDADES LO LOGRASTE!!!
-        </p>
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
-        <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR DE NUEVO</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ir_menu();">MENU</button>
+    <!-- Modal cierre de tiempo -->
+    <div class="modal fade" id="modalTiempo" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTiempoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title contenidos" id="modalTiempoLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
+    <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+     -->      </div>
+          <div class="modal-body">
+            <p class="contenidos">
+                TU TIEMPO HA FINALIZADO!!!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ir_menu();">MENU</button>
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Fin modal ganaste -->
+    <!-- Fin modal cierre de tiempo -->
 
-    <div class="container">
+    <!-- Modal ganaste -->
+    <div class="modal fade" id="modalGano" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalGanoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title contenidos" id="modalGanoLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
+    <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+     -->      </div>
+          <div class="modal-body">
+            <p class="contenidos">
+                FELICIDADES LO LOGRASTE!!!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+            <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reinicia_juego();">JUGAR</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ir_menu();">MENU</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin modal ganaste -->
 
-      <div class="d-flex justify-content-center">
-        <div class="col-12">
-        <br>
-        <p class="titulo">SOPA DE LETRAS</p>
-        <p id="time" class="titulo">02:00</p>
-        <div id="txt_tutorial">
-            <p>&nbsp;</p>
+  <div class="d-flex justify-content-center">
+    <div class="col-12">
+    <br>
+    <p class="titulo">SOPA DE LETRAS</p>
+    <p id="time" class="titulo">02:00</p>
+    <div id="txt_tutorial">
+        <p>&nbsp;</p>
 
 <!--             <center>
-                <div id="BOTjugar" onclick="inicia();" class="contenidos">JUGAR</div>
-            </center>
- -->        </div>
-        <div id="sopa_contenidos" style="text-align: center;">
-            <p class="contenidos" style="color: #f4df42;"><?php echo $pregunta; ?></p>
-            <p class="contenidos" style="color: #ffffff;">
-            <?php
-                $palabras = "";
-                foreach ($respuestas as $key => $r) {
-                    echo $r['respuesta']." ";
-                    $palabras .= $r['respuesta'] . ",";
-                }
-                $palabras_pulidas = rtrim($palabras, ",");
-                // echo $palabras_pulidas;
-            ?>
-            </p>
-            <!-- <p class="contenidos" style="color: #ffffff;"><?php //echo $palabras_pulidas; ?></p> -->
-            <!-- <div>El juego conciste en encontrar las siguientes palabras <span id="time">01:00</span> minutes!</div> -->
-            <div id="theGrid" width="100%"></div>
-            <!-- <input type="button" onclick="inicia();" value="iniciar"> -->
-        </div>
-
-        </div>
-      </div>
+            <div id="BOTjugar" onclick="inicia();" class="contenidos">JUGAR</div>
+        </center>
+-->        </div>
+    <div id="sopa_contenidos" style="text-align: center;">
+        <p class="contenidos" style="color: #f4df42;"><?php echo $pregunta; ?></p>
+        <p class="contenidos" style="color: #ffffff;">
+        <?php
+            $palabras = "";
+            foreach ($respuestas as $key => $r) {
+                // echo $r['respuesta']." ";
+                $palabras .= $r['respuesta'] . ",";
+            }
+            $palabras_pulidas = rtrim($palabras, ",");
+            // echo $palabras_pulidas;
+        ?>
+        </p>
+        <!-- <p class="contenidos" style="color: #ffffff;"><?php //echo $palabras_pulidas; ?></p> -->
+        <!-- <div>El juego conciste en encontrar las siguientes palabras <span id="time">01:00</span> minutes!</div> -->
+        <!-- <input type="button" onclick="inicia();" value="iniciar"> -->
+        
     </div>
+
+
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div id="theGrid"></div>
+  </div>
+  <p></p>
+
+  <div class="d-flex justify-content-center contenidos" style="color: #ffffff; font-size: 9pt;">
+    <?php
+        $palabras = "";
+        foreach ($respuestas as $key => $r) {
+            end($respuestas);
+            echo $r['respuesta'];
+            // echo ", ";
+            if ($key != key($respuestas))
+                // echo $r['respuesta'];
+                echo ", ";
+                // echo 'LAST ELEMENT!';
+            // $palabras .= $r['respuesta'] . ",";
+        }
+        // echo $ret;
+        // $palabras_pulidas = rtrim($palabras, ",");
+        // echo $palabras_pulidas;
+    ?>
+
+  </div>  
+
+</div>
+
+
+<!-- </center> -->
 
     <script>
 
@@ -1621,7 +1655,7 @@
             //attach the game to a div
             $("#theGrid").wordsearchwidget({
                 "wordlist": words,
-                "gridsize": 15,
+                "gridsize": 12,
                 // "width" : 300
             });
 

@@ -1,19 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
-body {
-  /*background:url("http://localhost/juegos/public/img/fnd.jpg") no-repeat !important;*/
-  /*padding-top:100px;*/
-  /*background-size:cover;*/
-  /*height: 100%;*/
-  /*background-position: center;*/
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
-  /*font-family: 'Orbitron', sans-serif;*/
-  background: url("http://localhost/juegos/public/img/fnd_sopa.jpg") no-repeat center center fixed; 
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-} 
 
 #BOTjugar {
     /*position: absolute;*/
@@ -133,8 +118,36 @@ body {
     visibility: hidden; 
 }
 #theGrid{
-    margin: auto;
-    width: 80%;
+    /*padding-bottom: 100px;*/
+    /*margin: 0;*/
+    /*position: absolute;*/
+    /*top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+*//*    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+*/    /*text-align: center;*/
+    /*margin: auto;*/
+    /*width: 100%;*/
+    /*border: 3px solid green;*/
+    /*padding: 10px;*/
+}
+#textoSopa{
+    padding-bottom: 200px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+/*    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+*/    /*text-align: center;*/
+    /*margin: auto;*/
+    /*width: 100%;*/
     /*border: 3px solid green;*/
     /*padding: 10px;*/
 }
