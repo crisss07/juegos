@@ -509,7 +509,7 @@ body {
   }
 
   .title {
-    font-size: 400%;
+    font-size: 300%;
   }
 
   .play{
@@ -536,5 +536,9 @@ body {
   font-size: 300%;
 }
 
+.prueba { 
+  font-size: 120%;
+  
+}
 
 }
