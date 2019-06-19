@@ -82,7 +82,7 @@
               $("#"+casilla).css("background-image", "url("+arrayImagenes[imagenElegida]+")").css("background-color", "transparent");
           },100);
 
-          console.log(arrayPosicionesParejas[anterior] + ":" + arrayPosicionesParejas[casilla]);
+          //console.log(arrayPosicionesParejas[anterior] + ":" + arrayPosicionesParejas[casilla]);
 
           //Comapara con el arreglo de posiciones de parejas si la imagen del deportista conside con el nombre de la jugada, 
           //si es asi la da por acertada y bloquea las acciones sobre las casillas correspondientes
@@ -132,8 +132,10 @@
           $(this).css("pointer-events","none");
       }
       if(contadorAciertos == 10){
+          console.log(cronometro_active);
           console.log("fin");
           fin_juego++;
+           var valor = 1;
           //tiempo_juego = document.getElementById("tiempo_final").textContent;
           var algo = document.querySelector('#tiempo_juego');
           $("#prueba").val(cronometro[tiempo_juego]);
@@ -142,8 +144,49 @@
           $("html, body").stop().animate({
               scrollTop: $("#juego_de_parejas").offset().top
           }, 500, 'swing'); 
+          $.ajax({
+            type:'POST',
+            url:"<?php echo base_url();?>emparejados/insertar",
+            dataType: 'json',
+            data:{valor:valor},
+          });
+
       }
     });
+
+
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes, seconds;
+            setInterval(function() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+                console.log(display.textContent);
+
+                if (--timer < 0) {
+                    timer = duration;
+                    //$("#modalTiempo").modal('show');
+                    var valor = 1;
+                    alert('Su tiempo termino');
+                    $.ajax({
+                      type:'POST',
+                      url:"<?php echo base_url();?>emparejados/insertar_perdida",
+                      dataType: 'json',
+                      data:{valor:valor},
+                    });
+                    //$('#modalTiempo').modal('show');
+                    location.reload(true);
+
+                }
+            }, 1000);
+        }
+
+       
 
       //CRONOMETRO DE TIEMPO
     function zeroIzq(n){
@@ -153,102 +196,110 @@
    //        return zeroIzq(Math.floor(s / 3600))+':'+zeroIzq(Math.floor(s%3600 / 60))+':'+zeroIzq(Math.floor((s%3600)%60));
         return zeroIzq(Math.floor(s%3600 / 60))+':'+zeroIzq(Math.floor((s%3600)%60));
     }
-    function actualizar(){
-        if(fin_juego == 0){
-            var dif = Date.now() - inicioConteo;
-            dif = Math.round(dif / 1000);
-            cronometro.innerHTML = formatoSegundos(dif);
-            console.log(cronometro.innerHTML);
-            if (cronometro.innerHTML == '00:05') {
-              //alert('Su tiempo termino');
-              $("#modalTiempo").modal('show');
-              //location.reload(true);
-            }
-            idTimeout = setTimeout(actualizar,1000);
-        }
-    }
-
-    
+    // function actualizar(){
+    //     if(fin_juego == 0){
+    //         var dif = Date.now() - inicioConteo;
+    //         dif = Math.round(dif / 1000);
+    //         cronometro.innerHTML = formatoSegundos(dif);
+    //         console.log(cronometro.innerHTML);
+    //         if (cronometro.innerHTML == '01:00') {
+    //           var valor = 1;
+    //           alert('Su tiempo termino');
+    //           $.ajax({
+    //             type:'POST',
+    //             url:"<?php //echo base_url();?>emparejados/insertar_perdida",
+    //             dataType: 'json',
+    //             data:{valor:valor},
+    //         });
+    //           //$('#modalTiempo').modal('show');
+    //           location.reload(true);
+    //         }
+    //         idTimeout = setTimeout(actualizar,1000);
+    //     }
+    // }
 
     function iniciar(){
-        clearTimeout(idTimeout);
-        inicioConteo = Date.now();
-        actualizar();
+      var fiveMinutes = 60 * 1,
+      display = document.querySelector('#time');
+      startTimer(fiveMinutes, display);
+        // clearTimeout(idTimeout);
+        // inicioConteo = Date.now();
+        // actualizar();
     }
     //PANEL DE RESULTADOS
     $("#btn_reiniciar").click(function(){
         location.reload(true);
     });
     
-    $("#btn_inf_jugada_01").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_01").show();
-    });
+    // $("#btn_inf_jugada_01").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_01").show();
+    // });
     
-    $("#btn_inf_jugada_02").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_02").show();
-    });
+    // $("#btn_inf_jugada_02").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_02").show();
+    // });
     
-    $("#btn_inf_jugada_03").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_03").show();
-    });
+    // $("#btn_inf_jugada_03").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_03").show();
+    // });
     
-    $("#btn_inf_jugada_04").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_04").show();
-    });
+    // $("#btn_inf_jugada_04").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_04").show();
+    // });
     
-    $("#btn_inf_jugada_05").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_05").show();
-    });
+    // $("#btn_inf_jugada_05").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_05").show();
+    // });
       
-    $("#btn_inf_jugada_06").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_06").show();
-    });
+    // $("#btn_inf_jugada_06").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_06").show();
+    // });
     
-    $("#btn_inf_jugada_07").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_07").show();
-    });
+    // $("#btn_inf_jugada_07").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_07").show();
+    // });
     
-    $("#btn_inf_jugada_08").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_08").show();
-    });
+    // $("#btn_inf_jugada_08").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_08").show();
+    // });
     
-    $("#btn_inf_jugada_09").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_09").show();
-    });
+    // $("#btn_inf_jugada_09").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_09").show();
+    // });
     
-    $("#btn_inf_jugada_10").click(function(){
-        $("#resultados").hide();
-        $("#infografia_jugada").show();
-        $(".inf_jugada").hide();
-        $("#inf_jugada_10").show();
-    });
+    // $("#btn_inf_jugada_10").click(function(){
+    //     $("#resultados").hide();
+    //     $("#infografia_jugada").show();
+    //     $(".inf_jugada").hide();
+    //     $("#inf_jugada_10").show();
+    // });
     
     $("#btn_volver").click(function(){
         $("#infografia_jugada").hide();
@@ -260,40 +311,40 @@
             scrollTop: $("#juego_de_parejas .preguntas").scrollTop() + 100
         }, 500, 'swing');
     });
-    //COMPARTIR RESULTADOS EN REDES
-    window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '1928749157200161',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v2.12'
-        });
-    };
+    // //COMPARTIR RESULTADOS EN REDES
+    // window.fbAsyncInit = function() {
+    //     FB.init({
+    //       appId            : '1928749157200161',
+    //       autoLogAppEvents : true,
+    //       xfbml            : true,
+    //       version          : 'v2.12'
+    //     });
+    // };
 
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    // (function(d, s, id){
+    //     var js, fjs = d.getElementsByTagName(s)[0];
+    //     if (d.getElementById(id)) {return;}
+    //     js = d.createElement(s); js.id = id;
+    //     js.src = "https://connect.facebook.net/en_US/sdk.js";
+    //     fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk'));
 
-    $("#btn_compartir_facebook").click(function(){
-        var tiempo_juego;
-        tiempo_juego = document.getElementById("tiempo_final").textContent;
-        FB.ui({
-            method: 'share',
-            href: 'http://beta.eltiempo.com/deportes/las-10-mejores-jugadas-159307',
-            quote:'Estas son las 10 mejores jugadas del Fútbol, mi tiempo fue de '+tiempo_juego+' http://www.eltiempo.com/deportes/futbol-internacional/especial-las-10-mejores-jugadas-futbol-196998',
-        }, function(response){});
-    });
+    // $("#btn_compartir_facebook").click(function(){
+    //     var tiempo_juego;
+    //     tiempo_juego = document.getElementById("tiempo_final").textContent;
+    //     FB.ui({
+    //         method: 'share',
+    //         href: 'http://beta.eltiempo.com/deportes/las-10-mejores-jugadas-159307',
+    //         quote:'Estas son las 10 mejores jugadas del Fútbol, mi tiempo fue de '+tiempo_juego+' http://www.eltiempo.com/deportes/futbol-internacional/especial-las-10-mejores-jugadas-futbol-196998',
+    //     }, function(response){});
+    // });
     
-    $("#btn_compartir_twitter").click(function(){
-        var tiempo_juego;
-        tiempo_juego = document.getElementById("tiempo_final").textContent;
-        var url='http://twitter.com/home?status=Mi%20tiempo%20fue%20de%20'+tiempo_juego+'%20http://www.eltiempo.com/deportes/futbol-internacional/especial-las-10-mejores-jugadas-futbol-196998'; 
-        window.open(url,'ventanacompartir', 'toolbar=0, status=0, width=650, height=450');
-    });
+    // $("#btn_compartir_twitter").click(function(){
+    //     var tiempo_juego;
+    //     tiempo_juego = document.getElementById("tiempo_final").textContent;
+    //     var url='http://twitter.com/home?status=Mi%20tiempo%20fue%20de%20'+tiempo_juego+'%20http://www.eltiempo.com/deportes/futbol-internacional/especial-las-10-mejores-jugadas-futbol-196998'; 
+    //     window.open(url,'ventanacompartir', 'toolbar=0, status=0, width=650, height=450');
+    // });
   });
   </script>
 
@@ -306,6 +357,7 @@
         <p>🅰🅿🆁🅴🅽🅳🅴   🅼🅰🆂   🆂🅾🅱🆁🅴   🅽🆄🅴🆂🆃🆁🅾   🅿🅰🅸🆂   🅹🆄🅶🅰🅽🅳🅾
         </p>
         <label id="tiempo_juego">00:00 </label><span>Tiempo</span>
+        <p id="time" class="titulo">01:00</p>
       </div>
       <div id="tablero_juego">
         <div class="casilla" id="0"></div>

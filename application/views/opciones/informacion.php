@@ -112,20 +112,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<div class="container">
-		<h1 class="subtitulo">PREMIOS</h1>
+		<h1 class="subtitulo">INFORMACIÓN</h1>
+		<div class="row">
+			<center>
+			<div class="col-md-8 col-sm-12">
+		    	<div class="card">
+		    	  
+		    	  <div class="card-body">
+		    	    <h5 class="card-title contenidos1">REGLAS</h5>
+		    	    <p class="card-text contenidos2">Para todos los juegos, el participante deberá registrarse una sola vez a los juegos y posteriormente ingresar a ellos, una vez dentro podrá jugar hasta 3 veces cada juego por día, los puntos se irán acumulando hasta que llegue a los puntos que cada premio exige que acumules.</p>
+		    	  </div>
+		    	</div>
+		    </div>
+		    </center>
+		</div>
+		<br>
 	  	<div class="row">
-		  	<?php foreach ($cosas as $premios) { ?>
 		  	<div class="col-md-6 col-sm-12">
 		    	<div class="card">
 		    	  
 		    	  <div class="card-body">
-		    	    <h5 class="card-title contenidos1"><?php echo $premios->premio; ?></h5>
-		    	    <p class="card-text contenidos2">Puede canjear <?php echo $premios->premio; ?> con <?php echo $premios->puntaje; ?> puntos que acumule en los juegos</p>
+		    	    <h5 class="card-title contenidos1">EL AHORCADO</h5>
+		    	    <p class="card-text contenidos2">El juego consiste en encontrar la respuesta a la pregunta planteada, letra a letra, cada fallo que cometas iras ahorcándote poco a poco, cuentas con 1 minuto para poder superar esta prueba. Cada palabra correcta que encuentres sumara 6 puntos ganados.</p>
 		    	  </div>
 		    	</div>
 		    </div>
-		    <?php } ?>
-	    
+		    <div class="col-md-6 col-sm-12">
+		    	<div class="card">
+		    	  
+		    	  <div class="card-body">
+		    	    <h5 class="card-title contenidos1">SOPA DE LETRAS</h5>
+		    	    <p class="card-text contenidos2">El juego consiste en encontrar la palabra correcta dentro de una gran sopa de letras, las palabras a buscar se encuentran descritas, cuentas con 1 minuto para poder superar esta prueba. Cada grupo de palabras correctas encontradas sumara 10 puntos ganados.</p>
+		    	  </div>
+		    	</div>
+		    </div>
+		    <div class="col-md-6 col-sm-12">
+		    	<div class="card">
+		    	  
+		    	  <div class="card-body">
+		    	    <h5 class="card-title contenidos1">TRIVIA</h5>
+		    	    <p class="card-text contenidos2">El juego consiste en encontrar la respuesta correcta a la pregunta, cuentas con 45 segundos para poder superar esta prueba. Cada respuesta sumara 2 puntos, pero si respondes mal se te descontara 1 punto, por cada respuesta.</p>
+		    	  </div>
+		    	</div>
+		    </div>
+		    
 		</div>
 	
 	

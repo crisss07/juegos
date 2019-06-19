@@ -25,6 +25,10 @@ class Opciones extends CI_Controller {
 		$datos['cosas']=$this->Opciones_model->datos();
 		$this->load->view('opciones/premios', $datos);
 	}
+
+	public function informacion(){
+		$this->load->view('opciones/informacion');
+	}
 	
 
 }
