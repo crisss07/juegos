@@ -136,6 +136,47 @@ class Ahorcado extends CI_Controller {
 			
 	}
 
+	
+
+	public function listado(){	
+        	$data['preguntas'] = $this->ahorcado_model->get_preguntas();
+			$this->load->view('ahorcado_preg', $data);	
+	}
+
+	public function create(){	
+        	$data = array (            
+            'pregunta' => $this->input->post('pregunta'),
+            'respuesta' => strtolower($this->input->post('respuesta')),           
+            'estado' => '1'
+        );
+        $this->db->insert('ahorcado', $data);		
+      
+		redirect(base_url('ahorcado/listado/'));
+	}
+
+	public function edit($ida=null){	
+        	$data['row'] = $this->ahorcado_model->get_data($ida);
+			$this->load->view('ahorcado_edit', $data);	
+	}
+	public function update($ida=null){
+			$data = array (            
+            'pregunta' => $this->input->post('pregunta'),
+            'respuesta' => strtolower($this->input->post('respuesta')),                   
+        	);
+        	$this->db->where('ahorcado_id', $ida);
+        	$this->db->update('ahorcado', $data);	
+       
+
+			redirect(base_url('ahorcado/listado/'));	
+	}
+	public function delete($ida=null){
+			$data = array (          
+            	'estado' => 0
+        	);
+        	$this->db->where('ahorcado_id', $ida);
+        	$this->db->update('ahorcado', $data);	
+        	redirect(base_url('ahorcado/listado/'));
+	}
 }
 
 	
