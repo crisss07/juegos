@@ -14,4 +14,10 @@ class Emparejados_model extends CI_Model {
 		
 		return $data;
 	}
+
+	public function lista(){
+		$data = $this->db->query("SELECT * FROM emparejados WHERE estado = 1")->result();
+		
+		return $data;
+	}
 }

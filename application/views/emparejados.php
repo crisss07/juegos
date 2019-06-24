@@ -42,7 +42,7 @@
     //VARIABLES CRONOMETRO DE TIEMPO
     var inicioConteo;
     var idTimeout;
-    var cronometro = document.querySelector('#tiempo_juego');
+    var cronometro = document.querySelector('#time');
     //botonReiniciar = document.querySelector('#botonReiniciar');
     var cronometro_active = 0;
     var fin_juego = 0;
@@ -134,12 +134,13 @@
       if(contadorAciertos == 10){
           console.log(cronometro_active);
           console.log("fin");
+         stop();
           fin_juego++;
            var valor = 1;
-          //tiempo_juego = document.getElementById("tiempo_final").textContent;
-          var algo = document.querySelector('#tiempo_juego');
-          $("#prueba").val(cronometro[tiempo_juego]);
-          $(".tiempo_final").html(cronometro);
+          tiempo_juego = document.getElementById("time").textContent;
+          var algo = tiempo_juego;
+          console.log(algo);
+          $(".tiempo_final").html(tiempo_juego);
           $("#panel_resultados").fadeIn();
           $("html, body").stop().animate({
               scrollTop: $("#juego_de_parejas").offset().top
@@ -226,6 +227,12 @@
         // inicioConteo = Date.now();
         // actualizar();
     }
+
+    function stop(){
+      clearInterval('cronometro');
+      alert('stop');
+    }
+
     //PANEL DE RESULTADOS
     $("#btn_reiniciar").click(function(){
         location.reload(true);
@@ -356,7 +363,6 @@
       <div id="cabecera_juego" align="center"><img alt="Juego de Parejas" id="imagen_juego" src="<?php echo base_url(); ?>public/imagenes/titulo.png"/>
         <p>🅰🅿🆁🅴🅽🅳🅴   🅼🅰🆂   🆂🅾🅱🆁🅴   🅽🆄🅴🆂🆃🆁🅾   🅿🅰🅸🆂   🅹🆄🅶🅰🅽🅳🅾
         </p>
-        <label id="tiempo_juego">00:00 </label><span>Tiempo</span>
         <p id="time" class="titulo">01:00</p>
       </div>
       <div id="tablero_juego">
@@ -386,7 +392,7 @@
     <div id="panel_resultados">
       <div id="resultados">
         <label class="label_tiempo">Tiempo:</label><br/><span class="tiempo_final">-- seg</span>
-        <input type="text" name="prueba" id="prueba">
+
         <hr/>
         <div class="preguntas">
           <table cellspacing="0">

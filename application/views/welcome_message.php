@@ -76,6 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<a href="<?php echo base_url('/opciones/informacion') ?>" class="btn btn-danger">Información</a>
 		<a href="#" class="btn btn-success">Ranking</a>
 		<a href="#" class="btn btn-primary">Ranking personal</a>	
+		<a href="<?php echo base_url('/Emparejados/formulario') ?>" class="btn btn-danger">Información</a>
 	</div>
 
 	<div class="container-fluid">
