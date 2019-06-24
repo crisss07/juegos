@@ -35,46 +35,39 @@
   <br>
 
   <div class="row">
-
   <div class="col-lg-12">
     
-
-
-
       <!-- Button trigger modal -->
-    
+   <h2>Listado de premios entregados</h2>
+   
+   <p></p>
+   <br>
 
     <!-- Modal -->
-    <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Entrega de premios</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Ahorcado</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form method="post"  action="<?php echo site_url('Entrega/guarda')?>">
+            <form method="post"  action="<?php echo site_url('Ahorcado/create')?>">
             <div class="form-group">
-              <label for="exampleInputEmail1">Usuario</label>
-              <input type="text" class="form-control" name="usuario" id="usuario" placeholder="....." readonly="">             
+              <label for="exampleInputEmail1">Pregunta</label>
+              <input type="text" class="form-control" name="pregunta" aria-describedby="emailHelp" placeholder=".....">             
             </div>
-            <input type="text" class="form-control" name="usuario_id" id="usuario_id" placeholder="....." readonly="" hidden> 
-            <input type="text" class="form-control" name="id" id="id" placeholder="....." readonly="" hidden>
             <div class="form-group">
-              <label for="exampleInputEmail1">Puntaje</label>
-              <input type="text" class="form-control" name="puntaje" id="puntaje" placeholder="....." readonly="">             
-            </div>        
+              <label for="exampleInputEmail1">Respuesta <span style="color:red"> (Solo una palabra y sin ascentos)</span></label>
+              <input type="text" class="form-control" name="respuesta" aria-describedby="emailHelp" placeholder=".....">            
+            </div>
+
+
+         
           
-              <div class="form-group">
-                 <label for="exampleInputEmail1">Premio</label>
-              <select class="selectpicker" id="premio_id" name="premio_id">
-               <?php foreach ($premios as $tp) : ?>                                    
-                                    <option value="<?php echo $tp->id; ?>"><?php echo $tp->premio.'-por-'.$tp->puntaje.' pts'; ?></option>
-                            <?php endforeach; ?>
-               </select>           
-            </div>            
+            
             <div class="modal-footer">
               <button type="submit" class="btn btn-success" value="save">Continuar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>          
@@ -87,45 +80,32 @@
     </div>
 
 
-    <?php $cont=1; ?>
+    <?php $conteo=1; ?>
 
 
-   <table class="table" id="ahorcado_table">
+   <table class="table" id="personas_table">
   <thead class="thead-primary">
     <tr>
-      <th scope="col">Nro</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Puntos</th>   
-      <th scope="col">Acciones</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Premiado</th>
+      <th scope="col">Puntos</th>
+      <th scope="col">Premio</th>         
     </tr>
   </thead>
   <tbody>
     
-   <?php foreach($puntajes as $row) {
-   $datos = $row->persona_id."||".
-   $row->puntaje."||".
-   $row->nombres."||".
-   $row->ap."||".
-   $row->am."||".
-   $row->id;
-   ?>
+     <?php foreach($cobrado as $rowc) {?>
     <tr>
-      <th ><?php echo $cont++; ?></th>
-      <td><?php echo $row->nombres.' '.$row->ap.' '.$row->am; ?></td>
-      <td><?php echo $row->puntaje; ?></td> 
-      <td>
-        <button type="button" class="btn btn-success footable-edit" data-toggle="modal" data-target="#modalEdicion" onclick="agregarform('<?php echo $datos ?>')"> <i class="fa fa-trophy fa-1x"></i> premiar                                                       
-                                                    </button>                   
-      </td>
+      <th ><?php echo $rowc->fecha; ?></th>
+      <td><?php echo $rowc->nombres.' '.$rowc->ap.' '.$rowc->am; ?></td>
+        <td><?php echo $rowc->puntaje; ?></td> 
+      <td><?php echo $rowc->premio; ?></td>   
     </tr>
     <?php } ?>
    
   </tbody>
 </table>
 </div><!--col lg-6-->
-
-
-
 </div>
   </div><!--container-->
     </body>
@@ -144,7 +124,7 @@
 
       );
 
-       $('#personasss_table').DataTable(
+       $('#personas_table').DataTable(
 
       {
     "language": {
@@ -167,11 +147,8 @@
   function agregarform(datos)
         {
              d=datos.split('||');
-              $('#usuario_id').val(d[0]);
+              $('#usuario').val(d[0]);
               $('#puntaje').val(d[1]);
-              var nombre=d[2]+" "+d[3]+" "+d[4];
-              $('#usuario').val(nombre);
-             
-              $('#id').val(d[5]);  
+              $('#id').val(d[2]);  
         }
 </script>
