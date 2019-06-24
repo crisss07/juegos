@@ -15,7 +15,7 @@ class Ahorcado_model extends CI_Model {
         return $query->row();
 	}
 	function get_preguntas() {
-        $query = $this->db->query("SELECT * FROM ahorcado");
+        $query = $this->db->query("SELECT * FROM ahorcado where estado=1");
         return $query->result();
 	}
 
@@ -24,4 +24,10 @@ class Ahorcado_model extends CI_Model {
         $query = $this->db->query("SELECT IFNULL(COUNT(persona_id),0) AS contador FROM registro WHERE persona_id=$id and nombre_juego='ahorcado' and date(fecha)=CURDATE()");
         return $query->row();
 	}
+
+	function get_data($id) {
+        $query = $this->db->query("SELECT * FROM ahorcado where ahorcado_id=$id");
+        return $query->row();
+	}
+
 }

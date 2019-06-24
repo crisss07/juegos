@@ -325,7 +325,7 @@ function enviado(tecla) {
     	 
     	 //var teclado = document.getElementById('teclado');
 		 //teclado.innerHTML="";
-		 setTimeout(guarda_perdida,1000); 
+		 setTimeout(guarda_perdida,1); 
     	}
     }
    // x.value = "";

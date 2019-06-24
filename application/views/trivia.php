@@ -256,7 +256,7 @@
       yourPoints.innerHTML = score;
     }, 44000);
 
-    setTimeout(guarda_data, 47000);
+    setTimeout(guarda_data, 46000);
   } 
 
   function guarda_data(){
