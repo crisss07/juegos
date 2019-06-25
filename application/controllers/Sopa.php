@@ -117,4 +117,70 @@ class Sopa extends CI_Controller {
 
 	}
 
+	public function listado_preguntas()
+	{
+		// $this->db->where('borrado IS NULL');
+		$this->db->order_by('id', 'DESC');
+		$data['preguntas'] = $this->db->get('sopapreguntas')->result();
+		$this->load->view('sopa/listado_preguntas', $data);
+		// vdebug($data, true, false, true);
+	
+	}
+
+	public function guarda_pregunta()
+	{
+		$data = array(
+			'pregunta' => $this->input->post('pregunta'),
+		);
+		if ($this->input->post('id') == null) {
+			$this->db->insert('sopapreguntas', $data);
+		} else {
+			$this->db->where('id', $this->input->post('id'));
+			$this->db->update('sopapreguntas', $data);
+		}
+		redirect(base_url('sopa/listado_preguntas'));
+	}
+
+	public function elimina_pregunta($idSopa = null)
+	{
+		// vdebug($idSopa, true, false, true);
+		$this->db->delete('sopapreguntas', array('id' => $idSopa));
+		redirect(base_url('sopa/listado_preguntas'));
+	}
+
+	public function listado_respuestas($idPregunta = null)
+	{
+		$data['pregunta'] = $this->db->get_where('sopapreguntas', ['id'=>$idPregunta])->row();
+		// vdebug($pregunta, true, false, true);   
+		$this->db->order_by('id', 'DESC');
+		$this->db->where('sopapregunta_id', $idPregunta);
+		$data['respuestas'] = $this->db->get('soparespuestas')->result();
+		// vdebug($data, true, false, true);
+		$this->load->view('sopa/listado_respuestas', $data);
+	}
+
+	public function guarda_respuestas()
+	{
+		// vdebug($this->input->post(), true, false, true);
+		$idPregunta = $this->input->post('id_pregunta');
+		$data = array(
+			'respuesta' => $this->input->post('respuesta'),
+			'sopapregunta_id'=>$idPregunta
+		);
+		if ($this->input->post('id') == null) {
+			$this->db->insert('soparespuestas', $data);
+		} else {
+			$this->db->where('id', $this->input->post('id'));
+			$this->db->update('soparespuestas', $data);
+		}
+		redirect(base_url("sopa/listado_respuestas/$idPregunta"));
+	}
+
+	public function elimina_respuesta($idRespuesta = null, $idPregunta = null)
+	{
+		// vdebug($idSopa, true, false, true);
+		$this->db->delete('soparespuestas', array('id' => $idRespuesta));
+		redirect(base_url("sopa/listado_respuestas/$idPregunta"));
+	}
+
 }

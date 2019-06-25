@@ -19,13 +19,14 @@
    
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-  <link rel="stylesheet" href="<?php echo base_url(); ?>public/ahorcado/css/ahorcado.css">  
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/ahorcado/css/ahorcado.css"> 
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
 
     <title>CRUD</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Registro de Entrega de premios</a>
+    <a class="navbar-brand" href="#"></a>
   </nav>
 
 
@@ -35,55 +36,47 @@
 
   <div class="row">
 
-  <div class="col-lg-6">
+  <div class="col-lg-12">
     
 
 
 
       <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-       <span class="glyphicon glyphicon-plus"></span>
-           Nuevo
-    </button>
+    
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ahorcado</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Entrega de premios</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form method="post"  action="<?php echo site_url('Ahorcado/create')?>">
+            <form method="post"  action="<?php echo site_url('Entrega/guarda')?>">
             <div class="form-group">
               <label for="exampleInputEmail1">Usuario</label>
-              <input type="text" class="form-control" name="pregunta" aria-describedby="emailHelp" placeholder="....." readonly="">             
+              <input type="text" class="form-control" name="usuario" id="usuario" placeholder="....." readonly="">             
             </div>
+            <input type="text" class="form-control" name="usuario_id" id="usuario_id" placeholder="....." readonly="" hidden> 
+            <input type="text" class="form-control" name="id" id="id" placeholder="....." readonly="" hidden>
             <div class="form-group">
               <label for="exampleInputEmail1">Puntaje</label>
-              <input type="text" class="form-control" name="respuesta" aria-describedby="emailHelp" placeholder=".....">             
-            </div>
-         
+              <input type="text" class="form-control" name="puntaje" id="puntaje" placeholder="....." readonly="">             
+            </div>        
           
               <div class="form-group">
-                 <label for="exampleInputEmail1">Premios</label>
-              <select class="selectpicker" data-size="5">
-                
-              <option data-subtext="Heinz">Ketchup</option>
-               <?php foreach ($premios as $tp) : ?>
-                                    
-                                    <option value="<?php echo $tp->id; ?>"><?php echo $tp->premio; ?></option>
-                             
+                 <label for="exampleInputEmail1">Premio</label>
+              <select class="selectpicker" id="premio_id" name="premio_id">
+               <?php foreach ($premios as $tp) : ?>                                    
+                                    <option value="<?php echo $tp->id; ?>"><?php echo $tp->premio.'-por-'.$tp->puntaje.' pts'; ?></option>
                             <?php endforeach; ?>
-               </select>
-           
-            </div>
-            
+               </select>           
+            </div>            
             <div class="modal-footer">
-              <button type="submit" class="btn btn-success" value="save">Guardar</button>
+              <button type="submit" class="btn btn-success" value="save">Continuar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>          
           </div>
           </form>
@@ -102,19 +95,27 @@
     <tr>
       <th scope="col">Nro</th>
       <th scope="col">Usuario</th>
-      <th scope="col">Puntaje</th>   
+      <th scope="col">Puntos</th>   
       <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
     
-     <?php foreach($puntajes as $row) {?>
+   <?php foreach($puntajes as $row) {
+   $datos = $row->persona_id."||".
+   $row->puntaje."||".
+   $row->nombres."||".
+   $row->ap."||".
+   $row->am."||".
+   $row->id;
+   ?>
     <tr>
-      <th scope="row"><?php echo $cont++; ?></th>
-      <td><?php echo $row->persona_id; ?></td>
+      <th ><?php echo $cont++; ?></th>
+      <td><?php echo $row->nombres.' '.$row->ap.' '.$row->am; ?></td>
       <td><?php echo $row->puntaje; ?></td> 
       <td>
-        <a href="<?php echo site_url('Entrega/edit');?>/<?php echo $row->persona_id;?>"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-align-left"></span>Cobrar</button></a>                    
+        <button type="button" class="btn btn-success footable-edit" data-toggle="modal" data-target="#modalEdicion" onclick="agregarform('<?php echo $datos ?>')"> <i class="fa fa-trophy fa-1x"></i> premiar                                                       
+                                                    </button>                   
       </td>
     </tr>
     <?php } ?>
@@ -123,84 +124,10 @@
 </table>
 </div><!--col lg-6-->
 
-<div class="col-lg-6">
-    
 
 
-
-      <!-- Button trigger modal -->
-   <h2>Listado de entregas</h2>
-   
-   <p></p>
-   <br>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ahorcado</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form method="post"  action="<?php echo site_url('Ahorcado/create')?>">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Pregunta</label>
-              <input type="text" class="form-control" name="pregunta" aria-describedby="emailHelp" placeholder=".....">             
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Respuesta <span style="color:red"> (Solo una palabra y sin ascentos)</span></label>
-              <input type="text" class="form-control" name="respuesta" aria-describedby="emailHelp" placeholder=".....">            
-            </div>
-
-
-         
-          
-            
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-success" value="save">Guardar</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>          
-          </div>
-          </form>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-
-
-    <?php $cont=1; ?>
-
-
-   <table class="table" id="personas_table">
-  <thead class="thead-primary">
-    <tr>
-      <th scope="col">Nro</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Premio</th>         
-    </tr>
-  </thead>
-  <tbody>
-    
-     <?php foreach($puntajes as $row) {?>
-    <tr>
-      <th scope="row"><?php echo $cont++; ?></th>
-      <td><?php echo $row->persona_id; ?></td>
-      <td><?php echo $row->puntaje; ?></td>   
-    </tr>
-    <?php } ?>
-   
-  </tbody>
-</table>
-</div><!--col lg-6-->
 </div>
   </div><!--container-->
-
-
-
-
     </body>
 </html>
 
@@ -228,4 +155,23 @@
       );
 
 } );
+
+
+        
+
+
+
+</script>
+
+<script>
+  function agregarform(datos)
+        {
+             d=datos.split('||');
+              $('#usuario_id').val(d[0]);
+              $('#puntaje').val(d[1]);
+              var nombre=d[2]+" "+d[3]+" "+d[4];
+              $('#usuario').val(nombre);
+             
+              $('#id').val(d[5]);  
+        }
 </script>

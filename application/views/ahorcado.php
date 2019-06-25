@@ -33,7 +33,11 @@
 				<img  class="img-fluid" src="<?php echo base_url(); ?>public/ahorcado/moneda.png" alt="ahorcado" width="10%"><span id="vidas"> 6</span>
 			</div>
 		</div>
-
+    
+    <?php 
+        $id = $_SESSION['usuario_id'];
+        echo $id;
+    ?>
 
 		
 		<div class="row">
