@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V6</title>
+	<title>Iniciar Sesion</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,7 +32,8 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<!--<form class="login100-form validate-form">-->
+				 <?php echo form_open('Login/login', array('class'=>'login100-form validate-form', 'method'=>'POST')); ?>
 					<span class="login100-form-title p-b-70">
 						Bienvenido
 					</span>
@@ -40,13 +41,13 @@
 						<img src="<?php echo base_url(); ?>public/login/images/play.png" alt="AVATAR">
 					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
-						<input class="input100" type="text" name="username">
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresar usuario">
+						<input class="input100" type="text" name="usuario">
 						<span class="focus-input100" data-placeholder="Usuario"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresar contraseña">
+						<input class="input100" type="password" name="contrasenia">
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
 

@@ -11,8 +11,11 @@ class Ahorcado extends CI_Controller {
     
     public function index()
 	{
-		//redirect(base_url());
-		redirect(base_url() . "ahorcado/nuevo/2");
+		if ($this->session->userdata("login")) {
+           		redirect(base_url() . "ahorcado/ingreso/".$this->session->userdata("usuario_id"));
+        } else {
+            redirect(base_url()."Login/nuevo");
+        }
 	}	
 
 	
@@ -42,19 +45,12 @@ class Ahorcado extends CI_Controller {
 	
 	public function guarda_loss($id_persona = null,$puntaje = null)
 	{
-		
-		
-
 		$nueva_fecha_inicio = $this->input->post('fecha_inicio').$hora_inicio;
 		$nueva_fecha_fin = $this->input->post('fecha_inicio').$hora_final;
-	
-
-		$data = array(
-            
+		$data = array(            
             'persona_id' => $id_persona,
             'nombre_juego' =>'ahorcado',
-            'puntaje' => $puntaje,
-   
+            'puntaje' => $puntaje,   
             'contador' =>$usu_creacion //aun no captura el usuario
         );
         $this->db->insert('registro', $data);		
@@ -62,22 +58,18 @@ class Ahorcado extends CI_Controller {
 	}
 
 
-	public function nuevo($ida=null){	
-	
-      
+	public function nuevo($ida=null){
             $data['id_persona']=$ida;
             $data['puntaje_id'] = $this->ahorcado_model->get_puntaje($ida);
             $data['preguntas'] = $this->ahorcado_model->get_preguntas();
             $data['ronda'] = $this->ahorcado_model->get_ronda($ida);
 			$cont=$this->ahorcado_model->get_ronda($ida);
+			$this->load->view('ahorcado', $data);				
+	}
 
-		
-				$this->load->view('ahorcado', $data);	
-			
-
-
-		
-		
+	public function ingreso($ida=null){	
+            $data['id_persona']=$ida;   
+			$this->load->view('ahorcado_inicio', $data);				
 	}
 
 	public function win($ida=null){
