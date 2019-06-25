@@ -128,13 +128,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="card-body">
                         <h5 class="card-title">TRIVIA</h5>
                         <p class="card-text">
-                            El juego conciste en encontrar la respuesta correcta
-                            en un conjunto de cartas, tienes 2 minutos para poder
-                            superar esta prueba.
-                            Si consigues encontrar todas las palabras tendras
-                            10 puntos ganados.
+                            Accede a la adminsitracion del juego
                         </p>
-                        <a href="<?php echo base_url('/trivia') ?>" class="btn btn-success">COMENZAR A JUGAR</a>
+                        <a href="<?php echo base_url('/Trivia/formulario') ?>" class="btn btn-warning">PREGUNTAS</a>
+                        <br>
+                        <a href="<?php echo base_url('/Trivia/sabias') ?>" class="btn btn-warning" style="margin-top: 5%;">¿SABIAS QUÉ?</a>
                     </div>
                 </div>
             </div>
