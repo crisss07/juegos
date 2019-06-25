@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<a href="<?php echo base_url('/Emparejados/formulario') ?>" class="btn btn-danger">Información</a>
 	</div>
 
-	<div class="container-fluid">
+	<div class="container">
 
 	  <div class="row">
 

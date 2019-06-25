@@ -132,11 +132,14 @@
                                             ?></td> -->
                                 <td>
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modal_edit" onclick="agregarform('<?php echo $datos ?>')">Editar</button>
-                                    <a id="button" type="button" class="btn btn-danger" onclick='if (window.confirm(" Do you really want to leave?")) { window.location.href = "<?php echo base_url("/configuraciones/elimina_usuario/$p->id"); ?>"; }'>Eliminar</a></td>
+                                    <a id="button" type="button" class="btn btn-danger" onclick='if (window.confirm("Desea eliminar a esta persona?")) { window.location.href = "<?php echo base_url("/configuraciones/elimina_usuario/$p->id"); ?>"; }'>Eliminar</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
                 </table>
+                <div style="height: 60px;" class="col-lg-12 col-md-12">
+                    <a href="<?php echo base_url('/configuraciones/inicio'); ?>" class="btn btn-primary btn-lg">MENU PRINCIPAL</a>
+                </div>
 
             </div>
 
@@ -145,7 +148,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Formulario de Persona</h5>
                         </div>
                         <div class="modal-body">
                             <div class="col-md-12">
@@ -203,7 +206,7 @@
                                     </div>
 
                                     <hr class="mb-4">
-                                    <button class="btn btn-warning btn-lg btn-block" type="submit">REGISTRARME</button>
+                                    <button class="btn btn-warning btn-lg btn-block" type="submit">GUARDAR</button>
                                 </form>
                             </div>
                         </div>
@@ -249,7 +252,7 @@
         });
 
         function agregarform(datos) {
-            
+
             d = datos.split('||');
             // console.log(d);
             $('#persona_id').val(d[0]);

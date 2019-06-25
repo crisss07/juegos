@@ -74,5 +74,10 @@ class Configuraciones extends CI_Controller {
 	{
 
 	}
+
+	public function inicio()
+	{
+		$this->load->view('configuraciones/inicio');
+	}
 }
 	
