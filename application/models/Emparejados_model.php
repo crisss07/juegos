@@ -10,7 +10,7 @@ class Emparejados_model extends CI_Model {
 	}
 
 	public function datos(){
-		$data = $this->db->query("SELECT * FROM emparejados ORDER BY rand() LIMIT 10")->result();
+		$data = $this->db->query("SELECT * FROM emparejados WHERE estado = 1 ORDER BY rand() LIMIT 10")->result();
 		
 		return $data;
 	}

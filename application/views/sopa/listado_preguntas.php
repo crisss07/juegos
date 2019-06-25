@@ -186,22 +186,7 @@
             });
         });
 
-        function agregarform(datos) {
-
-            d = datos.split('||');
-            console.log(d);
-            $('#id').val(d[0]);
-            $('#pregunta').val(d[1]);
-        }
-
-        function nueva_persona() {
-
-            $('#id').val("");
-            $('#nombres').val("");
-
-            $("#Modal_edit").modal('show');
-            // console.log("Hizo click");
-        }
+       
     </script>
 </body>
 

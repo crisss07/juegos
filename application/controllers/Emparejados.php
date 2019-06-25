@@ -12,7 +12,6 @@ class Emparejados extends CI_Controller {
     public function index()
 	{
 		$datos['emparejados']=$this->Emparejados_model->datos();
-
 		$this->load->view('emparejados', $datos);
 	}	
 
@@ -58,44 +57,56 @@ class Emparejados extends CI_Controller {
 	}
 
 	public function guardar_formulario(){
-        $mi_imagen = 'img_pregunta';
-        $mi_imagen1 = 'img_respuesta';
+		$valor_id = $this->input->post('id');
+		if($valor_id != " "){
+			$data = array( 
+				'pregunta' => $this->input->post('pregunta'),
+				'respuesta' => $this->input->post('respuesta'),
+					);
+			$this->db->where('id', $valor_id);
+			$this->db->update('emparejados', $data); 
+			redirect(base_url('Emparejados/formulario'));
+		}else{
+			$mi_imagen = 'img_pregunta';
+	        $mi_imagen1 = 'img_respuesta';
 
-        $valor = NULL;
+	        $valor = NULL;
 
-	    $config['upload_path'] = "./public/img_emparejados";
-	    $config['file_name'] = "imagen";
-	    $config['allowed_types'] = "gif|jpg|jpeg|png";
-	    $config['max_size'] = "50000";
-	    $config['max_width'] = "2000";
-	    $config['max_height'] = "2000";
+		    $config['upload_path'] = "./public/img_emparejados";
+		    $config['file_name'] = "imagen";
+		    $config['allowed_types'] = "gif|jpg|jpeg|png";
+		    $config['max_size'] = "50000";
+		    $config['max_width'] = "2000";
+		    $config['max_height'] = "2000";
 
-	    $this->load->library('upload', $config);
+		    $this->load->library('upload', $config);
 
-	    if (!$this->upload->do_upload($mi_imagen)) {
-	        //*** ocurrio un error
-	        $data['uploadError'] = $this->upload->display_errors();
-	        echo $this->upload->display_errors();
-	    }else { 
-			$w = $this->upload->data(); 
-			$valor['img_p']= $w['file_name'];
-		} 
-	    if (!$this->upload->do_upload($mi_imagen1)) {
-	        //*** ocurrio un error
-	        $data['uploadError'] = $this->upload->display_errors();
-	        echo $this->upload->display_errors();
-	    }else { 
-			$w = $this->upload->data(); 
-			$valor['img_r']= $w['file_name'];	
-		} 
-		$data = array( 
-			'pregunta' => $this->input->post('pregunta'),
-			'respuesta' => $this->input->post('respuesta'),
-			'img_pregunta' => $valor['img_p'],
-			'img_respuesta' => $valor['img_r'],
-				);
-		$this->db->insert('emparejados', $data); 
-		redirect(base_url('Emparejados/formulario'));
+		    if (!$this->upload->do_upload($mi_imagen)) {
+		        //*** ocurrio un error
+		        $data['uploadError'] = $this->upload->display_errors();
+		        echo $this->upload->display_errors();
+		    }else { 
+				$w = $this->upload->data(); 
+				$valor['img_p']= $w['file_name'];
+			} 
+		    if (!$this->upload->do_upload($mi_imagen1)) {
+		        //*** ocurrio un error
+		        $data['uploadError'] = $this->upload->display_errors();
+		        echo $this->upload->display_errors();
+		    }else { 
+				$w = $this->upload->data(); 
+				$valor['img_r']= $w['file_name'];	
+			} 
+			$data = array( 
+				'pregunta' => $this->input->post('pregunta'),
+				'respuesta' => $this->input->post('respuesta'),
+				'img_pregunta' => $valor['img_p'],
+				'img_respuesta' => $valor['img_r'],
+					);
+			$this->db->insert('emparejados', $data); 
+			redirect(base_url('Emparejados/formulario'));
+		}
+        
 	    
 	}
 	public function eliminar($id){

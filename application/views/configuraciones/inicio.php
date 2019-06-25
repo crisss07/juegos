@@ -85,7 +85,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <a href="<?php echo base_url('/opciones/informacion') ?>" class="btn btn-danger">Información</a>
         <a href="#" class="btn btn-success">Ranking</a>
         <a href="#" class="btn btn-primary">Ranking personal</a>
-        <a href="<?php echo base_url('/Emparejados/formulario') ?>" class="btn btn-danger">Información</a>
     </div>
 
     <div class="container">
@@ -143,13 +142,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="card-body">
                         <h5 class="card-title">EMPAREJADOS</h5>
                         <p class="card-text">
-                            El juego conciste en escoger la pregunta con su respuesta correcta
-                            lo mas rapido posible, tienes 3 minutos para poder
-                            superar esta prueba.
-                            Si consigues encontrar todas las palabras tendras
-                            30 puntos ganados.
+                            Accede a la adminsitracion del juego.
                         </p>
-                        <a href="#" class="btn btn-primary" disabled>PROXIMAMENTE</a>
+                        <a href="<?php echo base_url('/Emparejados/formulario') ?>" class="btn btn-primary" disabled>ADMINISTRAR</a>
                     </div>
                 </div>
             </div>
