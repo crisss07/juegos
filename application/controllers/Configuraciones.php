@@ -26,6 +26,7 @@ class Configuraciones extends CI_Controller {
 		// vdebug($this->input->post(), true, false, true);
 		$data = array(
 			'nombres'=>$this->input->post('nombres'),
+			'perfil'=>'Jugador',
 			'ap'=>$this->input->post('ap'),
 			'am'=>$this->input->post('am'),
 			'ci'=>$this->input->post('ci'),
@@ -36,11 +37,26 @@ class Configuraciones extends CI_Controller {
 			'estado'=>'Habilitado',
 		);
 		$this->db->insert('personas', $data);
+		redirect(base_url('configuraciones/registrado'));
 	}
 
 	public function registrado()
 	{
-			
+		$this->load->view('configuraciones/registrado');
+		// echo 'ya se registro';
+	}
+
+	public function listado()
+	{
+		$this->db->order_by('id', 'DESC');
+		$data['personas'] = $this->db->get('personas')->result();
+		// vdebug($data, true, false, true);
+		$this->load->view('configuraciones/listado', $data);
+	}
+
+	public function elimina_usuario($idUsuario = null)
+	{
+		
 	}
 }
 	
