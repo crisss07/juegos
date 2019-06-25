@@ -132,7 +132,7 @@
                                             ?></td> -->
                                 <td>
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modal_edit" onclick="agregarform('<?php echo $datos ?>')">Editar</button>
-                                    <a id="button" type="button" class="btn btn-danger" onclick='if (window.confirm(" Do you really want to leave?")) { window.location("<?php echo base_url("/configuraciones/elimina_usuario/$p->id"); ?>"); }'>Eliminar</a></td>
+                                    <a id="button" type="button" class="btn btn-danger" onclick='if (window.confirm(" Do you really want to leave?")) { window.location.href = "<?php echo base_url("/configuraciones/elimina_usuario/$p->id"); ?>"; }'>Eliminar</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>

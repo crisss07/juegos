@@ -53,15 +53,21 @@ class Configuraciones extends CI_Controller {
 
 	public function listado()
 	{
+		$this->db->where('borrado IS NULL');
 		$this->db->order_by('id', 'DESC');
 		$data['personas'] = $this->db->get('personas')->result();
-		// vdebug($data, true, false, true);
 		$this->load->view('configuraciones/listado', $data);
+		// vdebug($data, true, false, true);
 	}
-
+	
 	public function elimina_usuario($idUsuario = null)
 	{
-		
+		// vdebug($idUsuario, true, false, true);
+		$ahora = date("Y-m-d H:i:s"); 
+		$this->db->where('id', $idUsuario);
+		$this->db->set('borrado', $ahora);
+		$this->db->update('personas');
+		redirect(base_url('configuraciones/listado'));
 	}
 
 	public function guarda_edicion()
