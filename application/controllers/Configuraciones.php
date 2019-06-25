@@ -36,7 +36,12 @@ class Configuraciones extends CI_Controller {
 			'celular'=>$this->input->post('celular'),
 			'estado'=>'Habilitado',
 		);
-		$this->db->insert('personas', $data);
+		if($this->input->post('id')==null){
+			$this->db->insert('personas', $data);
+		}else{
+			$this->db->where('id', $this->input->post('id'));
+			$this->db->update('personas', $data);
+		}
 		redirect(base_url('configuraciones/registrado'));
 	}
 
@@ -57,6 +62,11 @@ class Configuraciones extends CI_Controller {
 	public function elimina_usuario($idUsuario = null)
 	{
 		
+	}
+
+	public function guarda_edicion()
+	{
+
 	}
 }
 	

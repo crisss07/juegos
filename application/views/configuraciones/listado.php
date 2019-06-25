@@ -87,7 +87,7 @@
             <div class="col-12">
                 <h1 class="col-12" align="center">USUARIOS REGISTRADOS</h1>
                 <div style="height: 60px;" class="col-lg-4 col-md-2">
-                    <button style="margin: auto;" type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#Modal_insert">Nueva Pregunta</button>
+                    <button style="margin: auto;" type="button" class="btn btn-success btn-lg" data-toggle="modal" onclick="nueva_persona();">Nueva persona</button>
                 </div>
                 <table id="example" class="table table-striped table-bordered">
                     <thead>
@@ -106,10 +106,10 @@
                     <tbody>
                         <?php foreach ($personas as $p) : ?>
                             <?php
-                            $dat$p->idos = $p->id . "||" .
-                                $p->id$p->perfil . "||" .
-                                $p->id$p->nombres . "||" .
-                                $p->id$p->ap . "||" .
+                            $datos = $p->id . "||" .
+                                $p->perfil . "||" .
+                                $p->nombres . "||" .
+                                $p->ap . "||" .
                                 $p->am . "||" .
                                 $p->ci . "||" .
                                 $p->fecha_nacimiento . "||" .
@@ -128,7 +128,7 @@
                                 </td>
                                 <td><?php echo $p->email; ?></td>
                                 <td><?php echo $p->celular; ?></td>
-                                <!-- <td><?php 
+                                <!-- <td><?php
                                             ?></td> -->
                                 <td>
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modal_edit" onclick="agregarform('<?php echo $datos ?>')">Editar</button>
@@ -153,7 +153,7 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="firstName">Nombres</label>
-                                            <input type="hidden" id="id">
+                                            <input type="hidden" id="persona_id" value="" name="id">
                                             <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Ej: Faviana Lucia" required>
                                         </div>
                                         <div class="col-md-3 mb-3">
@@ -211,49 +211,6 @@
                 </div>
             </div>
 
-            <!-- Modal Insercion-->
-            <div class="modal fade" id="Modal_insert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Preguntas</h5>
-                        </div>
-                        <div class="modal-body">
-                            <!--<form action="<?php echo base_url(); ?>edificio/update" method="POST">-->
-                            <?php echo form_open('trivia/insertar', array('method' => 'POST')); ?>
-
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Pregunta</label>
-                                <textarea class="form-control" id="pregunta" name="pregunta"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="control-label">Respuesta 1</label>
-                                <input type="text" class="form-control" id="respuesta_uno" name="respuesta_uno">
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="control-label">Respuesta 2</label>
-                                <input type="text" class="form-control" id="respuesta_dos" name="respuesta_dos">
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="control-label">Respuesta 3</label>
-                                <input type="text" class="form-control" id="respuesta_tres" name="respuesta_tres">
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="control-label">Respuesta Correcta</label>
-                                <input type="integer" class="form-control" id="respuesta_correcta" name="respuesta_correcta">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -291,11 +248,11 @@
             });
         });
 
-
         function agregarform(datos) {
+            
             d = datos.split('||');
-            console.log(d);
-            $('#id').val(d[0]);
+            // console.log(d);
+            $('#persona_id').val(d[0]);
             $('#nombres').val(d[2]);
             $('#ap').val(d[3]);
             $('#am').val(d[4]);
@@ -304,6 +261,22 @@
             $('#ciudad').val(d[7]);
             $('#email').val(d[8]);
             $('#celular').val(d[9]);
+        }
+
+        function nueva_persona() {
+
+            $('#persona_id').val("");
+            $('#nombres').val("");
+            $('#ap').val("");
+            $('#am').val("");
+            $('#ci').val("");
+            $('#fecha_nacimiento').val("");
+            $('#ciudad').val("");
+            $('#email').val("");
+            $('#celular').val("");
+
+            $("#Modal_edit").modal('show');
+            // console.log("Hizo click");
         }
     </script>
 </body>
