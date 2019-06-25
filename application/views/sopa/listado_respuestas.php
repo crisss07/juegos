@@ -87,8 +87,9 @@
             <div class="col-12">
                 <h1 class="col-12" align="center">LISTADO RESPUESTAS</h1>
                 <h3 align="center" style="color: #ffffff;"><?php echo $pregunta->pregunta; ?></h3>
-                <div style="height: 60px;" class="col-lg-4 col-md-2">
+                <div style="height: 60px;" class="col-lg-12 col-md-2">
                     <button style="margin: auto;" type="button" class="btn btn-success btn-lg" data-toggle="modal" onclick="nueva_respuesta(<?php echo $pregunta->id; ?>);">Nueva respuesta</button>
+                    <a href="<?php echo base_url('/sopa/listado_preguntas/') ?>" class="btn btn-light btn-lg" style="float: rigth;">Listado Preguntas</a>
                 </div>
                 <table id="example" class="table table-striped table-bordered">
                     <thead>
@@ -112,7 +113,7 @@
                                 <td><?php echo $r->respuesta; ?></td>
                                 <td>
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modal_edit" onclick="agregarform('<?php echo $datos ?>')">Editar</button>
-                                    <a id="button" class="btn btn-danger" onclick='if (window.confirm("Quieres eliminar esta respuesta?")) { window.location.href = "<?php echo base_url("/sopa/elimina_pregunta/$r->id"); ?>"; }'>Eliminar</a>
+                                    <a id="button" class="btn btn-danger" onclick='if (window.confirm("Quieres eliminar esta respuesta?")) { window.location.href = "<?php echo base_url("/sopa/elimina_respuesta/$r->id/$r->sopapregunta_id"); ?>"; }'>Eliminar</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

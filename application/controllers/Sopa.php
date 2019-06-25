@@ -176,4 +176,11 @@ class Sopa extends CI_Controller {
 		redirect(base_url("sopa/listado_respuestas/$idPregunta"));
 	}
 
+	public function elimina_respuesta($idRespuesta = null, $idPregunta = null)
+	{
+		// vdebug($idSopa, true, false, true);
+		$this->db->delete('soparespuestas', array('id' => $idRespuesta));
+		redirect(base_url("sopa/listado_respuestas/$idPregunta"));
+	}
+
 }
