@@ -74,6 +74,41 @@
     </div>
 
 
+<!--modal editar-->
+<div class="modal fade" id="modal_editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edicion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="post"  action="<?php echo site_url('Ahorcado/update')?>">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Pregunta</label>
+              <input type="text" class="form-control" id="id_e" name="id_e" aria-describedby="emailHelp" placeholder="....." hidden="">
+              <input type="text" class="form-control" id="pregunta_e" name="pregunta_e" aria-describedby="emailHelp" placeholder=".....">             
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Respuesta <span style="color:red"> (Solo una palabra y sin ascentos)</span></label>
+              <input type="text" class="form-control" id="respuesta_e" name="respuesta_e" aria-describedby="emailHelp" placeholder=".....">             
+            </div>
+         
+          
+            
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success" value="save">Guardar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>          
+          </div>
+          </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
     <?php $cont=1; ?>
 
 
@@ -88,13 +123,19 @@
   </thead>
   <tbody>
     
-     <?php foreach($preguntas as $row) {?>
+     <?php foreach($preguntas as $row) {
+      $dato = $row->ahorcado_id."||".
+              $row->pregunta."||".
+              $row->respuesta;
+   ?>
     <tr>
       <th scope="row"><?php echo $cont++; ?></th>
       <td><?php echo $row->pregunta; ?></td>
       <td><?php echo $row->respuesta; ?></td> 
       <td>
-        <a href="<?php echo site_url('Ahorcado/edit');?>/<?php echo $row->ahorcado_id;?>"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-align-left"></span>Editar</button></a> 
+        <!--<a href="<?php echo site_url('Ahorcado/edit');?>/<?php echo $row->ahorcado_id;?>"><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-align-left"></span>Editar</button></a>--> 
+
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal_editar" onclick="agregarform('<?php echo $dato ?>')">Editar</button>
                    <a href="<?php echo site_url('Ahorcado/delete');?>/<?php echo $row->ahorcado_id;?>"><button type="button" class="btn btn-danger">Eliminar</button></a>
       </td>
     </tr>
@@ -125,3 +166,14 @@
 
 } );
 </script>
+
+<script>
+        function agregarform(dato)
+        {
+             d=dato.split('||');
+             $('#id_e').val(d[0]);
+              $('#pregunta_e').val(d[1]);
+                  $('#respuesta_e').val(d[2]);
+             
+        }
+    </script>
