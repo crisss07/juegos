@@ -50,18 +50,19 @@
 						<input class="input100" type="password" name="contrasenia">
 						<span class="focus-input100" data-placeholder="Contraseña"></span>
 					</div>
-					 <?php
-				       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
-				       {
-				          echo "<div style='color:red'>Usuario o contraseña invalido </div>";
-				       }
-				     ?>
+	
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Ingresar
 						</button>
 					</div>
+									 <?php
+				       if(isset($_GET["fallo"]) && $_GET["fallo"] == 'true')
+				       {
+				          echo "<br><div style='color:red' align='center'>Usuario o contraseña invalido </div>";
+				       }
+				     ?>
 
 
 					<ul class="login-more p-t-190">

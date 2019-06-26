@@ -13,7 +13,9 @@ class Login extends CI_Controller {
 	{	
             redirect(base_url() . "Login/nuevo/");      	
 	}	
-	public function nuevo(){           		
+	public function nuevo(){
+
+			           		
 			$this->load->view('login');
 	}
 
@@ -25,7 +27,7 @@ class Login extends CI_Controller {
 		
 		$res = $this->Login_model->login($usuario, $contrasena);
 		if (!$res) {
-			 redirect(base_url() . "Login");   
+			 redirect(base_url() . "Login/nuevo?fallo=true");   
 		}
 		else{
 
