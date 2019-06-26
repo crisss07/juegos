@@ -84,14 +84,21 @@ class Ahorcado extends CI_Controller {
 
 	public function nuevo($ida=null){
 
-
 		if ($this->session->userdata("login")) {
-           		$data['id_persona']=$ida;
+           	$data['id_persona']=$ida;
             $data['puntaje_id'] = $this->ahorcado_model->get_puntaje($ida);
             $data['preguntas'] = $this->ahorcado_model->get_preguntas();
             $data['ronda'] = $this->ahorcado_model->get_ronda($ida);
 			$cont=$this->ahorcado_model->get_ronda($ida);
-			$this->load->view('ahorcado', $data);
+            if(($cont->contador)>2  ){
+                 redirect(base_url()."Ahorcado/contador/".$ida);
+            }
+            else{                
+                $this->load->view('ahorcado', $data);
+            }
+
+
+            
         } else {
             redirect(base_url()."Login");
         }
@@ -154,12 +161,7 @@ class Ahorcado extends CI_Controller {
 				$this->load->view('ahorcado_count', $data);	
         } else {
             redirect(base_url()."Login");
-        }
-      
-            
-		
-	
-		
+        }		
 	}
 
 	public function menu($ida=null){  
@@ -218,9 +220,7 @@ class Ahorcado extends CI_Controller {
             'respuesta' => strtolower($this->input->post('respuesta')),                   
         	);
         	$this->db->where('ahorcado_id', $ida);
-        	$this->db->update('ahorcado', $data);	
-       
-
+        	$this->db->update('ahorcado', $data);
 			redirect(base_url('ahorcado/listado/'));
         } else {
             redirect(base_url()."Login");
