@@ -492,6 +492,15 @@
                                  }
                             });
                             $("#modalGano").modal('show');
+                        }else{
+                            $.ajax({
+                                 type: "POST",
+                                 url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
+                                 data: {"persona_id": "56", 'puntaje': '0'},
+                                 success: function(response){
+                                     // alert(response);
+                                 }
+                            });
                         }
                     }
 

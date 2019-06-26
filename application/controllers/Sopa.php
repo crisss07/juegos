@@ -55,12 +55,12 @@ class Sopa extends CI_Controller {
 	{
 		$persona_id = $this->session->userdata("usuario_id");
 		$ahora = date("Y-m-d H:i:s");
-		$puntaje = $this->input->post('persona_id');
+		$puntaje = $this->input->post('puntaje');
 
 		$data = array(
 			'persona_id'=>$persona_id,
 			'nombre_juego'=>'sopa',
-			'puntaje'=>10,
+			'puntaje'=>$puntaje,
 			'contador'=>1,
 			'fecha'=>$ahora
 		);
@@ -81,7 +81,7 @@ class Sopa extends CI_Controller {
 		$arrayy = array(
 				'persona_id' =>$persona_id,
 				'puntaje' =>$score,
-				'estado' =>'activo',
+				'estado' =>'1',
 				'fecha' =>$hoy
 				);
 		$this->db->insert('entrega', $arrayy);
