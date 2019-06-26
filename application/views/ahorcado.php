@@ -34,12 +34,7 @@
 			</div>
 		</div>
     
-    <?php 
-        $id = $_SESSION['usuario_id'];
-        echo $id;
-    ?>
-
-		
+  
 		<div class="row">
 			<div class="col-md-3 " >				
 			</div>

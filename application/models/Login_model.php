@@ -14,8 +14,8 @@ class Login_model extends CI_Model {
 
 	public function login($usuario, $contrasenia)
 	{
-		$this->db->where('ci', $usuario);
-		$this->db->where('ci', $contrasenia);
+		$this->db->where('email', $usuario);
+		$this->db->where('password', $contrasenia);
 		//$this->db->where('activo', '1');
 		
 		$resultado = $this->db->get("personas");
