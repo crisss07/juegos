@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 	{		
 		$usuario = $this->input->post("usuario");
 		$contrasena = $this->input->post("contrasenia");
-		//$contrasenia = md5($contrasena);
+		$contrasena = md5($contrasena);
 		
 		$res = $this->Login_model->login($usuario, $contrasena);
 		if (!$res) {
