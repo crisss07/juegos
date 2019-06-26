@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script type="text/javascript">
   //LOGICA PRINCIPAL DEL JUEGO
   /*En caso de añadir una imagen al juego solo es necesario añadir un td en HTML nuevo y la imagen en arrayImagenes*/
@@ -167,22 +168,25 @@
                 seconds = seconds < 10 ? "0" + seconds : seconds;
 
                 display.textContent = minutes + ":" + seconds;
-                console.log(display.textContent);
+                //console.log(display.textContent);
 
-                if (--timer < 0) {
-                    timer = duration;
-                    //$("#modalTiempo").modal('show');
+                if (--timer == 0) {
+                  
+                  if(contadorAciertos < 10){
+                    timer = 0,0,0 ;
                     var valor = 1;
-                    alert('Su tiempo termino');
                     $.ajax({
                       type:'POST',
-                      url:"<?php echo base_url();?>emparejados/insertar_perdida",
+                      url:"<?php //echo base_url();?>emparejados/insertar_perdida",
                       dataType: 'json',
                       data:{valor:valor},
                     });
-                    //$('#modalTiempo').modal('show');
-                    location.reload(true);
-
+                    $('#modalTiempo').modal('show');
+                  }
+                  document.getElementById('time').style.display = 'none';
+                    
+                    //$("#modalTiempo").modal('show');
+                    
                 }
             }, 1000);
         }
@@ -197,30 +201,9 @@
    //        return zeroIzq(Math.floor(s / 3600))+':'+zeroIzq(Math.floor(s%3600 / 60))+':'+zeroIzq(Math.floor((s%3600)%60));
         return zeroIzq(Math.floor(s%3600 / 60))+':'+zeroIzq(Math.floor((s%3600)%60));
     }
-    // function actualizar(){
-    //     if(fin_juego == 0){
-    //         var dif = Date.now() - inicioConteo;
-    //         dif = Math.round(dif / 1000);
-    //         cronometro.innerHTML = formatoSegundos(dif);
-    //         console.log(cronometro.innerHTML);
-    //         if (cronometro.innerHTML == '01:00') {
-    //           var valor = 1;
-    //           alert('Su tiempo termino');
-    //           $.ajax({
-    //             type:'POST',
-    //             url:"<?php //echo base_url();?>emparejados/insertar_perdida",
-    //             dataType: 'json',
-    //             data:{valor:valor},
-    //         });
-    //           //$('#modalTiempo').modal('show');
-    //           location.reload(true);
-    //         }
-    //         idTimeout = setTimeout(actualizar,1000);
-    //     }
-    // }
-
+    
     function iniciar(){
-      var fiveMinutes = 60 * 1,
+      var fiveMinutes = 60 /4,
       display = document.querySelector('#time');
       startTimer(fiveMinutes, display);
         // clearTimeout(idTimeout);
@@ -229,84 +212,33 @@
     }
 
     function stop(){
-      clearInterval('cronometro');
-      alert('stop');
+
+     
+      alert(startTimer);
+      
     }
+
+    $(document).ready(function()
+   {
+      $("#modalInicial").modal("show");
+   });
+
+    $(".cerrarModal").click(function(){
+      $("#modalInicial").modal('hide');
+    });
+
+    $(".volver_jugar").click(function(){
+       location.reload(true);
+    });
+
+    $(".ir_menu").click(function(){
+      window.location.href = "<?php echo base_url('/') ?>";
+    });
 
     //PANEL DE RESULTADOS
     $("#btn_reiniciar").click(function(){
         location.reload(true);
     });
-    
-    // $("#btn_inf_jugada_01").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_01").show();
-    // });
-    
-    // $("#btn_inf_jugada_02").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_02").show();
-    // });
-    
-    // $("#btn_inf_jugada_03").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_03").show();
-    // });
-    
-    // $("#btn_inf_jugada_04").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_04").show();
-    // });
-    
-    // $("#btn_inf_jugada_05").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_05").show();
-    // });
-      
-    // $("#btn_inf_jugada_06").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_06").show();
-    // });
-    
-    // $("#btn_inf_jugada_07").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_07").show();
-    // });
-    
-    // $("#btn_inf_jugada_08").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_08").show();
-    // });
-    
-    // $("#btn_inf_jugada_09").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_09").show();
-    // });
-    
-    // $("#btn_inf_jugada_10").click(function(){
-    //     $("#resultados").hide();
-    //     $("#infografia_jugada").show();
-    //     $(".inf_jugada").hide();
-    //     $("#inf_jugada_10").show();
-    // });
     
     $("#btn_volver").click(function(){
         $("#infografia_jugada").hide();
@@ -318,40 +250,7 @@
             scrollTop: $("#juego_de_parejas .preguntas").scrollTop() + 100
         }, 500, 'swing');
     });
-    // //COMPARTIR RESULTADOS EN REDES
-    // window.fbAsyncInit = function() {
-    //     FB.init({
-    //       appId            : '1928749157200161',
-    //       autoLogAppEvents : true,
-    //       xfbml            : true,
-    //       version          : 'v2.12'
-    //     });
-    // };
-
-    // (function(d, s, id){
-    //     var js, fjs = d.getElementsByTagName(s)[0];
-    //     if (d.getElementById(id)) {return;}
-    //     js = d.createElement(s); js.id = id;
-    //     js.src = "https://connect.facebook.net/en_US/sdk.js";
-    //     fjs.parentNode.insertBefore(js, fjs);
-    // }(document, 'script', 'facebook-jssdk'));
-
-    // $("#btn_compartir_facebook").click(function(){
-    //     var tiempo_juego;
-    //     tiempo_juego = document.getElementById("tiempo_final").textContent;
-    //     FB.ui({
-    //         method: 'share',
-    //         href: 'http://beta.eltiempo.com/deportes/las-10-mejores-jugadas-159307',
-    //         quote:'Estas son las 10 mejores jugadas del Fútbol, mi tiempo fue de '+tiempo_juego+' http://www.eltiempo.com/deportes/futbol-internacional/especial-las-10-mejores-jugadas-futbol-196998',
-    //     }, function(response){});
-    // });
-    
-    // $("#btn_compartir_twitter").click(function(){
-    //     var tiempo_juego;
-    //     tiempo_juego = document.getElementById("tiempo_final").textContent;
-    //     var url='http://twitter.com/home?status=Mi%20tiempo%20fue%20de%20'+tiempo_juego+'%20http://www.eltiempo.com/deportes/futbol-internacional/especial-las-10-mejores-jugadas-futbol-196998'; 
-    //     window.open(url,'ventanacompartir', 'toolbar=0, status=0, width=650, height=450');
-    // });
+   
   });
   </script>
 
@@ -364,6 +263,7 @@
         <p>🅰🅿🆁🅴🅽🅳🅴   🅼🅰🆂   🆂🅾🅱🆁🅴   🅽🆄🅴🆂🆃🆁🅾   🅿🅰🅸🆂   🅹🆄🅶🅰🅽🅳🅾
         </p>
         <p id="time" class="titulo">01:00</p>
+       
       </div>
       <div id="tablero_juego">
         <div class="casilla" id="0"></div>
@@ -389,6 +289,7 @@
         
       </div>
     </div>
+    
     <div id="panel_resultados">
       <div id="resultados">
         <label class="label_tiempo">Tiempo:</label><br/><span class="tiempo_final">-- seg</span>
@@ -416,9 +317,64 @@
           </table>
         </div>
         <div><p class="flecha">&downarrow;</p></div>
-        <hr/><br/><br/><span id="btn_reiniciar">Reiniciar</span>
+        <hr/><br/><br/><span id="btn_reiniciar" class="volver_jugar">Reiniciar</span>
       </div>
     </div>
   </div>
+  <div class="modal fade" id="modalInicial" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalInicialLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title contenidos" id="modalInicialLabel" style="color: #ff0000">SOPA DE LETRAS</h5>
+    <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+     -->      </div>
+          <div class="modal-body">
+            <p class="contenidos">
+                El juego conciste en encontrar las palabras dentro
+                de la sopa de letras, tienes 2 minutos para poder
+                superar esta prueba.
+                Si consigues encontrar todas las palabras tendras
+                10 puntos ganados.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success btn-lg btn-block cerrarModal">JUGAR</button>
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 2 -->
+
+    <!-- Modal cierre de tiempo -->
+    <div class="modal fade" id="modalTiempo" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTiempoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title contenidos" id="modalTiempoLabel" style="color: #ff0000">EMPAREJADOS</h5>
+    <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+     -->      </div>
+          <div class="modal-body">
+            <p class="contenidos">
+                TU TIEMPO HA FINALIZADO!!!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning btn-lg btn-block volver_jugar" >JUGAR</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block ir_menu" >MENU</button>
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin modal cierre de tiempo -->
+
+    <!-- Modal ganaste -->
+   
   </body>
 </html>

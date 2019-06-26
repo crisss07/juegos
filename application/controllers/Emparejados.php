@@ -11,54 +11,72 @@ class Emparejados extends CI_Controller {
     
     public function index()
 	{
-		$datos['emparejados']=$this->Emparejados_model->datos();
-		$this->load->view('emparejados', $datos);
+		if ($this->session->userdata("login")) {
+           	$datos['emparejados']=$this->Emparejados_model->datos();
+			$this->load->view('emparejados', $datos);
+        } else {
+            redirect(base_url()."Login");
+        }
+		
 	}	
 
 	public function insertar()
 	{
-		$nueva_fecha_inicio = $this->input->post('fecha_inicio').$hora_inicio;
-		$nueva_fecha_fin = $this->input->post('fecha_inicio').$hora_final;
-		$id_persona = $this->input->post('valor');
+		if ($this->session->userdata("login")) {
+           	$fecha = date("Y-m-d H:i:s");
+		//$id_persona = $this->input->post('valor');
+		$persona_id = $this->session->userdata("usuario_id");
 
 		$data = array(
             //'codcatas' => $this->input->post('cod_catastral'), //input          
-            'persona_id' => $id_persona,
+            'persona_id' => $persona_id,
             'nombre_juego' =>'emparejados',
             'puntaje' => 30,
-            //'fecha' => now(), //agregar en la bd valor por defecto now()
+            'fecha' => $fecha, //agregar en la bd valor por defecto now()
             'contador' =>$usu_creacion //aun no captura el usuario
         );
-        $this->db->insert('registro', $data);		
-		redirect(base_url('ahorcado/win/'. $id_persona));
+        $this->db->insert('registro', $data);
+        } else {
+            redirect(base_url()."Login");
+        }
+				
+		
 	}
 
 	public function insertar_perdida()
 	{
-		$nueva_fecha_inicio = $this->input->post('fecha_inicio').$hora_inicio;
-		$nueva_fecha_fin = $this->input->post('fecha_inicio').$hora_final;
-		$id_persona = $this->input->post('valor');
+		$persona_id = $this->session->userdata("usuario_id");
+		$fecha = date("Y-m-d H:i:s");
+		//$id_persona = $this->input->post('valor');
 
 		$data = array(
             //'codcatas' => $this->input->post('cod_catastral'), //input          
-            'persona_id' => $id_persona,
+            'persona_id' => $persona_id,
             'nombre_juego' =>'emparejados',
             'puntaje' => 0,
-            //'fecha' => now(), //agregar en la bd valor por defecto now()
+            'fecha' => $fecha, //agregar en la bd valor por defecto now()
             'contador' =>$usu_creacion //aun no captura el usuario
         );
         $this->db->insert('registro', $data);		
-		redirect(base_url('ahorcado/win/'. $id_persona));
+		//redirect(base_url('Emparejados/formulario'));
 	}
 	
 	public function formulario(){
-		$datos['emparejados']=$this->Emparejados_model->lista();
-		$this->load->view('formulario_emparejados', $datos);
+		if ($this->session->userdata("login")) {
+           $datos['emparejados']=$this->Emparejados_model->lista();
+			$this->load->view('formulario_emparejados', $datos);
+        } else {
+            redirect(base_url()."Login");
+        }
+		
 	}
 
 	public function guardar_formulario(){
-		$valor_id = $this->input->post('id');
+		if ($this->session->userdata("login")) {
+           $valor_id = $this->input->post('id');
+
 		if($valor_id != " "){
+
 			$data = array( 
 				'pregunta' => $this->input->post('pregunta'),
 				'respuesta' => $this->input->post('respuesta'),
@@ -106,44 +124,29 @@ class Emparejados extends CI_Controller {
 			$this->db->insert('emparejados', $data); 
 			redirect(base_url('Emparejados/formulario'));
 		}
-        
+        } else {
+            redirect(base_url()."Login");
+        }    
 	    
 	}
 	public function eliminar($id){
-		$fecha = date('Y-m-d h:m:s');
-		$array = array(
-			'estado' => 0,
-			'fecha_eliminar' =>$fecha,
-		);
-
-		$this->db->where('id', $id);
-        $this->db->update('emparejados', $array);
-		redirect(base_url('Emparejados/formulario'));
+		if ($this->session->userdata("login")) {
+           	$persona_id = $this->session->userdata("usuario_id");
+			$fecha = date('Y-m-d h:m:s');
+			$array = array(
+				'estado' => 0,
+				'fecha_eliminar' =>$fecha,
+				'usu_eliminar' => $persona_id,
+			);
+			$this->db->where('id', $id);
+	        $this->db->update('emparejados', $array);
+			redirect(base_url('Emparejados/formulario'));
+        } else {
+            redirect(base_url()."Login");
+        }
+		
 	}
 
-	public function editar(){
-		$array = array(
-			'predio_id' => $predio_id,
-			'nro_matricula_folio' => $nro_matricula_folio,
-			'nro_folio' => $nro_folio,
-			'fecha_folio' => $fecha_folio,
-			'superficie_legal' => $superficie_legal,
-			'nom_notario' => $nom_notario,
-			'nro_testimonio' => $nro_testimonio,
-			'fecha_testimonio' => $fecha_testimonio,
-			'partida' => $partida,
-			'partida_computarizada' => $partida_computarizada,
-			'foja' => $foja,
-			'libro' => $libro,
-			'fecha_reg_libro' => $fecha_reg_libro,
-			'usu_modificacion' => $usu_modificacion,
-			'fec_modificacion' => $fec_modificacion
-		);
-
-		$this->db->where('ddrr_id', $ddrr_id);
-        $this->db->update('catastro.predio_ddrr', $array);
-		redirect(base_url('Emparejados/formulario'));
-	}
 
 }
 
