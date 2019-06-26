@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 		
 		$res = $this->Login_model->login($usuario, $contrasena);
 		if (!$res) {
-			 redirect(base_url() . "Login/nuevo/");   
+			 redirect(base_url() . "Login");   
 		}
 		else{
 
@@ -47,6 +47,11 @@ class Login extends CI_Controller {
 				redirect(base_url() . "Configuraciones/inicio/");  
 			}				
 		}
+	}
+	public function logout()
+	{
+		$this->session->sess_destroy();	
+		redirect(base_url());
 	}
 }
 
