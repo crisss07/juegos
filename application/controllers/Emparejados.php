@@ -22,6 +22,7 @@ class Emparejados extends CI_Controller {
 
 	public function insertar()
 	{
+		$puntaje=30;
 		if ($this->session->userdata("login")) {
            	$fecha = date("Y-m-d H:i:s");
 		//$id_persona = $this->input->post('valor');
@@ -31,11 +32,25 @@ class Emparejados extends CI_Controller {
             //'codcatas' => $this->input->post('cod_catastral'), //input          
             'persona_id' => $persona_id,
             'nombre_juego' =>'emparejados',
-            'puntaje' => 30,
+            'puntaje' => $puntaje,
             'fecha' => $fecha, //agregar en la bd valor por defecto now()
-            'contador' =>$usu_creacion //aun no captura el usuario
+            //'contador' =>$usu_creacion //aun no captura el usuario
         );
         $this->db->insert('registro', $data);
+        $puntos=$this->Emparejados_model->puntos($persona_id);
+
+       	if(($puntos->contador)==0){
+       		$data2 = array(
+               
+            'persona_id' => $persona_id,
+            'puntaje' => $puntaje,
+            'estado' =>1
+        	);
+        $this->db->insert('entrega', $data2);
+
+       	}else{
+       		$this->db->query("UPDATE entrega SET puntaje = puntaje+$puntaje WHERE persona_id=$persona_id and estado=1");
+       	}
         } else {
             redirect(base_url()."Login");
         }
