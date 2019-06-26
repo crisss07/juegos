@@ -26,31 +26,39 @@ class Emparejados extends CI_Controller {
 		if ($this->session->userdata("login")) {
            	$fecha = date("Y-m-d H:i:s");
 		//$id_persona = $this->input->post('valor');
-		$persona_id = $this->session->userdata("usuario_id");
+			$persona_id = $this->session->userdata("usuario_id");
 
-		$data = array(
-            //'codcatas' => $this->input->post('cod_catastral'), //input          
-            'persona_id' => $persona_id,
-            'nombre_juego' =>'emparejados',
-            'puntaje' => $puntaje,
-            'fecha' => $fecha, //agregar en la bd valor por defecto now()
-            //'contador' =>$usu_creacion //aun no captura el usuario
-        );
-        $this->db->insert('registro', $data);
-        $puntos=$this->Emparejados_model->puntos($persona_id);
+			$data = array(
+	            //'codcatas' => $this->input->post('cod_catastral'), //input          
+	            'persona_id' => $persona_id,
+	            'nombre_juego' =>'emparejados',
+	            'puntaje' => $puntaje,
+	            'fecha' => $fecha, //agregar en la bd valor por defecto now()
+	            //'contador' =>$usu_creacion //aun no captura el usuario
+	        );
+	        $this->db->insert('registro', $data);
+	        $puntos=$this->Emparejados_model->puntos($persona_id);
+	        $consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = 1")->row();
+			if ($consulta) {
+					$puntos = $puntaje + $consulta->puntaje;
+					 $data = array(
+		            'puntaje' => $puntos,
+		            'fecha' => $fecha
+			        );
+			        $this->db->where('id', $consulta->id);
+			        $this->db->update('entrega', $data);
+			}
+			else
+			{
+			$arrayy = array(
+					'persona_id' =>$persona_id,
+					'puntaje' =>$puntaje,
+					'fecha' =>$fecha,
+					'estado' => 1
+					);
+			$this->db->insert('entrega', $arrayy);
+			}
 
-       	if(($puntos->contador)==0){
-       		$data2 = array(
-               
-            'persona_id' => $persona_id,
-            'puntaje' => $puntaje,
-            'estado' =>1
-        	);
-        $this->db->insert('entrega', $data2);
-
-       	}else{
-       		$this->db->query("UPDATE entrega SET puntaje = puntaje+$puntaje WHERE persona_id=$persona_id and estado=1");
-       	}
         } else {
             redirect(base_url()."Login");
         }
