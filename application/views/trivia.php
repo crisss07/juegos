@@ -30,7 +30,10 @@
               <div class="playTxt col-md-12">¡Empieza a Jugar!</div>
             </div>
             <div class="play col-md-12">
-              <div class="playTxt" onclick="learn()">Acerca de Nosotros</div>
+              <div class="playTxt" onclick="learn()">Reglas de Juego</div>
+            </div>
+            <div class="play1 normal col-md-4" onclick="triv1()">
+              <div class="playTxt col-md-4">MENU PRINCIPAL</div>
             </div>
          </div>
        
@@ -58,12 +61,12 @@
       </div>
       <div class="learnUI">
         <h1 class="title">
-          <span class="I">El</span>
-          <span class="T">Objetivo</span>
-          <span class="R">Estratégico </span>
-          <span class="A">Vivienda</span>
+          <span class="I">Las</span>
+          <span class="T">Reglas</span>
+          <span class="R">Del </span>
+          <span class="A">Juego</span>
         </h1>
-        <div class="prueba">Es Contribuir a la reducción progresiva del déficit habitacional a través de políticas, normas, programas y proyectos integrales basados en la participación, autogestión, concurrencia, ayuda mutua, responsabilidad compartida y solidaridad social.
+        <div class="prueba">El juego consiste en elegir la respuesta correcta lo mas antes posible, cada respuesta correcta acumulas 2 puntos, una incorrecta disminuye 1 punto. Solo tienes 3 intentos por día
         <!-- <div class="trivMachine">
           <div class="lever" onclick="newlearn()">
             <div class="leverHandle" onclick="newLearn()"></div>
@@ -333,6 +336,11 @@ function learn() {
   document.querySelector(".learnOut").addEventListener("click", function(){
     document.querySelector(".learnUI").style.display = "none";
   });
+}
+
+function triv1() {
+  location = "/juegos";
+  
 }
 </script>
 

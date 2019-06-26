@@ -11,36 +11,25 @@ class Trivia extends CI_Controller {
 
     public function index()
 	{
-		$persona_id = 6;
+		$persona_id = $this->session->userdata("usuario_id");
+		// var_dump($persona_id);
 		$hoy = date("Y-m-d");
-
 		$res = $this->db->query("SELECT count(fecha)as numero
 									FROM registro
 									WHERE fecha like '$hoy%'
 									AND persona_id = '$persona_id'")->row();
-		// $num = $res->numero;
-		// if ($num < 3) {
+		$num = $res->numero;
+		if ($num < 3) {
 			$trivias['persona_id'] = $persona_id;
 			$trivias['triviaa'] = $this->db->query("SELECT * FROM trivia ORDER BY RAND()")->result();
 			$this->load->view('trivia', $trivias);
-		// }
-		// else
-		// {
-		// 	echo 'hola ya tienes 3 juegos jugados el dia de hoy';
-		// }
+		}
+		else
+		{
+			$this->load->view('trivia3');
+		}
 		
 	}
-
-	// public function prueba()
-	// {
-	// 	$consulta = $this->db->query("SELECT * FROM sabias ORDER BY RAND()")->result();
-	// 	foreach ($consulta as $con) {
-	// 		echo $con->nombre;
-	// 		}
- //        // $valor = $consulta->nombre;
-
- //        // var_dump($valor);
-	//  }
 
 	public function guarda($persona_id = null, $score = null)
 	{
@@ -55,6 +44,27 @@ class Trivia extends CI_Controller {
 			'contador' =>1
 			);
 		$this->db->insert('registro', $array);
+
+		$consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = 'activo'")->row();
+		if ($consulta) {
+				$puntos = $score + $consulta->puntaje;
+				 $data = array(
+	            'puntaje' => $puntos,
+	            'fecha' => $hoy
+		        );
+		        $this->db->where('id', $consulta->id);
+		        $this->db->update('entrega', $data);
+		}
+		else
+		{
+		$arrayy = array(
+				'persona_id' =>$persona_id,
+				'puntaje' =>$score,
+				'estado' =>'activo',
+				'fecha' =>$hoy
+				);
+		$this->db->insert('entrega', $arrayy);
+		}
 		redirect('Trivia');
 	}
 
