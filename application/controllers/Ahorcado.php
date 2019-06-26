@@ -215,9 +215,10 @@ class Ahorcado extends CI_Controller {
 	}
 	public function update($ida=null){
 		if ($this->session->userdata("login")) {
+            $ida=$this->input->post('id_e');
            		$data = array (            
-            'pregunta' => $this->input->post('pregunta'),
-            'respuesta' => strtolower($this->input->post('respuesta')),                   
+            'pregunta' => $this->input->post('pregunta_e'),
+            'respuesta' => strtolower($this->input->post('respuesta_e')),                   
         	);
         	$this->db->where('ahorcado_id', $ida);
         	$this->db->update('ahorcado', $data);
