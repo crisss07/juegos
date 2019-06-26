@@ -203,7 +203,7 @@
     }
     
     function iniciar(){
-      var fiveMinutes = 60 /4,
+      var fiveMinutes = 60 * 2,
       display = document.querySelector('#time');
       startTimer(fiveMinutes, display);
         // clearTimeout(idTimeout);
@@ -262,7 +262,7 @@
       <div id="cabecera_juego" align="center"><img alt="Juego de Parejas" id="imagen_juego" src="<?php echo base_url(); ?>public/imagenes/titulo.png"/>
         <p>🅰🅿🆁🅴🅽🅳🅴   🅼🅰🆂   🆂🅾🅱🆁🅴   🅽🆄🅴🆂🆃🆁🅾   🅿🅰🅸🆂   🅹🆄🅶🅰🅽🅳🅾
         </p>
-        <p id="time" class="titulo">01:00</p>
+        <p id="time" class="titulo">02:00</p>
        
       </div>
       <div id="tablero_juego">
