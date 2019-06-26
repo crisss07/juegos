@@ -30,7 +30,8 @@
               top: 50%;
               /*transform: translateY(-50%);*/
               /*width: 100%;*/
-              text-shadow: 0 1px 0 #e4adad, 0 2px 0 #e1a6a6, 0 3px 0 #df9e9e, 0 4px 0 #dc9696, 0 5px 0 #da8f8f, 0 6px 0 #d78787, 0 7px 0 #d58080, 0 8px 0 #d27878, 0 0 5px rgba(237, 154, 154, 0.05), 0 -1px 3px rgba(237, 154, 154, 0.2), 0 9px 9px rgba(237, 154, 154, 0.5), 0 12px 12px rgba(237, 154, 154, 0.5), 0 15px 15px rgba(237, 154, 154, 0.5);
+              text-shadow: 2px 2px 2px #000000;
+              /*text-shadow: 0 1px 0 #e4adad, 0 2px 0 #e1a6a6, 0 3px 0 #df9e9e, 0 4px 0 #dc9696, 0 5px 0 #da8f8f, 0 6px 0 #d78787, 0 7px 0 #d58080, 0 8px 0 #d27878, 0 0 5px rgba(237, 154, 154, 0.05), 0 -1px 3px rgba(237, 154, 154, 0.2), 0 9px 9px rgba(237, 154, 154, 0.5), 0 12px 12px rgba(237, 154, 154, 0.5), 0 15px 15px rgba(237, 154, 154, 0.5);*/
         }
         .contenidos{
             font-family: 'Handlee', cursive;
@@ -125,7 +126,7 @@
      -->      </div>
           <div class="modal-body">
             <p class="contenidos">
-                TU TIEMPO HA FINALIZADO!!!
+                <i class="material-icons md-48" style="float: left;">sentiment_dissatisfied</i> TU TIEMPO HA FINALIZADO!!!
             </p>
           </div>
           <div class="modal-footer">

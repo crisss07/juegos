@@ -37,6 +37,7 @@
       /*position: absolute;*/
       text-align: center;
       top: 50%;
+      text-shadow: 2px 2px 4px #000000;
       /*transform: translateY(-50%);*/
       /*width: 100%;*/
       /*text-shadow: 0 1px 0 #e4adad, 0 2px 0 #e1a6a6, 0 3px 0 #df9e9e, 0 4px 0 #dc9696, 0 5px 0 #da8f8f, 0 6px 0 #d78787, 0 7px 0 #d58080, 0 8px 0 #d27878, 0 0 5px rgba(237, 154, 154, 0.05), 0 -1px 3px rgba(237, 154, 154, 0.2), 0 9px 9px rgba(237, 154, 154, 0.5), 0 12px 12px rgba(237, 154, 154, 0.5), 0 15px 15px rgba(237, 154, 154, 0.5);*/
@@ -90,6 +91,18 @@
       </div>
       <div class="col-md-8 order-md-1">
         <form class="needs-validation" action="<?php echo base_url('/configuraciones/guarda_registro/') ?>" method="post">
+
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label for="cc-name">Email</label>
+              <input type="text" class="form-control" name="email" placeholder="Ej: tucorreo@gmail.com" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="cc-number">Password</label>
+              <input type="text" class="form-control" name="pasword" placeholder="Ej: 735124789" required>
+            </div>
+          </div>
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombres</label>
@@ -106,15 +119,15 @@
           </div>
 
           <div class="row">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-3 mb-3">
               <label for="address">Carnet</label>
               <input type="number" class="form-control" name="ci" required>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-3 mb-3">
               <label for="address">Fecha nacimiento</label>
               <input type="date" class="form-control" name="fecha_nacimiento" required>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-3 mb-3">
               <label for="country">Ciudad</label>
               <select class="custom-select d-block w-100" name="ciudad" required>
                 <option value="La Paz">La Paz</option>
@@ -128,14 +141,7 @@
                 <option value="Trinidad">Trinidad</option>
               </select>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-8 mb-3">
-              <label for="cc-name">Email</label>
-              <input type="text" class="form-control" name="email" placeholder="Ej: tucorreo@gmail.com" required>
-            </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-3 mb-3">
               <label for="cc-number">Celular</label>
               <input type="text" class="form-control" name="celular" placeholder="Ej: 735124789" required>
             </div>

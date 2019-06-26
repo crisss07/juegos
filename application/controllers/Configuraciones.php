@@ -26,6 +26,7 @@ class Configuraciones extends CI_Controller {
 		// vdebug($this->input->post(), true, false, true);
 		$data = array(
 			'nombres'=>$this->input->post('nombres'),
+			'password'=>md5($this->input->post('pasword')),
 			'perfil'=>'Jugador',
 			'ap'=>$this->input->post('ap'),
 			'am'=>$this->input->post('am'),
