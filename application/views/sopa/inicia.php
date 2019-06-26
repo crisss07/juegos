@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style type="text/css">
         body {
           background: url("<?php echo base_url("/public/img/fnd_nsopa.jpeg"); ?>") repeat; 
@@ -44,6 +45,31 @@
           z-index: +1;
           /*background: #ff0000;*/
         }
+
+        .material-icons {
+          font-family: 'Material Icons';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 28px;  /* Preferred icon size */
+          display: inline-block;
+          line-height: 1;
+          text-transform: none;
+          letter-spacing: normal;
+          word-wrap: normal;
+          white-space: nowrap;
+          direction: ltr;
+
+          /* Support for all WebKit browsers. */
+          -webkit-font-smoothing: antialiased;
+          /* Support for Safari and Chrome. */
+          text-rendering: optimizeLegibility;
+
+          /* Support for Firefox. */
+          -moz-osx-font-smoothing: grayscale;
+
+          /* Support for IE. */
+          font-feature-settings: 'liga';
+        }
     </style>
 </head>
 
@@ -70,7 +96,8 @@
      -->      </div>
           <div class="modal-body">
             <p class="contenidos">
-                El juego conciste en encontrar las palabras dentro
+                <i class="material-icons md-48" style="float: left;">sentiment_very_satisfied</i>Hola <?php echo $this->session->userdata("nombres"); ?>,
+                el juego conciste en encontrar las palabras dentro
                 de la sopa de letras, tienes 2 minutos para poder
                 superar esta prueba.
                 Si consigues encontrar todas las palabras tendras
@@ -124,7 +151,7 @@
      -->      </div>
           <div class="modal-body">
             <p class="contenidos">
-                FELICIDADES LO LOGRASTE!!!
+                <i class="material-icons md-48" style="float: left;">sentiment_very_satisfied</i> Felicidades <?php echo $this->session->userdata("nombres"); ?>, ganaste 10 puntos!!!                
             </p>
           </div>
           <div class="modal-footer">

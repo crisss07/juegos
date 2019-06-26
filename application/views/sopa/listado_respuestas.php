@@ -130,7 +130,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Formulario respuesta</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Formulario Respuesta</h5>
                         </div>
                         <div class="modal-body">
                             <div class="col-md-12">
@@ -140,11 +140,12 @@
                                             <!-- <label for="firstName">Nombres</label> -->
                                             <input type="hidden" id="id" value="" name="id">
                                             <input type="hidden" id="id_pregunta" value="" name="id_pregunta">
-                                            <input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Ej: Colores primarios" required>
+                                            <input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Ej: VIVIENDA" pattern="^\S{2,12}" required>
+                                            <small id="emailHelp" class="form-text text-muted">Maximo 12 letras por respuesta sin espacios.</small>
                                         </div>
                                     </div>
                                     <br />
-                                    <button class="btn btn-warning btn-lg btn-block" type="submit">REGISTRARME</button>
+                                    <button class="btn btn-warning btn-lg btn-block" type="submit">GUARDAR</button>
                                 </form>
                             </div>
                         </div>
@@ -207,6 +208,12 @@
             $("#Modal_edit").modal('show');
             // console.log("Hizo click");
         }
+
+        $('#respuesta').keyup(function () {
+            $('#respuesta').val(function(){
+                return this.value.toUpperCase();
+            });
+        });
     </script>
 </body>
 

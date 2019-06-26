@@ -30,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        font-size: 28px;
 	        color: #ffffff;
 	        font-weight: bolder;
+	        text-shadow: 2px 2px 2px #000000;
 	    }
 	    #txt_tutorial {
 	      position: absolute;
@@ -68,7 +69,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="jumbotron text-center cabecera" >
 	  <h1 class="titulo">JUEGOS</h1>
-	  <p class="contenidos">Bienvenido a nuestra consola de juegos!</p> 
+	  <?php //vdebug($this->session->userdata(), false, false,true) ?>
+	  <p class="contenidos">
+	  	Bienvenid@ 
+	  	<span style="color: #f4bb41;">
+	  		<?php echo $this->session->userdata("nombres"); ?>
+	  		<?php echo ($this->session->userdata("ap"))?$this->session->userdata("ap"):'' ?>
+	  		<?php echo $this->session->userdata("am"); ?>
+  		</span> a nuestra consola de juegos!</p> 
 	</div>
 	<div class="container botones">
 		<a href="<?php echo base_url('/') ?>" class="btn btn-info">Inicio</a>

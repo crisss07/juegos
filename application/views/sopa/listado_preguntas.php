@@ -87,7 +87,7 @@
             <div class="col-12">
                 <h1 class="col-12" align="center">LISTADO PREGUNTAS</h1>
                 <div style="height: 60px;" class="col-lg-4 col-md-2">
-                    <button style="margin: auto;" type="button" class="btn btn-success btn-lg" data-toggle="modal" onclick="nueva_persona();">Nueva pregunta</button>
+                    <button style="margin: auto;" type="button" class="btn btn-success btn-lg" data-toggle="modal" onclick="nueva_pregunta();">Nueva pregunta</button>
                 </div>
                 <table id="example" class="table table-striped table-bordered">
                     <thead>
@@ -128,7 +128,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Editar Pregunta</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Formulario Pregunta</h5>
                         </div>
                         <div class="modal-body">
                             <div class="col-md-12">
@@ -141,7 +141,7 @@
                                         </div>
                                     </div>
                                     <br />
-                                    <button class="btn btn-warning btn-lg btn-block" type="submit">REGISTRARME</button>
+                                    <button class="btn btn-warning btn-lg btn-block" type="submit">GUARDAR</button>
                                 </form>
                             </div>
                         </div>
@@ -186,6 +186,24 @@
             });
         });
 
+        function agregarform(datos) {
+
+            d = datos.split('||');
+            console.log(d);
+            $('#id').val(d[0]);
+            $('#pregunta').val(d[1]);
+            // $('#id_pregunta').val(d[2]);
+        }
+
+        function nueva_pregunta(idPregunta) {
+            // d = datos.split('||');
+            $('#id').val("");
+            $('#pregunta').val("");
+            // $('#id_pregunta').val(idPregunta);
+
+            $("#Modal_edit").modal('show');
+            // console.log("Hizo click");
+        }
        
     </script>
 </body>
