@@ -136,6 +136,7 @@
           //console.log(cronometro_active);
           //console.log("fin");
          //stop();
+         document.getElementById('time').style.display = 'none';
           fin_juego++;
            var valor = 1;
           tiempo_juego = document.getElementById("time").textContent;
@@ -203,7 +204,7 @@
     }
     
     function iniciar(){
-      var fiveMinutes = 60 * 2,
+      var fiveMinutes = 60 * 3,
       display = document.querySelector('#time');
       startTimer(fiveMinutes, display);
         // clearTimeout(idTimeout);
@@ -262,7 +263,7 @@
       <div id="cabecera_juego" align="center"><img alt="Juego de Parejas" id="imagen_juego" src="<?php echo base_url(); ?>public/imagenes/titulo.png"/>
         <p>🅰🅿🆁🅴🅽🅳🅴   🅼🅰🆂   🆂🅾🅱🆁🅴   🅽🆄🅴🆂🆃🆁🅾   🅿🅰🅸🆂   🅹🆄🅶🅰🅽🅳🅾
         </p>
-        <p id="time" class="titulo">02:00</p>
+        <p id="time" class="titulo">03:00</p>
        
       </div>
       <div id="tablero_juego">
@@ -332,11 +333,9 @@
      -->      </div>
           <div class="modal-body">
             <p class="contenidos">
-                El juego conciste en encontrar las palabras dentro
-                de la sopa de letras, tienes 2 minutos para poder
-                superar esta prueba.
+                El juego conciste buscar emparejados, buscar en las imagenes a la pregunta la respuesta en un tiempo de 3 minutos.
                 Si consigues encontrar todas las palabras tendras
-                10 puntos ganados.
+                30 puntos ganados.
             </p>
           </div>
           <div class="modal-footer">

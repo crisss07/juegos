@@ -102,7 +102,11 @@
    
   </tbody>
 </table>
-</div>
+
+
+  <div style="height: 60px;" class="col-lg-12 col-md-12" align="center">
+                    <a href="<?php echo base_url('/configuraciones/inicio'); ?>" class="btn btn-primary btn-lg">MENU PRINCIPAL</a>
+                </div></div>
     </body>
 </html>
 

@@ -107,6 +107,9 @@
 </table>
 </div><!--col lg-6-->
 </div>
+<div style="height: 60px;" class="col-lg-12 col-md-12" align="center">
+                    <a href="<?php echo base_url('/configuraciones/inicio'); ?>" class="btn btn-primary btn-lg">MENU PRINCIPAL</a>
+                </div>
   </div><!--container-->
     </body>
 </html>

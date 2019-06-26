@@ -23,7 +23,7 @@
 			<div class="col-md-3 " >							
 			</div>
 			<div class="col-md-2 contador " >
-			<!--RONDA <span id="puntaje"> <?php echo ($ronda->contador)+1 ?> /3</span>-->
+			<span id="puntaje"> <?php echo ($ronda->contador)+1 ?> /3</span>
 			</div>
 		
 			<div class="col-md-2 contador " >
