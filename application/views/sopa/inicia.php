@@ -469,7 +469,7 @@
 
                     var wordIndex = this.model.wordList.isWordPresent(selectedword)
                     var cantidad_palabras = this.model.wordList.words.length;
-                    console.log(cantidad_palabras);
+                    // console.log(cantidad_palabras);
                     if (wordIndex != -1) {
                         $('.rf-glowing, .rf-highlight', this.element[0]).each(function () {
                             Visualizer.select(this);
@@ -478,7 +478,7 @@
                         });
                         GameWidgetHelper.signalWordFound(wordIndex);
                         contador += 1;
-
+                        // Funcion si gana 
                         // console.log(contador + ' si lo lograste');
                         if(cantidad_palabras == contador){
                             // console.log('lo lograste carajo!!!')

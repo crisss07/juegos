@@ -34,15 +34,41 @@ class Sopa extends CI_Controller {
 
 	public function guarda_puntaje()
 	{
+		$persona_id = $this->session->userdata("usuario_id");
 		$ahora = date("Y-m-d H:i:s");
 		$puntaje = $this->input->post('persona_id');
+
 		$data = array(
-			'persona_id'=>55,
+			'persona_id'=>$persona_id,
 			'nombre_juego'=>'sopa',
 			'puntaje'=>10,
+			'contador'=>1,
 			'fecha'=>$ahora
 		);
 		$this->db->insert('registro', $data);
+		$score = 10;
+		$consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = 'activo'")->row();
+		if ($consulta) {
+				$puntos = $score + $consulta->puntaje;
+				 $data = array(
+	            'puntaje' => $puntos,
+	            'fecha' => $hoy
+		        );
+		        $this->db->where('id', $consulta->id);
+		        $this->db->update('entrega', $data);
+		}
+		else
+		{
+		$arrayy = array(
+				'persona_id' =>$persona_id,
+				'puntaje' =>$score,
+				'estado' =>'activo',
+				'fecha' =>$hoy
+				);
+		$this->db->insert('entrega', $arrayy);
+		}
+		redirect('Trivia');
+
 		// var_dump($puntaje);
 	}
 
