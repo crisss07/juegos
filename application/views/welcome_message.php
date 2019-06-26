@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    	a la pregunta, tienes 1 minuto para poder
 			    	superar esta prueba.
 			    	Si consigues encontrar todas las palabras tendras
-			    	10 puntos ganados.
+			    	6 puntos ganados.
 			    </p>
 			    <a href="<?php echo base_url('/ahorcado/') ?>" class="btn btn-info">COMENZAR A JUGAR</a>
 			  </div>

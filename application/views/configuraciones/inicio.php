@@ -100,7 +100,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <p class="card-text">
                             Accede a la adminsitracion del juego
                         </p>
-                        <a href="<?php echo base_url('/ahorcado/listado') ?>" class="btn btn-info">COMENZAR A JUGAR</a>
+                        <a href="<?php echo base_url('/ahorcado/listado') ?>" class="btn btn-info">ADMINISTRAR</a>
                     </div>
                 </div>
             </div>

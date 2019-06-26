@@ -19,8 +19,27 @@ class Sopa extends CI_Controller {
 
 		// echo "holas desde la sopa";
 		$resultados = $this->Sopa_model->genera_ramdon();
+		$persona_id = $this->session->userdata("usuario_id");
+		// var_dump($persona_id);
+		$hoy = date("Y-m-d");
+		$res = $this->db->query("SELECT count(fecha)as numero
+									FROM registro
+									WHERE fecha like '$hoy%'
+									AND nombre_juego = 'sopa'
+									AND persona_id = '$persona_id'")->row();
+		$num = $res->numero;
+		if ($num < 3) {
+			// $trivias['persona_id'] = $persona_id;
+			// $trivias['triviaa'] = $this->db->query("SELECT * FROM trivia ORDER BY RAND()")->result();
+			// $this->load->view('trivia', $trivias);
+			$this->load->view('sopa/inicia', $resultados);
+		}
+		else
+		{
+			$this->load->view('sopa/no_puede');
+			// $this->load->view('trivia3');
+		}
 		// vdebug($resultados, true, false, true);
-		$this->load->view('sopa/inicia', $resultados);
 	}
 
 	public function prueba()

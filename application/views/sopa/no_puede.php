@@ -85,18 +85,18 @@
     <div class="container">
         <div class="py-5 text-center">
             <!-- <img class="d-block mx-auto mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-            <h2 class="titulo">FELICIDADES TU REGISTRO SE HA COMPLETADO!!!</h2>
-            <h4 class="subtitulo">Ya puedes iniciar sesion o registrar otro usuario</h4>
+            <h2 class="titulo">TUS INTENTOS POR EL DIA DE HOY SE HAN AGOTADO!!!</h2>
+            <h4 class="subtitulo">Puedes intentar con otro juego</h4>
             <!-- <p class="lead">Completa el siguiente formulario con tus datos personales</p> -->
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                <a href="<?php echo base_url("Login/nuevo") ?>" class="btn btn-primary btn-lg btn-block">INICIAR SESION</a>
+            <div class="col-md-12">
+                <a href="<?php echo base_url() ?>" class="btn btn-primary btn-lg btn-block">MENU PRINCIPAL</a>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <a href="<?php echo base_url("Configuraciones/registro") ?>" class="btn btn-warning btn-lg btn-block">REGISTRA OTRO USUARIO</a>
-            </div>
+            </div> -->
         </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
