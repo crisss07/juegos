@@ -98,13 +98,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="card-body">
                         <h5 class="card-title">EL AHORCADO</h5>
                         <p class="card-text">
-                            El juego conciste en encontrar la respuesta
-                            a la pregunta, tienes 1 minuto para poder
-                            superar esta prueba.
-                            Si consigues encontrar todas las palabras tendras
-                            10 puntos ganados.
+                            Accede a la adminsitracion del juego
                         </p>
-                        <a href="<?php echo base_url('/ahorcado/') ?>" class="btn btn-info">COMENZAR A JUGAR</a>
+                        <a href="<?php echo base_url('/ahorcado/listado') ?>" class="btn btn-info">COMENZAR A JUGAR</a>
                     </div>
                 </div>
             </div>

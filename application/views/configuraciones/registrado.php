@@ -86,8 +86,17 @@
         <div class="py-5 text-center">
             <!-- <img class="d-block mx-auto mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
             <h2 class="titulo">FELICIDADES TU REGISTRO SE HA COMPLETADO!!!</h2>
-            <h4 class="subtitulo">Para iniciar puedes acceder a la siguiente direccion <a href="<?php echo base_url("configuraciones/registro/") ?>">Iniciar sesion</a></h4>
+            <h4 class="subtitulo">Ya puedes iniciar sesion o registrar otro usuario</h4>
             <!-- <p class="lead">Completa el siguiente formulario con tus datos personales</p> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <a href="<?php echo base_url("Login/nuevo") ?>" class="btn btn-primary btn-lg btn-block">INICIAR SESION</a>
+            </div>
+            <div class="col-md-6">
+                <a href="<?php echo base_url("Configuraciones/registro") ?>" class="btn btn-warning btn-lg btn-block">REGISTRA OTRO USUARIO</a>
+            </div>
         </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">

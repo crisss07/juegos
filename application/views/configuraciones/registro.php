@@ -95,7 +95,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="cc-name">Email</label>
-              <input type="text" class="form-control" name="email" placeholder="Ej: tucorreo@gmail.com" required>
+              <input type="email" class="form-control" name="email" placeholder="Ej: tucorreo@gmail.com" required>
             </div>
             <div class="col-md-4 mb-3">
               <label for="cc-number">Password</label>
