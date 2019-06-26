@@ -10,15 +10,26 @@ class Opciones extends CI_Controller {
     }
     
     public function ranking(){
-		$datos['puntajes']=$this->Opciones_model->puntaje();
+    	if ($this->session->userdata("login")) {
+           	$datos['puntajes']=$this->Opciones_model->puntaje();
 
-		$this->load->view('opciones/ranking', $datos);
+			$this->load->view('opciones/ranking', $datos);
+        } else {
+            redirect(base_url()."Login");
+        }
+		
 	}
 
 	public	function ranking_juego(){
-
-		$datos['puntajes_id']=$this->Emparejados_model->puntaje_id($id);
-		$this->load->view('opciones/ranking_juego');
+		$persona_id = $this->session->userdata("usuario_id");
+		if ($this->session->userdata("login")) {
+           	$datos['puntajes_id']=$this->Opciones_model->puntaje_id($persona_id);
+           	$datos['acumulados'] = $this->Opciones_model->acumulado($persona_id);
+			$this->load->view('opciones/ranking_juego', $datos);
+        } else {
+            redirect(base_url()."Login");
+        }
+		
 	}
 
 	public function premios(){
