@@ -44,7 +44,7 @@ class Login extends CI_Controller {
 			}
 			//pefil de administrador
 			else{
-				redirect(base_url() . "Configuraciones/listado/");  
+				redirect(base_url() . "Configuraciones/inicio/");  
 			}				
 		}
 	}
