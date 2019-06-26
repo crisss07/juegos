@@ -133,14 +133,14 @@
           $(this).css("pointer-events","none");
       }
       if(contadorAciertos == 10){
-          console.log(cronometro_active);
-          console.log("fin");
-         stop();
+          //console.log(cronometro_active);
+          //console.log("fin");
+         //stop();
           fin_juego++;
            var valor = 1;
           tiempo_juego = document.getElementById("time").textContent;
           var algo = tiempo_juego;
-          console.log(algo);
+          //console.log(algo);
           $(".tiempo_final").html(tiempo_juego);
           $("#panel_resultados").fadeIn();
           $("html, body").stop().animate({
@@ -211,12 +211,12 @@
         // actualizar();
     }
 
-    function stop(){
+    // function stop(){
 
      
-      alert(startTimer);
+    //   alert(startTimer);
       
-    }
+    // }
 
     $(document).ready(function()
    {
