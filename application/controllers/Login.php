@@ -39,12 +39,12 @@ class Login extends CI_Controller {
 			);
 			$this->session->set_userdata($data);
 			//perfil de usuario
-			if($res->perfil=='100'){
+			if($res->perfil=='Jugador'){
 				redirect(base_url());
 			}
 			//pefil de administrador
 			else{
-				redirect(base_url() . "Ahorcado/listado/");  
+				redirect(base_url() . "Configuraciones/listado/");  
 			}				
 		}
 	}

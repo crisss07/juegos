@@ -62,7 +62,7 @@
 							<span class="txt1">
 								No tienes una cuenta
 							</span>
-							<a href="#" class="txt2">
+							<a href="<?php echo site_url('Configuraciones/registro');?>" class="txt2">
 								Registrate
 							</a>
 						</li>

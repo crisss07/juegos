@@ -30,4 +30,9 @@ class Ahorcado_model extends CI_Model {
         return $query->row();
 	}
 
+	function get_puntos($id) {
+        $query = $this->db->query("SELECT IFNULL(COUNT(persona_id),0) AS contador FROM entrega WHERE persona_id=$id");
+        return $query->row();
+	}
+
 }
