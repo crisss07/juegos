@@ -43,7 +43,7 @@
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresar usuario">
 						<input class="input100" type="text" name="usuario">
-						<span class="focus-input100" data-placeholder="Usuario"></span>
+						<span class="focus-input100" data-placeholder="Usuario (Email)"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresar contraseña">

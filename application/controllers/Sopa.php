@@ -66,7 +66,7 @@ class Sopa extends CI_Controller {
 		);
 		$this->db->insert('registro', $data);
 		$score = 10;
-		$consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = 'activo'")->row();
+		$consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = '1'")->row();
 		if ($consulta) {
 				$puntos = $score + $consulta->puntaje;
 				 $data = array(
