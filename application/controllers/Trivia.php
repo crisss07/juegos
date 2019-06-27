@@ -17,7 +17,8 @@ class Trivia extends CI_Controller {
 		$res = $this->db->query("SELECT count(fecha)as numero
 									FROM registro
 									WHERE fecha like '$hoy%'
-									AND persona_id = '$persona_id'")->row();
+									AND persona_id = '$persona_id'
+									AND nombre_juego = 'trivia' ")->row();
 		$num = $res->numero;
 		if ($num < 3) {
 			$trivias['persona_id'] = $persona_id;
@@ -45,7 +46,7 @@ class Trivia extends CI_Controller {
 			);
 		$this->db->insert('registro', $array);
 
-		$consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = 'activo'")->row();
+		$consulta = $this->db->query("SELECT * FROM entrega WHERE persona_id = $persona_id AND estado = '1'")->row();
 		if ($consulta) {
 				$puntos = $score + $consulta->puntaje;
 				 $data = array(
@@ -60,7 +61,7 @@ class Trivia extends CI_Controller {
 		$arrayy = array(
 				'persona_id' =>$persona_id,
 				'puntaje' =>$score,
-				'estado' =>'activo',
+				'estado' =>'1',
 				'fecha' =>$hoy
 				);
 		$this->db->insert('entrega', $arrayy);
