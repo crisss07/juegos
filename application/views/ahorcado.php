@@ -196,6 +196,7 @@
                 if (--timer < 0) {
                     timer = duration;
                     $("#modalTiempo").modal('show');
+                    guarda_perdida();
                     // console.log('termino');
 
                 }
@@ -329,8 +330,7 @@ function enviado(tecla) {
     }
    // x.value = "";
 }
-function guarda_data(){
-	
+function guarda_data(){	
 	location = "/juegos/ahorcado/guarda/"+ <?php echo $id_persona;?>+"/"+6;
 }
 function guarda_perdida(){
