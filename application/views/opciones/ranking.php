@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    }
 	    .contenidos2{
 	        font-family: 'Handlee', cursive;
-	        font-size: 24px;
+	        font-size: 30px;
 	        color: #000000;
 	        font-weight: bolder;
 	    }
@@ -113,25 +113,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  	<div class="row">
 		  	
 		  	<div class="col-md-12 col-sm-12">
-		    	<div class="card">
-		    	  <div class="card-body">
-		    	  	<div class="row">
+		    	
 		    	  		<?php foreach ($puntajes as $valores) { ?>
-		    	  		<div class="col-md-6 col-sm-12">
-		    	  			<p class="card-text contenidos2"><h5 class="contenidos1"><?php echo $valores->nombres;  ?> <?php echo $valores->ap;  ?> <?php echo $valores->am;  ?></h5> </p>
-		    	  		</div>
-		    	  		<div class="col-md-6 col-sm-12">
-		    	  			<p class="card-text contenidos2"><h5 class="contenidos2"><?php echo $valores->puntaje; ?> Pts.</h5> </p>
-		    	  		</div>
+		    	  			<dl class="row"> 
+						      <dt class="col-sm-9 contenidos2"><?php echo $valores->nombres;?> <?php echo $valores->ap;?> <?php echo $valores->am;?>  (<?php echo $valores->ciudad;?>)</dt>
+						      <dd class="col-sm-3 contenidos1"><?php echo $valores->puntaje; ?> Pts.</dd>
+						    </dl>
+		    	  		
 		    	  		<?php } ?>
-		    	  	</div>
-		    	    
-		    	  </div>
-		    	</div>
+		    	  	
 		    </div>
 		    
 	    
 		</div>
+		
 	
 	
 </body>

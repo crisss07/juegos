@@ -83,19 +83,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<a href="<?php echo base_url('/') ?>" class="btn btn-info">Inicio</a>
 		<a href="<?php echo base_url('/opciones/premios') ?>" class="btn btn-warning">Premios</a>
 		<a href="<?php echo base_url('/opciones/informacion') ?>" class="btn btn-danger">Información</a>
-		<a href="#" class="btn btn-success">Ranking</a>
-		<a href="#" class="btn btn-primary">Ranking personal</a>	
-		<a href="<?php echo base_url('/login/logout') ?>" class="btn btn-danger">Salir</a>
-
 		<a href="<?php echo base_url('/opciones/ranking') ?>" class="btn btn-success">Ranking</a>
-		<a href="<?php echo base_url('/opciones/ranking_juego') ?>" class="btn btn-primary">Ranking personal</a>	
-
+		<a href="<?php echo base_url('/opciones/ranking_juego') ?>" class="btn btn-primary">Ranking personal</a>
+		<a href="<?php echo base_url('/login/logout') ?>" class="btn btn-danger">Salir</a>
 	</div>	
-
 	<div class="container">
-
 	  <div class="row">
-
 		<div class="col-xs-6 col-md-6">
 			<div class="card">
 			  <img src="<?php echo base_url('/public/img/ahorcado.jpg'); ?>" class="card-img-top" alt="...">

@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    }
 	    .contenidos3{
 	        font-family: 'Handlee', cursive;
-	        font-size: 30px;
+	        font-size: 24px;
 	        color: #0000FF;
 	        font-weight: bolder;
 	    }
@@ -116,44 +116,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="container">
 		<h1 class="subtitulo">RANKING</h1>
-	  	<div class="row">
-		  	<div class="col-md-12 col-sm-12">
-		    	<div class="card">
-		    	  
-		    	  <div class="card-body">
-		    	  	<div class="row">
-		    	  		<p class="contenidos3"><?php echo $acumulados->nombres; ?> desde que se registro en cada juego registro todo esto.</p>
-		    	  		<?php foreach ($puntajes_id as $valores) { ?>
-		    	  		
-		    	  		<div class="col-md-6 col-sm-12">
-		    	  			<p class="card-text contenidos2"><h5 class="contenidos1"><?php echo $valores->nombre_juego;	?></h5> </p>
-		    	  		</div>
-		    	  		<div class="col-md-6 col-sm-12">
-		    	  			<p class="card-text contenidos2"><h5 class="contenidos2"><?php echo $valores->suma; ?> Pts.</h5> </p>
-		    	  		</div>
-		    	  		<?php } ?>
-		    	  	</div>
-		    	   
-	    	    	
-		    	  </div>
-		    	</div>
-		    </div>
-		    
-	    
-		</div>
-		<div class="row">
-		  	
-		  	<div class="col-md-12 col-sm-12">
-		    	<div class="card">
-		    	  
-		    	  <div class="card-body">
-		    	    <h5 class="card-title contenidos1">Tiene acumulado hasta ahora</h5>
-		    	    <p class="card-text contenidos2"><?php echo $acumulados->puntaje; ?> Pts.</p>
-		    	  </div>
-		    	</div>
-		    </div>
-		   
-	    
+	  	
+		<div class="list-group">
+			<a href="#" class="list-group-item list-group-item-action  list-group-item-info">
+				<h4 class="contenidos1"><?php echo $acumulados->nombres; ?> <?php echo $acumulados->ap; ?> <?php echo $acumulados->am; ?></h4>
+				<p class="contenidos2">Ciudad de <?php echo $acumulados->ciudad; ?></p>
+			</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-success">
+				<h4 class="contenidos3">Puntos acumulados en cada juego desde su registro</h4>
+				<p class="contenidos2">
+					<?php foreach ($puntajes_id as $valores) { ?>
+						<dl class="row"> 
+					      <dt class="col-sm-9 contenidos2"><?php echo $valores->nombre_juego;	?></dt>
+					      <dd class="col-sm-3 contenidos1"><?php echo $valores->suma; ?> Pts.</dd>
+					    </dl>
+				    <?php } ?>
+				</p>
+			</a>
+			<a href="#" class="list-group-item list-group-item-action list-group-item-primary active">
+				<dl class="row"> 
+			      <dt class="col-sm-9 contenidos1">Puntos acumulados actuales</dt>
+			      <dd class="col-sm-3 contenidos2"><?php echo $acumulados->puntaje; ?> Pts.</dd>
+			    </dl>
+				
+			</a>
 		</div>
 	
 	

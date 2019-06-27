@@ -84,6 +84,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <a href="<?php echo base_url('/configuraciones/listado') ?>" class="btn btn-warning">Listado registrados</a>
         <a href="<?php echo base_url('/entrega') ?>" class="btn btn-success">Entrega permios</a>
         <a href="<?php echo base_url('/entrega/premiados') ?>" class="btn btn-danger">Premios recogidos</a>
+        <a href="<?php echo base_url('/login/logout') ?>" class="btn btn-danger">Salir</a>
 <!--         <a href="#" class="btn btn-success">Ranking</a>
         <a href="#" class="btn btn-primary">Ranking personal</a>
  -->    </div>
