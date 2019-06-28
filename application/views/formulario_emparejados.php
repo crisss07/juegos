@@ -102,6 +102,7 @@
                             <th>Respuesta</th>
                             <th>Imagen de la respuesta</th>
                             <th>Acci&oacute;n</th>
+                            <th>Acci&oacute;n</th>
 
                         </tr>
                     </thead>
@@ -119,6 +120,9 @@
                                   
                                     <button type="button" class="btn btn-warning" onclick="mostrarModal('Editar pregunta', <?php echo $datos->id ?>  ,'<?php echo $datos->pregunta ?>', '<?php echo $datos->respuesta  ?>', '',  '')" >Editar</button>
                                     
+        
+                                </td>
+                                <td>
                                     <a id="button" onclick='if (window.confirm("Quieres eliminar esta pregunta?")) { window.location.href = "<?php echo base_url(); ?>/Emparejados/eliminar/<?php echo $datos->id ?>"; }' class="btn btn-danger" >Eliminar</a>
                                 </td>
                             </tr>

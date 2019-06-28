@@ -330,18 +330,36 @@
     <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-     -->      </div>
-          <div class="modal-body">
-            <p class="contenidos">
-                El juego conciste buscar emparejados, buscar en las imagenes a la pregunta la respuesta en un tiempo de 3 minutos.
-                Si consigues encontrar todas las palabras tendras
-                30 puntos ganados.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success btn-lg btn-block cerrarModal">JUGAR</button>
-            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
-          </div>
+     -->  </div>
+           <?php if ($intentos == 0) { ?>
+              <div class="modal-body">
+                  <p class="contenidos">
+                      El juego conciste buscar emparejados, buscar en las imagenes a la pregunta la respuesta en un tiempo de 3 minutos.
+                      Si consigues encontrar todas las palabras tendras
+                      30 puntos ganados.
+                      Solo tiene 3 intentos por dia.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success btn-lg btn-block cerrarModal">JUGAR</button>
+                  <button type="button" class="btn btn-primary btn-lg btn-block ir_menu" >MENU</button>
+                  <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+                </div>
+           <?php }else{ ?>
+                <div class="modal-body">
+                  <p class="contenidos">
+                      Ya sobrepaso el numero de intentos.
+                      <br>
+                      Solo tiene 3 intentos por dia.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  
+                  <button type="button" class="btn btn-primary btn-lg btn-block ir_menu" >MENU</button>
+                  <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Jugar</button> -->
+                </div>
+           <?php } ?>
+          
         </div>
       </div>
     </div>
@@ -356,7 +374,7 @@
     <!--         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-     -->      </div>
+     -->   </div>
           <div class="modal-body">
             <p class="contenidos">
                 TU TIEMPO HA FINALIZADO!!!

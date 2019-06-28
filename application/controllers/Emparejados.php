@@ -12,8 +12,22 @@ class Emparejados extends CI_Controller {
     public function index()
 	{
 		if ($this->session->userdata("login")) {
-           	$datos['emparejados']=$this->Emparejados_model->datos();
-			$this->load->view('emparejados', $datos);
+			$persona_id = $this->session->userdata("usuario_id");
+			$fecha = date("Y-m-d");
+			$numero = $this->db->query("SELECT count(fecha)as contador FROM registro WHERE fecha like '$fecha%' AND persona_id = '$persona_id' AND nombre_juego = 'emparejados' ")->row();
+			$valor = $numero->contador;
+			if ($valor < 3) {
+				$datos['emparejados']=$this->Emparejados_model->datos();
+				$datos['intentos'] = 0;
+				$this->load->view('emparejados', $datos);
+			}
+			else
+			{
+				$datos['emparejados']=$this->Emparejados_model->datos();
+				$datos['intentos'] = 1;
+				$this->load->view('emparejados', $datos);
+			}
+
         } else {
             redirect(base_url()."Login");
         }
