@@ -482,11 +482,11 @@
                         // Funcion si gana 
                         // console.log(contador + ' si lo lograste');
                         if(cantidad_palabras == contador){
-                            // console.log('lo lograste carajo!!!')
+                            console.log('lo lograste!!!')
                             $.ajax({
                                  type: "POST",
                                  url: '<?php echo base_url('sopa/guarda_puntaje'); ?>',
-                                 data: {"persona_id": "56", 'puntaje': '10'},
+                                 data: {"persona_id": "6", 'puntaje': '10'},
                                  success: function(response){
                                      // alert(response);
                                  }
@@ -511,6 +511,8 @@
 
             }
             ); //widget
+
+            // function cuenta
 
 
             $.extend($.ryanf.wordsearchwidget, {
